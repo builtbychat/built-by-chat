@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Built by Chat · Launch Handoff</title>
+  <title>Launch Handoff · Brand decision pending</title>
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
@@ -11,7 +11,7 @@
   <header class="hero">
     <div class="hero-grid" aria-hidden="true"></div>
     <nav class="topbar" aria-label="Dashboard">
-      <div class="brand"><span class="brand-icon">⌂<b>›</b></span><span>Built by Chat</span></div>
+      <div class="brand"><span class="brand-icon">⌂<b>›</b></span><span>Launch Studio <small>name pending</small></span></div>
       <span class="local-pill"><i></i> Local only · nothing publishes</span>
     </nav>
     <div class="hero-copy">
@@ -32,6 +32,11 @@
       <div><h2 id="safety-title">Never enter secrets here</h2><p>No passwords, OTPs, recovery codes, stream keys, API keys, tokens, payment-card data, or private moderation details. The save endpoint blocks common secret patterns.</p></div>
     </section>
 
+    <section class="decision-banner" aria-labelledby="name-decision-title">
+      <div><p class="eyebrow">Launch-critical decision</p><h2 id="name-decision-title">Choose the umbrella name before claiming accounts</h2><p><strong>Working recommendation: Build With Phaenex.</strong> No account, repository, deployment, domain, or asset will be renamed from this page. Availability checks are snapshots, not reservations.</p></div>
+      <a href="#naming-title">Review and choose</a>
+    </section>
+
     <section class="progress-section" aria-labelledby="progress-title">
       <div class="section-heading"><div><p class="eyebrow">From the repository tracker</p><h2 id="progress-title">Running progress</h2></div><span id="last-verified"></span></div>
       <div class="progress-grid" id="progress-grid"></div>
@@ -45,23 +50,43 @@
     <form id="handoff-form" novalidate>
       <div class="section-heading form-heading"><div><p class="eyebrow">Private input form</p><h2>Tell me what I need to continue</h2><p>Fields marked “checkpoint” usually involve an account screen, physical equipment, or a consequential approval.</p></div><span class="completion" id="form-completion">0 fields filled</span></div>
 
+      <section class="form-card naming-card" aria-labelledby="naming-title">
+        <div class="form-card-head"><span>01</span><div><h3 id="naming-title">Umbrella name decision</h3><p>Choose a direction or add your own. This records a decision only; it does not rename, reserve, publish, or purchase anything.</p></div></div>
+        <div class="candidate-grid" role="radiogroup" aria-label="Shortlisted names">
+          <label class="candidate recommended"><input type="radio" name="naming.selectedCandidate" value="Build With Phaenex"><span><b>Recommended</b><strong>Build With Phaenex</strong><small>Clearest invitation; distinctive and expandable.</small></span></label>
+          <label class="candidate"><input type="radio" name="naming.selectedCandidate" value="Phaenex & You"><span><strong>Phaenex &amp; You</strong><small>Warmest and most community-forward.</small></span></label>
+          <label class="candidate"><input type="radio" name="naming.selectedCandidate" value="Prompt Phaenex"><span><strong>Prompt Phaenex</strong><small>Most AI-forward; needs a little explanation.</small></span></label>
+          <label class="candidate"><input type="radio" name="naming.selectedCandidate" value="Phaenex Assembly"><span><strong>Phaenex Assembly</strong><small>Collective and future-proof; less show-like.</small></span></label>
+          <label class="candidate"><input type="radio" name="naming.selectedCandidate" value="custom"><span><strong>My own name</strong><small>Enter it below so Codex can screen it first.</small></span></label>
+        </div>
+        <div class="fields two naming-fields">
+          <label>Custom or refined display name <input name="naming.customDisplayName" maxlength="80" placeholder="Leave blank if choosing above"></label>
+          <label>Preferred plain handle <input name="naming.preferredHandle" maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" placeholder="buildwithphaenex"></label>
+          <label>How should “Phaenex” be pronounced? <input name="naming.pronunciation" maxlength="100" placeholder="Write it phonetically for intros"></label>
+          <label>Tagline choice <select name="naming.tagline"><option value="">Undecided</option><option>You decide. AI assists. Phaenex builds it live.</option><option>You prompt it. We build it live.</option><option>The internet decides. Phaenex builds it live.</option><option value="custom">I want a different tagline</option></select></label>
+          <label class="span-two">Naming notes or new candidates <textarea name="naming.notes" maxlength="1000" rows="3" placeholder="What should the name feel like? Any words you love or dislike?"></textarea></label>
+        </div>
+        <div class="availability-note"><strong>Preliminary result for <code>buildwithphaenex</code></strong><span>.com and .live: RDAP not found · GitHub: no user/org · YouTube: no channel page · Twitch: no account returned · TikTok: no account page · Bluesky: no resolution · Instagram/X: inconclusive. Checked July 16, 2026.</span></div>
+        <div class="checks"><label class="check"><input type="checkbox" name="naming.finalChoice"><span><strong>Final choice:</strong> this is the display name I want Codex to prepare</span></label><label class="check"><input type="checkbox" name="naming.approveRepositoryRename"><span><strong>Rename approval:</strong> prepare the repository-only rename branch after saving; do not claim accounts or buy anything</span></label></div>
+      </section>
+
       <section class="form-card" aria-labelledby="identity-title">
-        <div class="form-card-head"><span>01</span><div><h3 id="identity-title">Brand identity and recovery</h3><p>Needed for Cloudflare Access, forwarding, and platform ownership.</p></div></div>
+        <div class="form-card-head"><span>02</span><div><h3 id="identity-title">Brand identity and recovery</h3><p>Needed for Cloudflare Access, forwarding, and platform ownership after the name is final.</p></div></div>
         <div class="fields two">
-          <label>Chosen Google address
+          <label>Brand Google account status
             <select name="identity.brandGoogleChoice">
-              <option value="">Not chosen</option><option>builtbychatstudio@gmail.com</option><option>builtbychathq@gmail.com</option><option>hello.builtbychat@gmail.com</option><option value="custom">Different address</option>
+              <option value="">Wait for final name</option><option value="legacy-created">A Built by Chat address already exists</option><option value="new-created">A new-name address is created</option><option value="custom">Different/existing address</option>
             </select>
           </label>
           <label>Actual brand Google email <input type="email" name="identity.brandGoogleEmail" autocomplete="off" placeholder="name@gmail.com"></label>
           <label>Personal recovery/Access email <input type="email" name="identity.recoveryEmail" autocomplete="off" placeholder="Your allowed recovery email"></label>
-          <label>Public contact display name <input name="identity.displayName" maxlength="80" placeholder="Built by Chat"></label>
+          <label>Public contact display name <input name="identity.displayName" maxlength="80" placeholder="Use the final umbrella name"></label>
         </div>
         <label class="check"><input type="checkbox" name="identity.googleAccountCreated"><span><strong>Checkpoint complete:</strong> Google account created and 2FA enabled</span></label>
       </section>
 
       <section class="form-card" aria-labelledby="github-title">
-        <div class="form-card-head"><span>02</span><div><h3 id="github-title">GitHub organization</h3><p>The repository is protected; these finish organization governance.</p></div></div>
+        <div class="form-card-head"><span>03</span><div><h3 id="github-title">GitHub organization</h3><p>The repository is protected. The existing organization can remain during a controlled rename.</p></div></div>
         <div class="fields two">
           <label>Trusted reviewer GitHub username <input name="github.reviewerUsername" maxlength="39" placeholder="username"></label>
           <label>Reviewer notes <input name="github.reviewerNotes" maxlength="180" placeholder="Who should review protected PRs?"></label>
@@ -70,9 +95,9 @@
       </section>
 
       <section class="form-card" aria-labelledby="domain-title">
-        <div class="form-card-head"><span>03</span><div><h3 id="domain-title">Domain research preferences</h3><p>This requests a quote only. It does not authorize a purchase.</p></div></div>
+        <div class="form-card-head"><span>04</span><div><h3 id="domain-title">Domain research preferences</h3><p>This requests a quote only after the name is final. It does not authorize a purchase.</p></div></div>
         <div class="fields three">
-          <label>Preferred domain <select name="domain.preferred"><option value="builtbychat.com">builtbychat.com</option><option value="builtbychat.live">builtbychat.live</option><option value="">Research both</option></select></label>
+          <label>Preferred domain <select name="domain.preferred"><option value="">Wait for final name</option><option value="buildwithphaenex.com">buildwithphaenex.com</option><option value="buildwithphaenex.live">buildwithphaenex.live</option><option value="custom">Different domain from notes</option></select></label>
           <label>Registrar preference <input name="domain.registrarPreference" maxlength="80" placeholder="Cloudflare Registrar, no preference…"></label>
           <label>Maximum first-year total (USD) <input type="number" name="domain.maxFirstYearUsd" min="0" max="100" step="1" placeholder="100"></label>
           <label>Maximum annual renewal (USD) <input type="number" name="domain.maxRenewalUsd" min="0" max="100" step="1" placeholder="Leave blank if undecided"></label>
@@ -82,18 +107,18 @@
       </section>
 
       <section class="form-card" aria-labelledby="cloudflare-title">
-        <div class="form-card-head"><span>04</span><div><h3 id="cloudflare-title">Cloudflare and email</h3><p>Once these destinations are known, I can prepare Access and routing.</p></div></div>
+        <div class="form-card-head"><span>05</span><div><h3 id="cloudflare-title">Cloudflare and email</h3><p>Once the name and destinations are known, I can prepare Access and routing.</p></div></div>
         <div class="fields two">
           <label>Primary Studio Access email <input type="email" name="cloudflare.primaryAccessEmail" autocomplete="off" placeholder="brand account email"></label>
           <label>Recovery Studio Access email <input type="email" name="cloudflare.recoveryAccessEmail" autocomplete="off" placeholder="personal recovery email"></label>
           <label>Email forwarding destination <input type="email" name="cloudflare.forwardDestination" autocomplete="off" placeholder="where hello@, sponsors@, security@ go"></label>
-          <label>Preferred production hostname <input name="cloudflare.productionHostname" maxlength="120" placeholder="builtbychat.com"></label>
+          <label>Preferred production hostname <input name="cloudflare.productionHostname" maxlength="120" placeholder="Use the final approved domain"></label>
         </div>
         <label class="check"><input type="checkbox" name="cloudflare.configureAfterSave"><span>Configure eligible Cloudflare settings after I save these addresses</span></label>
       </section>
 
       <section class="form-card" aria-labelledby="accounts-title">
-        <div class="form-card-head"><span>05</span><div><h3 id="accounts-title">Channels and community accounts</h3><p>Enter public handles or URLs only—never credentials.</p></div></div>
+        <div class="form-card-head"><span>06</span><div><h3 id="accounts-title">Channels and community accounts</h3><p>Enter public handles or URLs only—never credentials. Wait for the final name before creating new accounts.</p></div></div>
         <div class="account-grid">
           <label>YouTube <input name="accounts.youtube" maxlength="160" placeholder="@handle or channel URL"><select name="accounts.youtubeStatus"><option value="not-started">Not started</option><option value="checkpoint">At checkpoint</option><option value="reserved">Reserved</option></select></label>
           <label>Twitch <input name="accounts.twitch" maxlength="160" placeholder="handle or URL"><select name="accounts.twitchStatus"><option value="not-started">Not started</option><option value="checkpoint">At checkpoint</option><option value="reserved">Reserved</option></select></label>
@@ -105,7 +130,7 @@
       </section>
 
       <section class="form-card" aria-labelledby="obs-title">
-        <div class="form-card-head"><span>06</span><div><h3 id="obs-title">OBS and rehearsal setup</h3><p>These are local equipment checkpoints I cannot truthfully complete without you.</p></div></div>
+        <div class="form-card-head"><span>07</span><div><h3 id="obs-title">OBS and rehearsal setup</h3><p>These are local equipment checkpoints I cannot truthfully complete without you.</p></div></div>
         <div class="fields three">
           <label>Measured upload speed (Mbps) <input type="number" name="obs.uploadMbps" min="0" max="10000" step="0.1" placeholder="0"></label>
           <label>Recording folder <input name="obs.recordingFolder" maxlength="240" placeholder="Local path; no cloud credentials"></label>
@@ -118,7 +143,7 @@
       </section>
 
       <section class="form-card" aria-labelledby="decisions-title">
-        <div class="form-card-head"><span>07</span><div><h3 id="decisions-title">Launch decisions and notes</h3><p>Anything else that changes priorities or unlocks the next pass.</p></div></div>
+        <div class="form-card-head"><span>08</span><div><h3 id="decisions-title">Launch decisions and notes</h3><p>Anything else that changes priorities or unlocks the next pass.</p></div></div>
         <div class="fields two">
           <label>Optional support provider <select name="launch.supportProvider"><option value="">Undecided</option><option>Ko-fi</option><option>GitHub Sponsors</option><option>Both later</option><option>Defer monetization</option></select></label>
           <label>Next priority <select name="launch.nextPriority"><option value="">Let Codex choose from unlocked work</option><option>Accounts and domain</option><option>OBS and rehearsal</option><option>Prompt rehearsal</option><option>Cloudflare production</option><option>Content and launch operations</option></select></label>
@@ -127,13 +152,60 @@
         <label class="check"><input type="checkbox" name="launch.promptRehearsalAvailable"><span>I am available to participate in the live prompt-failure/injection rehearsal</span></label>
       </section>
 
+      <section class="form-card" aria-labelledby="viewer-title">
+        <div class="form-card-head"><span>09</span><div><h3 id="viewer-title">Viewer experience defaults</h3><p>Recommended pilot settings are shown first. Saving a preference lets me configure the site, overlays, scripts, and rehearsal checklist consistently.</p></div></div>
+        <div class="pilot-defaults"><strong>Recommended pilot</strong><span>1080p30 · YouTube low latency + DVR · 6-minute polls · warnings at 60 and 15 seconds · captions · 5-minute break · repeated first-time orientation · site voting authoritative</span></div>
+        <div class="fields three">
+          <label>Major poll window <select name="viewer.pollWindow"><option value="">Undecided</option><option value="6">6 minutes (recommended)</option><option value="5">5 minutes</option><option value="8">8 minutes</option><option value="custom">Varies by poll</option></select></label>
+          <label>YouTube latency <select name="viewer.youtubeLatency"><option value="">Undecided</option><option value="low">Low (recommended)</option><option value="ultra-low">Ultra-low</option><option value="normal">Normal</option></select></label>
+          <label>Stream format <select name="viewer.streamFormat"><option value="">Undecided</option><option value="1080p30">1080p30 (recommended)</option><option value="1080p60">1080p60</option><option value="720p30">720p30</option></select></label>
+          <label>Starting Soon length <select name="viewer.startingSoon"><option value="">Undecided</option><option value="5">5 minutes (recommended)</option><option value="10">10 minutes</option><option value="none">No countdown</option></select></label>
+          <label>Break length <select name="viewer.breakLength"><option value="">Undecided</option><option value="5">5 minutes (recommended)</option><option value="10">10 minutes</option><option value="none">No planned break</option></select></label>
+          <label>Time display <select name="viewer.timeDisplay"><option value="">Undecided</option><option value="local-and-ct">Viewer local + CT (recommended)</option><option value="ct-only">Central only</option></select></label>
+        </div>
+        <div class="checks"><label class="check"><input type="checkbox" name="viewer.dvr"><span>Keep YouTube DVR on</span></label><label class="check"><input type="checkbox" name="viewer.captions"><span>Require captions on both platforms</span></label><label class="check"><input type="checkbox" name="viewer.repeatOrientation"><span>Repeat orientation after break and before final vote</span></label><label class="check"><input type="checkbox" name="viewer.lowBandwidth"><span>Include low-bandwidth status/town view</span></label><label class="check"><input type="checkbox" name="viewer.verbalDescriptions"><span>Verbally describe important visual changes</span></label><label class="check"><input type="checkbox" name="viewer.siteVoteAuthoritative"><span>Keep the site as the only authoritative final vote</span></label></div>
+      </section>
+
+      <section class="form-card" aria-labelledby="host-title">
+        <div class="form-card-head"><span>10</span><div><h3 id="host-title">Your comfort and workload</h3><p>These boundaries determine what gets automated, simplified, deferred, or cut. Sustainable is a launch requirement.</p></div></div>
+        <div class="fields three">
+          <label>Maximum weekly production hours <input type="number" name="host.maxWeeklyHours" min="2" max="60" step="1" placeholder="Your honest limit"></label>
+          <label>Comfortable pre-show setup <input type="number" name="host.preShowMinutes" min="15" max="180" step="5" placeholder="Minutes"></label>
+          <label>Comfortable post-show work <input type="number" name="host.postShowMinutes" min="15" max="240" step="5" placeholder="Minutes"></label>
+          <label>Preferred control method <select name="host.controlMethod"><option value="">Undecided</option><option>Keyboard hotkeys</option><option>Stream Deck</option><option>Mouse / Studio page</option><option>Mix of all three</option></select></label>
+          <label>On-air coding comfort <select name="host.codingComfort"><option value="">Undecided</option><option>Explain outcomes, not every line</option><option>Detailed technical narration</option><option>Mostly visual building</option></select></label>
+          <label>Face/portrait in clips <select name="host.portraitComfort"><option value="">Undecided</option><option>Yes</option><option>Sometimes</option><option>No</option></select></label>
+          <label class="span-two">What makes live production stressful?<textarea name="host.stressors" maxlength="1200" rows="3" placeholder="Examples: silence, chat moderation, scene switching, debugging, being on camera, schedule pressure…"></textarea></label>
+          <label>When behind schedule <select name="host.overrunRule"><option value="">Undecided</option><option>Cut optional polish first</option><option>Move second build to roadmap</option><option>Extend up to 15 minutes</option><option>End exactly on time</option></select></label>
+        </div>
+        <div class="checks"><label class="check"><input type="checkbox" name="host.showClock"><span>Use a visible private show/segment clock</span></label><label class="check"><input type="checkbox" name="host.breakReminder"><span>Give me an automatic break reminder</span></label><label class="check"><input type="checkbox" name="host.markerHotkey"><span>Configure one-button recording markers</span></label><label class="check"><input type="checkbox" name="host.secondDevice"><span>I can use a second device as confidence monitor</span></label></div>
+      </section>
+
+      <section class="form-card" aria-labelledby="moderation-title">
+        <div class="form-card-head"><span>11</span><div><h3 id="moderation-title">Moderation and community coverage</h3><p>Public names or handles only. Keep private case details and credentials out of this file.</p></div></div>
+        <div class="fields two">
+          <label>Primary moderator public handle <input name="moderation.primary" maxlength="100" placeholder="Needed for premiere"></label>
+          <label>Backup moderator public handle <input name="moderation.backup" maxlength="100" placeholder="Recommended for premiere"></label>
+          <label>Private escalation channel name <input name="moderation.escalationChannel" maxlength="100" placeholder="Name only, not an invite URL"></label>
+          <label>Default chat pace <select name="moderation.chatPace"><option value="">Decide during rehearsal</option><option>Normal; enable slow mode if needed</option><option>10-second slow mode</option><option>30-second slow mode</option></select></label>
+          <label class="span-two">Moderator availability or coverage gaps<textarea name="moderation.notes" maxlength="1200" rows="3" placeholder="Dates, roles, accessibility needs, or gaps—no private incident details."></textarea></label>
+        </div>
+        <div class="checks"><label class="check"><input type="checkbox" name="moderation.briefAccepted"><span>Primary moderator reviewed commands, consent, removals, and yellow/orange/red escalation</span></label><label class="check"><input type="checkbox" name="moderation.backupConfirmed"><span>Backup coverage confirmed for premiere and host break</span></label><label class="check"><input type="checkbox" name="moderation.discordOnboarding"><span>Use newcomer-friendly Discord onboarding and default channels</span></label><label class="check"><input type="checkbox" name="moderation.scheduledEvents"><span>Use Discord Scheduled Events for opt-in reminders</span></label></div>
+      </section>
+
+      <section class="form-card" aria-labelledby="reliability-title">
+        <div class="form-card-head"><span>12</span><div><h3 id="reliability-title">Physical reliability and fallbacks</h3><p>These cannot be inferred from code. Check only what is genuinely available and tested.</p></div></div>
+        <div class="checks reliability-checks"><label class="check"><input type="checkbox" name="reliability.wiredNetwork"><span>Wired network connection available</span></label><label class="check"><input type="checkbox" name="reliability.backupInternet"><span>Backup hotspot/internet available</span></label><label class="check"><input type="checkbox" name="reliability.headphones"><span>Headphones prevent stream echo</span></label><label class="check"><input type="checkbox" name="reliability.power"><span>Power/charging is stable for the full show</span></label><label class="check"><input type="checkbox" name="reliability.disk"><span>Recording disk has safe free space</span></label><label class="check"><input type="checkbox" name="reliability.backupAudio"><span>Backup microphone is available and rehearsed</span></label><label class="check"><input type="checkbox" name="reliability.brb"><span>Emergency BRB scene and mute are rehearsed</span></label><label class="check"><input type="checkbox" name="reliability.safeEnd"><span>Emergency end procedure is rehearsed</span></label></div>
+        <label>Fallback notes<textarea name="reliability.notes" maxlength="1200" rows="3" placeholder="Known limitations, replacement equipment, room constraints, or fallback preference."></textarea></label>
+      </section>
+
       <div class="save-dock">
         <div><strong id="save-state">Not saved yet</strong><small id="save-path">The private save path will appear here.</small></div>
         <div class="save-actions"><button class="secondary" type="button" id="download-button">Download backup</button><button class="primary" type="submit" id="save-button">Save for Codex</button></div>
       </div>
     </form>
   </main>
-  <footer><p>Built by Chat · The internet decides. We build it live.</p><p>Local dashboard · No external submission</p></footer>
+  <footer><p>Working project: Tiny Internet Town · umbrella name pending</p><p>Local dashboard · No external submission</p></footer>
   <script src="/app.js"></script>
 </body>
 </html>

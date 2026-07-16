@@ -26,14 +26,16 @@ try {
   await waitForServer();
   const bootstrap = await fetch(`${origin}/api/bootstrap`).then((response) => response.json());
   if (!Array.isArray(bootstrap.progress?.workstreams) || !bootstrap.agentTasks?.length || !bootstrap.humanTasks?.length) throw new Error('Bootstrap response is incomplete.');
+  const dashboard = await fetch(origin).then((response) => response.text());
+  if (!dashboard.includes('Umbrella name decision') || !dashboard.includes('Build With Phaenex')) throw new Error('Naming decision workflow is missing.');
 
   const accepted = await fetch(`${origin}/api/handoff`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ version: 1, fields: { identity: { brandGoogleEmail: 'qa@example.com' }, domain: { readyForExactQuote: true } } })
+    body: JSON.stringify({ version: 1, fields: { naming: { selectedCandidate: 'Build With Phaenex', finalChoice: false }, identity: { brandGoogleEmail: 'qa@example.com' }, domain: { readyForExactQuote: true } } })
   });
   if (!accepted.ok) throw new Error(`Valid handoff rejected: ${accepted.status}`);
   const saved = JSON.parse(await readFile(savePath, 'utf8'));
-  if (saved.fields.identity.brandGoogleEmail !== 'qa@example.com' || saved.source !== 'local-launch-handoff') throw new Error('Saved handoff does not match input.');
+  if (saved.fields.naming.selectedCandidate !== 'Build With Phaenex' || saved.fields.identity.brandGoogleEmail !== 'qa@example.com' || saved.source !== 'local-launch-handoff') throw new Error('Saved handoff does not match input.');
 
   const rejected = await fetch(`${origin}/api/handoff`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },

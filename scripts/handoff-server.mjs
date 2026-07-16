@@ -20,6 +20,10 @@ const staticFiles = new Map([
 ]);
 
 const agentTasks = [
+  'After the final name is saved, rerun exact domain and logged-in handle checks and produce a rename manifest before changing anything.',
+  'Prepare the repository-only rename branch, preserving stable infrastructure identifiers until replacement deployments pass.',
+  'Turn the saved viewer defaults into first-time orientation, catch-up cues, readable vote timing, and consistent platform copy.',
+  'Build the private host cockpit around one clock, one cue list, health signals, markers, and rehearsed emergency actions.',
   'Run and record the prompt-failure and injection rehearsal with the approved operator workflow.',
   'Research exact domain offers and show vendor, first-year total, tax if known, billing period, and renewal before any purchase.',
   'Configure Cloudflare Access after the allowed email addresses are supplied.',
@@ -32,7 +36,11 @@ const agentTasks = [
 ];
 
 const humanTasks = [
-  'Enable “Require two-factor authentication” in the Built by Chat GitHub organization settings.',
+  'Choose the umbrella display name, plain handle, Phaenex pronunciation, and tagline in section 01.',
+  'Approve or reject the repository-only rename; account claims and purchases stay separate checkpoints.',
+  'Save honest workload limits, control preferences, and physical fallback availability in sections 09–12.',
+  'Confirm a primary moderator and backup, then participate in the short escalation and recovery rehearsal.',
+  'Confirm “Require two-factor authentication” remains enabled in the current or renamed GitHub organization.',
   'Add a trusted reviewer so protected pull requests can receive the required independent approval.',
   'Create the brand Google account and complete its recovery email, CAPTCHA, terms, and 2FA screens.',
   'Review the exact domain quote; explicitly approve or reject it. No purchase occurs from this form alone.',

@@ -16,6 +16,7 @@ function formFields() {
   const fields = {};
   for (const element of form.elements) {
     if (!element.name) continue;
+    if (element.type === 'radio' && !element.checked) continue;
     const value = element.type === 'checkbox' ? element.checked : element.value.trim();
     setNested(fields, element.name, value);
   }
@@ -29,15 +30,20 @@ function populate(fields, prefix = '') {
     else {
       const element = form.elements.namedItem(path);
       if (!element) continue;
-      if (element.type === 'checkbox') element.checked = Boolean(value);
+      if (element instanceof RadioNodeList) element.value = value ?? '';
+      else if (element.type === 'checkbox') element.checked = Boolean(value);
       else element.value = value ?? '';
     }
   }
 }
 
 function updateCompletion() {
-  const elements = [...form.elements].filter((element) => element.name);
-  const filled = elements.filter((element) => element.type === 'checkbox' ? element.checked : element.value.trim() && !['not-started'].includes(element.value)).length;
+  const elements = [...form.elements].filter((element, index, all) => element.name && (element.type !== 'radio' || all.findIndex((candidate) => candidate.name === element.name) === index));
+  const filled = elements.filter((element) => {
+    if (element.type === 'checkbox') return element.checked;
+    if (element.type === 'radio') return Boolean(form.elements.namedItem(element.name).value);
+    return element.value.trim() && !['not-started'].includes(element.value);
+  }).length;
   completion.textContent = `${filled} field${filled === 1 ? '' : 's'} filled`;
 }
 
@@ -125,7 +131,7 @@ downloadButton.addEventListener('click', () => {
   const data = JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), fields: formFields() }, null, 2);
   const anchor = document.createElement('a');
   anchor.href = URL.createObjectURL(new Blob([data], { type: 'application/json' }));
-  anchor.download = 'built-by-chat-handoff.json';
+  anchor.download = 'launch-studio-handoff.json';
   anchor.click();
   URL.revokeObjectURL(anchor.href);
 });

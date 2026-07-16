@@ -25,6 +25,30 @@
       ]
     },
     {
+      "name": "Name decision + migration",
+      "tasks": [
+        { "label": "Identify current name collision and pause account claims", "status": "done" },
+        { "label": "Screen replacement shortlist across names, domains, and handles", "status": "done" },
+        { "label": "Approve final display name, handle, pronunciation, and tagline", "status": "blocked" },
+        { "label": "Run final logged-in handle and exact domain quote checks", "status": "blocked" },
+        { "label": "Complete repository-visible rename and full automated QA", "status": "pending" },
+        { "label": "Migrate verified accounts, production services, email, and OBS", "status": "blocked" },
+        { "label": "Run renamed unlisted rehearsal and approve public transition", "status": "blocked" }
+      ]
+    },
+    {
+      "name": "Viewer + host experience",
+      "tasks": [
+        { "label": "Prioritized viewer journey and host-sustainability plan", "status": "done" },
+        { "label": "Local pilot-default, workload, moderation, and reliability handoff", "status": "done" },
+        { "label": "Implement first-time orientation and persistent objective/catch-up UI", "status": "pending" },
+        { "label": "Implement private host cockpit clocks, cues, health, and emergency actions", "status": "pending" },
+        { "label": "Implement privacy-safe feedback and four-week host workload review", "status": "pending" },
+        { "label": "Confirm moderator staffing, commands, and escalation rehearsal", "status": "blocked" },
+        { "label": "Confirm platform latency, DVR, captions, and accessibility settings", "status": "blocked" }
+      ]
+    },
+    {
       "name": "Prompt + show system",
       "tasks": [
         { "label": "Prompt lifecycle and safety policy", "status": "done" },
@@ -48,7 +72,7 @@
         { "label": "Authorize admin:org scope", "status": "done" },
         { "label": "Create builtbychat organization", "status": "done" },
         { "label": "Create and push public repository", "status": "done" },
-        { "label": "Enable protection and security settings", "status": "pending" }
+        { "label": "Enable protection and security settings", "status": "done" }
       ]
     },
     {
@@ -70,7 +94,7 @@
     {
       "name": "Accounts + domain",
       "tasks": [
-        { "label": "Fallback names and handles documented", "status": "done" },
+        { "label": "Replacement name shortlist and preliminary handle/domain screen", "status": "done" },
         { "label": "Approve domain vendor and exact price", "status": "blocked" },
         { "label": "Purchase approved domain", "status": "blocked" },
         { "label": "Create brand Google account and 2FA", "status": "blocked" },
