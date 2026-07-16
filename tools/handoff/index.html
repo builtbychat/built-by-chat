@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Built by Chat · Launch Handoff</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#handoff-form">Skip to form</a>
+  <header class="hero">
+    <div class="hero-grid" aria-hidden="true"></div>
+    <nav class="topbar" aria-label="Dashboard">
+      <div class="brand"><span class="brand-icon">⌂<b>›</b></span><span>Built by Chat</span></div>
+      <span class="local-pill"><i></i> Local only · nothing publishes</span>
+    </nav>
+    <div class="hero-copy">
+      <p class="eyebrow">Launch handoff console</p>
+      <h1>Your steps, my steps,<br><span>one saved handoff.</span></h1>
+      <p>Complete what you know, leave the rest blank, and press <strong>Save for Codex</strong>. I can read the private JSON file on your Mac after you save.</p>
+    </div>
+    <div class="overall-card" aria-live="polite">
+      <div><span>Launch readiness</span><strong id="overall-percent">—</strong></div>
+      <progress class="meter large" id="overall-meter" max="100" value="0">0%</progress>
+      <small id="overall-count">Loading project tracker…</small>
+    </div>
+  </header>
+
+  <main>
+    <section class="warning" aria-labelledby="safety-title">
+      <span class="warning-icon" aria-hidden="true">!</span>
+      <div><h2 id="safety-title">Never enter secrets here</h2><p>No passwords, OTPs, recovery codes, stream keys, API keys, tokens, payment-card data, or private moderation details. The save endpoint blocks common secret patterns.</p></div>
+    </section>
+
+    <section class="progress-section" aria-labelledby="progress-title">
+      <div class="section-heading"><div><p class="eyebrow">From the repository tracker</p><h2 id="progress-title">Running progress</h2></div><span id="last-verified"></span></div>
+      <div class="progress-grid" id="progress-grid"></div>
+    </section>
+
+    <section class="split" aria-label="Work ownership">
+      <article class="work-card agent"><div class="card-label">Codex can do</div><h2>Work I can carry forward</h2><ol id="agent-tasks"></ol></article>
+      <article class="work-card human"><div class="card-label">Nicholas checkpoint</div><h2>Work that needs you</h2><ol id="human-tasks"></ol></article>
+    </section>
+
+    <form id="handoff-form" novalidate>
+      <div class="section-heading form-heading"><div><p class="eyebrow">Private input form</p><h2>Tell me what I need to continue</h2><p>Fields marked “checkpoint” usually involve an account screen, physical equipment, or a consequential approval.</p></div><span class="completion" id="form-completion">0 fields filled</span></div>
+
+      <section class="form-card" aria-labelledby="identity-title">
+        <div class="form-card-head"><span>01</span><div><h3 id="identity-title">Brand identity and recovery</h3><p>Needed for Cloudflare Access, forwarding, and platform ownership.</p></div></div>
+        <div class="fields two">
+          <label>Chosen Google address
+            <select name="identity.brandGoogleChoice">
+              <option value="">Not chosen</option><option>builtbychatstudio@gmail.com</option><option>builtbychathq@gmail.com</option><option>hello.builtbychat@gmail.com</option><option value="custom">Different address</option>
+            </select>
+          </label>
+          <label>Actual brand Google email <input type="email" name="identity.brandGoogleEmail" autocomplete="off" placeholder="name@gmail.com"></label>
+          <label>Personal recovery/Access email <input type="email" name="identity.recoveryEmail" autocomplete="off" placeholder="Your allowed recovery email"></label>
+          <label>Public contact display name <input name="identity.displayName" maxlength="80" placeholder="Built by Chat"></label>
+        </div>
+        <label class="check"><input type="checkbox" name="identity.googleAccountCreated"><span><strong>Checkpoint complete:</strong> Google account created and 2FA enabled</span></label>
+      </section>
+
+      <section class="form-card" aria-labelledby="github-title">
+        <div class="form-card-head"><span>02</span><div><h3 id="github-title">GitHub organization</h3><p>The repository is protected; these finish organization governance.</p></div></div>
+        <div class="fields two">
+          <label>Trusted reviewer GitHub username <input name="github.reviewerUsername" maxlength="39" placeholder="username"></label>
+          <label>Reviewer notes <input name="github.reviewerNotes" maxlength="180" placeholder="Who should review protected PRs?"></label>
+        </div>
+        <div class="checks"><label class="check"><input type="checkbox" name="github.org2faEnabled"><span><strong>Checkpoint:</strong> organization-wide 2FA enabled</span></label><label class="check"><input type="checkbox" name="github.reviewerInvited"><span><strong>Checkpoint:</strong> trusted reviewer invited</span></label><label class="check"><input type="checkbox" name="github.pr6Approved"><span><strong>Checkpoint:</strong> tracker PR #6 approved</span></label></div>
+      </section>
+
+      <section class="form-card" aria-labelledby="domain-title">
+        <div class="form-card-head"><span>03</span><div><h3 id="domain-title">Domain research preferences</h3><p>This requests a quote only. It does not authorize a purchase.</p></div></div>
+        <div class="fields three">
+          <label>Preferred domain <select name="domain.preferred"><option value="builtbychat.com">builtbychat.com</option><option value="builtbychat.live">builtbychat.live</option><option value="">Research both</option></select></label>
+          <label>Registrar preference <input name="domain.registrarPreference" maxlength="80" placeholder="Cloudflare Registrar, no preference…"></label>
+          <label>Maximum first-year total (USD) <input type="number" name="domain.maxFirstYearUsd" min="0" max="100" step="1" placeholder="100"></label>
+          <label>Maximum annual renewal (USD) <input type="number" name="domain.maxRenewalUsd" min="0" max="100" step="1" placeholder="Leave blank if undecided"></label>
+          <label class="span-two">Domain notes <input name="domain.notes" maxlength="240" placeholder="Alternatives, privacy requirements, timing…"></label>
+        </div>
+        <label class="check"><input type="checkbox" name="domain.readyForExactQuote"><span><strong>Research request:</strong> show me an exact vendor/price/tax/renewal quote next. I understand I must approve again before purchase.</span></label>
+      </section>
+
+      <section class="form-card" aria-labelledby="cloudflare-title">
+        <div class="form-card-head"><span>04</span><div><h3 id="cloudflare-title">Cloudflare and email</h3><p>Once these destinations are known, I can prepare Access and routing.</p></div></div>
+        <div class="fields two">
+          <label>Primary Studio Access email <input type="email" name="cloudflare.primaryAccessEmail" autocomplete="off" placeholder="brand account email"></label>
+          <label>Recovery Studio Access email <input type="email" name="cloudflare.recoveryAccessEmail" autocomplete="off" placeholder="personal recovery email"></label>
+          <label>Email forwarding destination <input type="email" name="cloudflare.forwardDestination" autocomplete="off" placeholder="where hello@, sponsors@, security@ go"></label>
+          <label>Preferred production hostname <input name="cloudflare.productionHostname" maxlength="120" placeholder="builtbychat.com"></label>
+        </div>
+        <label class="check"><input type="checkbox" name="cloudflare.configureAfterSave"><span>Configure eligible Cloudflare settings after I save these addresses</span></label>
+      </section>
+
+      <section class="form-card" aria-labelledby="accounts-title">
+        <div class="form-card-head"><span>05</span><div><h3 id="accounts-title">Channels and community accounts</h3><p>Enter public handles or URLs only—never credentials.</p></div></div>
+        <div class="account-grid">
+          <label>YouTube <input name="accounts.youtube" maxlength="160" placeholder="@handle or channel URL"><select name="accounts.youtubeStatus"><option value="not-started">Not started</option><option value="checkpoint">At checkpoint</option><option value="reserved">Reserved</option></select></label>
+          <label>Twitch <input name="accounts.twitch" maxlength="160" placeholder="handle or URL"><select name="accounts.twitchStatus"><option value="not-started">Not started</option><option value="checkpoint">At checkpoint</option><option value="reserved">Reserved</option></select></label>
+          <label>Discord <input name="accounts.discord" maxlength="160" placeholder="server invite/name"><select name="accounts.discordStatus"><option value="not-started">Not started</option><option value="checkpoint">At checkpoint</option><option value="created">Created</option></select></label>
+          <label>Instagram <input name="accounts.instagram" maxlength="160" placeholder="@handle"><select name="accounts.instagramStatus"><option value="not-started">Not started</option><option value="checkpoint">At checkpoint</option><option value="reserved">Reserved</option></select></label>
+          <label>TikTok <input name="accounts.tiktok" maxlength="160" placeholder="@handle"><select name="accounts.tiktokStatus"><option value="not-started">Not started</option><option value="checkpoint">At checkpoint</option><option value="reserved">Reserved</option></select></label>
+          <label>Bluesky / X <input name="accounts.otherSocial" maxlength="200" placeholder="public handles and status"></label>
+        </div>
+      </section>
+
+      <section class="form-card" aria-labelledby="obs-title">
+        <div class="form-card-head"><span>06</span><div><h3 id="obs-title">OBS and rehearsal setup</h3><p>These are local equipment checkpoints I cannot truthfully complete without you.</p></div></div>
+        <div class="fields three">
+          <label>Measured upload speed (Mbps) <input type="number" name="obs.uploadMbps" min="0" max="10000" step="0.1" placeholder="0"></label>
+          <label>Recording folder <input name="obs.recordingFolder" maxlength="240" placeholder="Local path; no cloud credentials"></label>
+          <label>Rehearsal availability <input name="obs.rehearsalAvailability" maxlength="180" placeholder="Dates/times that work"></label>
+          <label>Camera model/status <input name="obs.camera" maxlength="120" placeholder="Available / needs setup"></label>
+          <label>Microphone model/status <input name="obs.microphone" maxlength="120" placeholder="Available / needs setup"></label>
+          <label>GPU or Mac model <input name="obs.computer" maxlength="120" placeholder="Used for encoder planning"></label>
+        </div>
+        <div class="checks"><label class="check"><input type="checkbox" name="obs.scenesImported"><span>Sanitized scene collection imported</span></label><label class="check"><input type="checkbox" name="obs.aitumInstalled"><span>Aitum Multistream installed/current</span></label><label class="check"><input type="checkbox" name="obs.audioTracksChecked"><span>Microphone and desktop audio tracks visible</span></label><label class="check"><input type="checkbox" name="obs.readyForRecordingTest"><span>Ready for the 20-minute recording test</span></label></div>
+      </section>
+
+      <section class="form-card" aria-labelledby="decisions-title">
+        <div class="form-card-head"><span>07</span><div><h3 id="decisions-title">Launch decisions and notes</h3><p>Anything else that changes priorities or unlocks the next pass.</p></div></div>
+        <div class="fields two">
+          <label>Optional support provider <select name="launch.supportProvider"><option value="">Undecided</option><option>Ko-fi</option><option>GitHub Sponsors</option><option>Both later</option><option>Defer monetization</option></select></label>
+          <label>Next priority <select name="launch.nextPriority"><option value="">Let Codex choose from unlocked work</option><option>Accounts and domain</option><option>OBS and rehearsal</option><option>Prompt rehearsal</option><option>Cloudflare production</option><option>Content and launch operations</option></select></label>
+          <label class="span-two">Availability, preferences, or blockers<textarea name="launch.notes" maxlength="3000" rows="6" placeholder="Do not include passwords, codes, tokens, keys, private moderation material, or payment-card data."></textarea></label>
+        </div>
+        <label class="check"><input type="checkbox" name="launch.promptRehearsalAvailable"><span>I am available to participate in the live prompt-failure/injection rehearsal</span></label>
+      </section>
+
+      <div class="save-dock">
+        <div><strong id="save-state">Not saved yet</strong><small id="save-path">The private save path will appear here.</small></div>
+        <div class="save-actions"><button class="secondary" type="button" id="download-button">Download backup</button><button class="primary" type="submit" id="save-button">Save for Codex</button></div>
+      </div>
+    </form>
+  </main>
+  <footer><p>Built by Chat · The internet decides. We build it live.</p><p>Local dashboard · No external submission</p></footer>
+  <script src="/app.js"></script>
+</body>
+</html>

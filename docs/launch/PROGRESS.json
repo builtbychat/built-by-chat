@@ -105,6 +105,14 @@
       ]
     },
     {
+      "name": "Local launch handoff",
+      "tasks": [
+        { "label": "Categorized Codex and Nicholas remaining-work dashboard", "status": "done" },
+        { "label": "Localhost-only private save API and secret guardrails", "status": "done" },
+        { "label": "Responsive, persistence, security, and CI verification", "status": "done" }
+      ]
+    },
+    {
       "name": "Content + launch ops",
       "tasks": [
         { "label": "Six-episode season arc", "status": "done" },
