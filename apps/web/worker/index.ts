@@ -1,5 +1,6 @@
-import type { Building, LiveState, Poll, PromptDisposition, PromptRun, PromptSourceType, Resident, Show, TownEvent, TownState } from '@tiny-signal-club/shared';
+import type { Building, LiveState, Poll, PromptDisposition, PromptRun, PromptSourceType, Resident, Show, ShowControl, ShowCue, ShowPhase, StudioSnapshot, TownEvent, TownState } from '@tiny-signal-club/shared';
 import { LiveShow } from './live-show';
+import { authenticateStudio } from './access';
 import { cookieValue, createIdentity, hashIdentifier, identityCookie, readJson, verifyIdentity, verifyTurnstile } from './security';
 
 export { LiveShow };
@@ -26,15 +27,23 @@ function requiredSecret(env: object, name: string): string {
   return value;
 }
 
-function accessEmail(request: Request): string | null {
-  return request.headers.get('Cf-Access-Authenticated-User-Email');
-}
-
 async function getActiveShow(env: Env): Promise<Show | null> {
   return await env.DB.prepare(
     `SELECT id, episode_number AS episodeNumber, title, objective, starts_at AS startsAt, status
      FROM shows WHERE status IN ('live','scheduled') ORDER BY CASE status WHEN 'live' THEN 0 ELSE 1 END, starts_at LIMIT 1`
   ).first<Show>();
+}
+
+async function getShowControl(env: Env, showId: string): Promise<ShowControl | null> {
+  return env.DB.prepare(`SELECT show_id AS showId,phase,catch_up AS catchUp,show_started_at AS showStartedAt,
+    phase_started_at AS phaseStartedAt,emergency_message AS emergencyMessage,updated_at AS updatedAt,updated_by AS updatedBy
+    FROM show_control WHERE show_id=?`).bind(showId).first<ShowControl>();
+}
+
+async function getShowCues(env: Env, showId: string): Promise<ShowCue[]> {
+  const rows = await env.DB.prepare(`SELECT id,show_id AS showId,label,kind,target_seconds AS targetSeconds,status,
+    display_order AS displayOrder,completed_at AS completedAt FROM show_cues WHERE show_id=? ORDER BY display_order`).bind(showId).all<ShowCue>();
+  return rows.results;
 }
 
 async function getPoll(env: Env, showId: string): Promise<Poll | null> {
@@ -75,7 +84,8 @@ async function publicApi(request: Request, env: Env, url: URL): Promise<Response
     if (!show) return json(url.pathname.endsWith('active') ? null : { show: null, poll: null, counts: {}, connectedViewers: 0 });
     const poll = await getPoll(env, show.id);
     const live = await env.LIVE_SHOWS.getByName(show.id).getState();
-    return json(url.pathname.endsWith('active') ? poll : { ...live, show, poll: live.poll ?? poll } satisfies LiveState);
+    const control = await getShowControl(env, show.id);
+    return json(url.pathname.endsWith('active') ? poll : { ...live, show, poll: live.poll ?? poll, control: control ?? undefined } satisfies LiveState);
   }
   const liveMatch = url.pathname.match(/^\/api\/live\/([^/]+)(\/socket)?$/);
   if (liveMatch?.[1] && request.method === 'GET') {
@@ -125,8 +135,61 @@ async function publicApi(request: Request, env: Env, url: URL): Promise<Response
 
 async function adminApi(request: Request, env: Env, url: URL): Promise<Response | null> {
   if (!url.pathname.startsWith('/studio/api/')) return null;
-  const email = accessEmail(request);
-  if (!email) return error('access_required', 401, 'Cloudflare Access authentication is required.');
+  const email = await authenticateStudio(request, env);
+  if (!email) return error('access_required', 401, 'Cloudflare Access authentication is required. Staging and production require a valid signed Access token.');
+  if (url.pathname === '/studio/api/control' && request.method === 'GET') {
+    const showId = url.searchParams.get('showId');
+    const show = showId
+      ? await env.DB.prepare('SELECT id,episode_number AS episodeNumber,title,objective,starts_at AS startsAt,status FROM shows WHERE id=?').bind(showId).first<Show>()
+      : await getActiveShow(env);
+    if (!show) return error('show_not_found', 404, 'No scheduled or live show was found.');
+    let control = await getShowControl(env, show.id);
+    if (!control) {
+      await env.DB.prepare("INSERT OR IGNORE INTO show_control (show_id,phase,catch_up,updated_by) VALUES (?,'pre_show',?,?)").bind(show.id, `${show.title} is getting ready.`, email).run();
+      control = await getShowControl(env, show.id);
+    }
+    if (!control) return error('control_unavailable', 500, 'Show control could not be initialized.');
+    const live = await env.LIVE_SHOWS.getByName(show.id).getState();
+    const secretsConfigured = ['IDENTITY_SIGNING_SECRET', 'NETWORK_HASH_SECRET', 'TURNSTILE_SECRET'].every((name) => typeof Reflect.get(env, name) === 'string' && String(Reflect.get(env, name)).length >= 16);
+    const snapshot: StudioSnapshot = {
+      show, control, cues: await getShowCues(env, show.id), live: { ...live, show, control },
+      health: { database: 'ok', coordinator: 'ok', accessConfigured: env.ENVIRONMENT === 'development' || !env.ACCESS_TEAM_DOMAIN.includes('replace-before-access'), secretsConfigured },
+      serverNow: new Date().toISOString()
+    };
+    return json(snapshot);
+  }
+  const controlAction = url.pathname.match(/^\/studio\/api\/shows\/([^/]+)\/control$/);
+  if (controlAction?.[1] && request.method === 'PATCH') {
+    const body = await readJson<{ phase?: ShowPhase; catchUp?: string; emergencyMessage?: string }>(request);
+    const phases: ShowPhase[] = ['pre_show','welcome','build','vote','results','break','tour','ending','emergency','ended'];
+    if (!body.phase || !phases.includes(body.phase) || !body.catchUp?.trim() || body.catchUp.length > 500 || (body.emergencyMessage?.length ?? 0) > 300) return error('invalid_control', 400, 'A valid phase and short viewer catch-up message are required.');
+    if (body.phase === 'emergency' && !body.emergencyMessage?.trim()) return error('emergency_message_required', 400, 'An emergency message is required.');
+    const show = await env.DB.prepare('SELECT id,status FROM shows WHERE id=?').bind(controlAction[1]).first<{ id: string; status: Show['status'] }>();
+    if (!show) return error('show_not_found', 404, 'Show not found.');
+    const now = new Date().toISOString();
+    const nextStatus: Show['status'] = body.phase === 'ended' ? 'ended' : body.phase === 'pre_show' ? show.status : 'live';
+    await env.DB.batch([
+      env.DB.prepare(`INSERT INTO show_control (show_id,phase,catch_up,show_started_at,phase_started_at,emergency_message,updated_at,updated_by)
+        VALUES (?,?,?,?,?,?,?,?) ON CONFLICT(show_id) DO UPDATE SET phase=excluded.phase,catch_up=excluded.catch_up,
+        show_started_at=COALESCE(show_control.show_started_at,excluded.show_started_at),phase_started_at=excluded.phase_started_at,
+        emergency_message=excluded.emergency_message,updated_at=excluded.updated_at,updated_by=excluded.updated_by`).bind(show.id, body.phase, body.catchUp.trim(), body.phase === 'pre_show' ? null : now, now, body.phase === 'emergency' ? body.emergencyMessage?.trim() : null, now, email),
+      env.DB.prepare("UPDATE shows SET status=?,ends_at=CASE WHEN ?='ended' THEN ? ELSE ends_at END WHERE id=?").bind(nextStatus, body.phase, now, show.id),
+      env.DB.prepare('INSERT INTO audit_log (id,action,subject_type,subject_id,actor_email,metadata) VALUES (?,?,?,?,?,?)').bind(crypto.randomUUID(), 'show.control', 'show', show.id, email, JSON.stringify({ phase: body.phase }))
+    ]);
+    const control = await getShowControl(env, show.id);
+    await env.LIVE_SHOWS.getByName(show.id).emitOverlay({ id: crypto.randomUUID(), type: 'show-control', payload: { phase: body.phase, catchUp: body.catchUp.trim(), emergencyMessage: body.phase === 'emergency' ? body.emergencyMessage?.trim() : undefined }, createdAt: now });
+    return json(control);
+  }
+  const cueAction = url.pathname.match(/^\/studio\/api\/shows\/([^/]+)\/cues\/([^/]+)$/);
+  if (cueAction?.[1] && cueAction[2] && request.method === 'PATCH') {
+    const body = await readJson<{ status?: ShowCue['status'] }>(request);
+    if (!body.status || !['pending','done','skipped'].includes(body.status)) return error('invalid_cue_status', 400, 'Cue status must be pending, done, or skipped.');
+    const now = new Date().toISOString();
+    const result = await env.DB.prepare('UPDATE show_cues SET status=?,completed_at=?,actor_email=? WHERE id=? AND show_id=?').bind(body.status, body.status === 'pending' ? null : now, email, cueAction[2], cueAction[1]).run();
+    if ((result.meta.changes ?? 0) === 0) return error('cue_not_found', 404, 'Cue not found.');
+    await env.DB.prepare('INSERT INTO audit_log (id,action,subject_type,subject_id,actor_email,metadata) VALUES (?,?,?,?,?,?)').bind(crypto.randomUUID(), 'show.cue', 'show_cue', cueAction[2], email, JSON.stringify({ status: body.status })).run();
+    return json({ id: cueAction[2], status: body.status, completedAt: body.status === 'pending' ? null : now });
+  }
   if (url.pathname === '/studio/api/prompts/runs' && request.method === 'GET') {
     const showId = url.searchParams.get('showId');
     const sql = `SELECT id,show_id AS showId,template_slug AS templateSlug,template_version AS templateVersion,
@@ -226,12 +289,12 @@ async function adminApi(request: Request, env: Env, url: URL): Promise<Response 
     if (!poll) return error('poll_not_found', 404, 'Poll not found.');
     const stub = env.LIVE_SHOWS.getByName(poll.showId);
     if (pollAction[2] === 'open') {
-      const state = await stub.openPoll(poll);
       await env.DB.batch([
         env.DB.prepare("UPDATE polls SET status='closed',closed_at=CURRENT_TIMESTAMP WHERE show_id=? AND status='open' AND id<>?").bind(poll.showId, poll.id),
         env.DB.prepare("UPDATE polls SET status='open',opened_at=CURRENT_TIMESTAMP WHERE id=?").bind(poll.id),
         env.DB.prepare('INSERT INTO audit_log (id,action,subject_type,subject_id,actor_email) VALUES (?,?,?,?,?)').bind(crypto.randomUUID(), 'poll.open', 'poll', poll.id, email)
       ]);
+      const state = await stub.openPoll(poll);
       return json(state);
     }
     const result = await stub.closePoll(poll.id);
@@ -240,6 +303,7 @@ async function adminApi(request: Request, env: Env, url: URL): Promise<Response 
     for (const option of poll.options) statements.push(env.DB.prepare('INSERT OR IGNORE INTO poll_results (poll_id,option_id,vote_count,finalized_at,snapshot_hash) VALUES (?,?,?,?,?)').bind(poll.id, option.id, result.counts[option.id] ?? 0, result.finalizedAt, snapshotHash));
     statements.push(env.DB.prepare('INSERT INTO audit_log (id,action,subject_type,subject_id,actor_email,metadata) VALUES (?,?,?,?,?,?)').bind(crypto.randomUUID(), 'poll.close', 'poll', poll.id, email, JSON.stringify({ snapshotHash })));
     await env.DB.batch(statements);
+    await stub.announcePollResult(poll.id);
     return json({ ...result, snapshotHash });
   }
   const moderation = url.pathname.match(/^\/studio\/api\/ideas\/([^/]+)\/moderate$/);
@@ -317,9 +381,9 @@ export default {
       return withSecurityHeaders(await env.ASSETS.fetch(request), request, env);
     } catch (caught) {
       console.error(JSON.stringify({ event: 'request_error', path: url.pathname, error: caught instanceof Error ? caught.message : 'unknown' }));
-      if (caught instanceof SyntaxError) return error('invalid_json', 400, 'The request body is not valid JSON.');
-      if (caught instanceof Error && caught.message === 'payload_too_large') return error('payload_too_large', 413, 'The request body is too large.');
-      return error('internal_error', 500, 'Something went wrong.');
+      if (caught instanceof SyntaxError) return withSecurityHeaders(error('invalid_json', 400, 'The request body is not valid JSON.'), request, env);
+      if (caught instanceof Error && caught.message === 'payload_too_large') return withSecurityHeaders(error('payload_too_large', 413, 'The request body is too large.'), request, env);
+      return withSecurityHeaders(error('internal_error', 500, 'Something went wrong.'), request, env);
     }
   },
   scheduled(_controller: ScheduledController, env: Env, ctx: ExecutionContext): void {

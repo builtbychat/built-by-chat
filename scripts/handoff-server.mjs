@@ -22,8 +22,6 @@ const staticFiles = new Map([
 const agentTasks = [
   'Complete and verify the Tiny Signal Club repository rebrand while preserving stable infrastructure identifiers until replacement deployments pass.',
   'Prepare exact domain and logged-in handle checks before any external claim, rename, or purchase.',
-  'Turn the saved viewer defaults into first-time orientation, catch-up cues, readable vote timing, and consistent platform copy.',
-  'Build the private host cockpit around one clock, one cue list, health signals, markers, and rehearsed emergency actions.',
   'Run and record the prompt-failure and injection rehearsal with the approved operator workflow.',
   'Research exact domain offers and show vendor, first-year total, tax if known, billing period, and renewal before any purchase.',
   'Configure Cloudflare Access after the allowed email addresses are supplied.',

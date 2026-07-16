@@ -57,4 +57,15 @@ export interface PromptRun {
   completedAt?: string;
   createdAt: string;
 }
-export interface LiveState { show: Show | null; poll: Poll | null; counts: Record<string, number>; connectedViewers: number; }
+export type ShowPhase = 'pre_show' | 'welcome' | 'build' | 'vote' | 'results' | 'break' | 'tour' | 'ending' | 'emergency' | 'ended';
+export interface ShowControl {
+  showId: string; phase: ShowPhase; catchUp: string; showStartedAt?: string; phaseStartedAt?: string;
+  emergencyMessage?: string; updatedAt: string; updatedBy?: string;
+}
+export interface ShowCue {
+  id: string; showId: string; label: string; kind: 'cue' | 'checkpoint' | 'break' | 'vote';
+  targetSeconds: number; status: 'pending' | 'done' | 'skipped'; displayOrder: number; completedAt?: string;
+}
+export interface StudioHealth { database: 'ok'; coordinator: 'ok'; accessConfigured: boolean; secretsConfigured: boolean; }
+export interface StudioSnapshot { show: Show; control: ShowControl; cues: ShowCue[]; live: LiveState; health: StudioHealth; serverNow: string; }
+export interface LiveState { show: Show | null; poll: Poll | null; counts: Record<string, number>; connectedViewers: number; control?: ShowControl; }

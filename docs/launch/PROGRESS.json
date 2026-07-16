@@ -41,8 +41,8 @@
       "tasks": [
         { "label": "Prioritized viewer journey and host-sustainability plan", "status": "done" },
         { "label": "Local pilot-default, workload, moderation, and reliability handoff", "status": "done" },
-        { "label": "Implement first-time orientation and persistent objective/catch-up UI", "status": "pending" },
-        { "label": "Implement private host cockpit clocks, cues, health, and emergency actions", "status": "pending" },
+        { "label": "Implement first-time orientation and persistent objective/catch-up UI", "status": "done" },
+        { "label": "Implement private host cockpit clocks, cues, health, and emergency actions", "status": "done" },
         { "label": "Implement privacy-safe feedback and four-week host workload review", "status": "pending" },
         { "label": "Confirm moderator staffing, commands, and escalation rehearsal", "status": "blocked" },
         { "label": "Confirm platform latency, DVR, captions, and accessibility settings", "status": "blocked" }

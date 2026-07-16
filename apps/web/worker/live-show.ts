@@ -88,9 +88,13 @@ export class LiveShow extends DurableObject<Env> {
     const finalizedAt = new Date().toISOString();
     const poll = { ...(JSON.parse(row.payload) as Poll), status: 'closed' as const, closedAt: finalizedAt };
     this.ctx.storage.sql.exec('UPDATE poll_state SET payload=?,status=?,closed_at=? WHERE id=?', JSON.stringify(poll), 'closed', finalizedAt, pollId);
-    const result = { counts: this.counts(pollId), finalizedAt };
-    this.broadcast({ type: 'poll-result', poll, ...result });
-    return result;
+    return { counts: this.counts(pollId), finalizedAt };
+  }
+
+  announcePollResult(pollId: string): void {
+    const row = this.ctx.storage.sql.exec<PollRow>('SELECT * FROM poll_state WHERE id=? AND status=\'closed\'', pollId).toArray()[0];
+    if (!row?.closed_at) throw new Error('poll_not_closed');
+    this.broadcast({ type: 'poll-result', poll: JSON.parse(row.payload) as Poll, counts: this.counts(pollId), finalizedAt: row.closed_at });
   }
 
   emitOverlay(event: { id: string; type: string; payload: Record<string, unknown>; createdAt: string }): void {
