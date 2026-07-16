@@ -69,3 +69,10 @@ export interface ShowCue {
 export interface StudioHealth { database: 'ok'; coordinator: 'ok'; accessConfigured: boolean; secretsConfigured: boolean; }
 export interface StudioSnapshot { show: Show; control: ShowControl; cues: ShowCue[]; live: LiveState; health: StudioHealth; serverNow: string; }
 export interface LiveState { show: Show | null; poll: Poll | null; counts: Record<string, number>; connectedViewers: number; control?: ShowControl; }
+export interface FeedbackContext { show: Show | null; accepting: boolean; }
+export interface FeedbackSummary { showId: string; responseCount: number; clarity: number; agency: number; accessibility: number; pendingNotes: number; }
+export interface HostWorkload {
+  showId: string; prepMinutes: number; liveMinutes: number; postMinutes: number; adminMinutes: number;
+  stress: number; recovery: number; notes?: string; recordedAt: string;
+}
+export interface WorkloadSummary { entries: HostWorkload[]; fourWeekMinutes: number; averageStress: number; averageRecovery: number; }

@@ -1,7 +1,7 @@
-import type { Building, LiveState, Poll, PromptDisposition, PromptRun, PromptSourceType, Resident, Show, ShowControl, ShowCue, ShowPhase, StudioSnapshot, TownEvent, TownState } from '@tiny-signal-club/shared';
+import type { Building, FeedbackContext, FeedbackSummary, HostWorkload, LiveState, Poll, PromptDisposition, PromptRun, PromptSourceType, Resident, Show, ShowControl, ShowCue, ShowPhase, StudioSnapshot, TownEvent, TownState, WorkloadSummary } from '@tiny-signal-club/shared';
 import { LiveShow } from './live-show';
 import { authenticateStudio } from './access';
-import { cookieValue, createIdentity, hashIdentifier, identityCookie, readJson, verifyIdentity, verifyTurnstile } from './security';
+import { cookieValue, createIdentity, hashIdentifier, hashScopedIdentifier, identityCookie, readJson, verifyIdentity, verifyTurnstile } from './security';
 
 export { LiveShow };
 
@@ -79,6 +79,30 @@ async function publicApi(request: Request, env: Env, url: URL): Promise<Response
     const rows = await env.DB.prepare('SELECT id,type,title,description,occurred_at AS occurredAt FROM town_events ORDER BY occurred_at DESC LIMIT 50').all<TownEvent>();
     return json(rows.results);
   }
+  if (request.method === 'GET' && url.pathname === '/api/feedback/context') {
+    const show = await env.DB.prepare(`SELECT id,episode_number AS episodeNumber,title,objective,starts_at AS startsAt,status
+      FROM shows ORDER BY CASE status WHEN 'ended' THEN 0 WHEN 'live' THEN 1 ELSE 2 END, starts_at DESC LIMIT 1`).first<Show>();
+    return json({ show: show ?? null, accepting: show?.status === 'ended' } satisfies FeedbackContext);
+  }
+  if (request.method === 'POST' && url.pathname === '/api/feedback') {
+    const browserId = await verifyIdentity(requiredSecret(env, 'IDENTITY_SIGNING_SECRET'), cookieValue(request, 'bbc_identity'));
+    if (!browserId) return error('session_required', 401, 'Start a browser session before sending feedback.');
+    const body = await readJson<{ showId?: string; clarity?: number; agency?: number; accessibility?: number; note?: string; turnstileToken?: string }>(request);
+    const scores = [body.clarity, body.agency, body.accessibility];
+    if (!body.showId || scores.some((score) => !Number.isInteger(score) || Number(score) < 1 || Number(score) > 5) || !body.turnstileToken || (body.note?.length ?? 0) > 500) return error('invalid_feedback', 400, 'Show, three 1–5 ratings, and verification are required.');
+    const show = await env.DB.prepare("SELECT id FROM shows WHERE id=? AND status='ended'").bind(body.showId).first();
+    if (!show) return error('feedback_closed', 409, 'Feedback opens after the show ends.');
+    const remoteIp = request.headers.get('CF-Connecting-IP') ?? 'local';
+    if (!await verifyTurnstile(requiredSecret(env, 'TURNSTILE_SECRET'), body.turnstileToken, remoteIp, crypto.randomUUID())) return error('challenge_failed', 403, 'Bot protection could not verify this feedback.');
+    const browserHash = await hashScopedIdentifier(requiredSecret(env, 'NETWORK_HASH_SECRET'), `feedback:${body.showId}`, browserId);
+    const note = body.note?.trim() || null;
+    await env.DB.prepare(`INSERT INTO viewer_feedback (show_id,browser_hash,clarity,agency,accessibility,note,note_status)
+      VALUES (?,?,?,?,?,?,?) ON CONFLICT(show_id,browser_hash) DO UPDATE SET clarity=excluded.clarity,agency=excluded.agency,
+      accessibility=excluded.accessibility,note=excluded.note,note_status=excluded.note_status,updated_at=CURRENT_TIMESTAMP`).bind(
+      body.showId, browserHash, body.clarity, body.agency, body.accessibility, note, note ? 'pending' : 'none'
+    ).run();
+    return json({ saved: true }, 202);
+  }
   if (request.method === 'GET' && (url.pathname === '/api/state' || url.pathname === '/api/polls/active')) {
     const show = await getActiveShow(env);
     if (!show) return json(url.pathname.endsWith('active') ? null : { show: null, poll: null, counts: {}, connectedViewers: 0 });
@@ -137,6 +161,39 @@ async function adminApi(request: Request, env: Env, url: URL): Promise<Response 
   if (!url.pathname.startsWith('/studio/api/')) return null;
   const email = await authenticateStudio(request, env);
   if (!email) return error('access_required', 401, 'Cloudflare Access authentication is required. Staging and production require a valid signed Access token.');
+  if (url.pathname === '/studio/api/feedback' && request.method === 'GET') {
+    const showId = url.searchParams.get('showId');
+    if (!showId) return error('show_required', 400, 'A show is required.');
+    const row = await env.DB.prepare(`SELECT COUNT(*) AS responseCount,COALESCE(AVG(clarity),0) AS clarity,
+      COALESCE(AVG(agency),0) AS agency,COALESCE(AVG(accessibility),0) AS accessibility,
+      SUM(CASE WHEN note_status='pending' THEN 1 ELSE 0 END) AS pendingNotes FROM viewer_feedback WHERE show_id=?`).bind(showId).first<FeedbackSummary>();
+    return json({ showId, responseCount: row?.responseCount ?? 0, clarity: row?.clarity ?? 0, agency: row?.agency ?? 0, accessibility: row?.accessibility ?? 0, pendingNotes: row?.pendingNotes ?? 0 } satisfies FeedbackSummary);
+  }
+  if (url.pathname === '/studio/api/workload' && request.method === 'GET') {
+    const rows = await env.DB.prepare(`SELECT show_id AS showId,prep_minutes AS prepMinutes,live_minutes AS liveMinutes,
+      post_minutes AS postMinutes,admin_minutes AS adminMinutes,stress,recovery,notes,recorded_at AS recordedAt
+      FROM host_workload WHERE recorded_at >= datetime('now','-28 days') ORDER BY recorded_at DESC`).all<HostWorkload>();
+    const entries = rows.results;
+    const summary: WorkloadSummary = { entries,
+      fourWeekMinutes: entries.reduce((sum, entry) => sum + entry.prepMinutes + entry.liveMinutes + entry.postMinutes + entry.adminMinutes, 0),
+      averageStress: entries.length ? entries.reduce((sum, entry) => sum + entry.stress, 0) / entries.length : 0,
+      averageRecovery: entries.length ? entries.reduce((sum, entry) => sum + entry.recovery, 0) / entries.length : 0 };
+    return json(summary);
+  }
+  if (url.pathname === '/studio/api/workload' && request.method === 'POST') {
+    const body = await readJson<{ showId?: string; prepMinutes?: number; liveMinutes?: number; postMinutes?: number; adminMinutes?: number; stress?: number; recovery?: number; notes?: string }>(request);
+    const minutes = [body.prepMinutes, body.liveMinutes, body.postMinutes, body.adminMinutes];
+    if (!body.showId || minutes.some((value) => !Number.isInteger(value) || Number(value) < 0 || Number(value) > 10080) || !Number.isInteger(body.stress) || Number(body.stress) < 1 || Number(body.stress) > 5 || !Number.isInteger(body.recovery) || Number(body.recovery) < 1 || Number(body.recovery) > 5 || (body.notes?.length ?? 0) > 1000) return error('invalid_workload', 400, 'Show, minute totals, stress, and recovery ratings are required.');
+    if (!await env.DB.prepare('SELECT 1 FROM shows WHERE id=?').bind(body.showId).first()) return error('show_not_found', 404, 'Show not found.');
+    await env.DB.batch([
+      env.DB.prepare(`INSERT INTO host_workload (show_id,prep_minutes,live_minutes,post_minutes,admin_minutes,stress,recovery,notes,actor_email)
+        VALUES (?,?,?,?,?,?,?,?,?) ON CONFLICT(show_id) DO UPDATE SET prep_minutes=excluded.prep_minutes,live_minutes=excluded.live_minutes,
+        post_minutes=excluded.post_minutes,admin_minutes=excluded.admin_minutes,stress=excluded.stress,recovery=excluded.recovery,
+        notes=excluded.notes,recorded_at=CURRENT_TIMESTAMP,actor_email=excluded.actor_email`).bind(body.showId, body.prepMinutes, body.liveMinutes, body.postMinutes, body.adminMinutes, body.stress, body.recovery, body.notes?.trim() || null, email),
+      env.DB.prepare('INSERT INTO audit_log (id,action,subject_type,subject_id,actor_email) VALUES (?,?,?,?,?)').bind(crypto.randomUUID(), 'workload.record', 'show', body.showId, email)
+    ]);
+    return json({ saved: true }, 201);
+  }
   if (url.pathname === '/studio/api/control' && request.method === 'GET') {
     const showId = url.searchParams.get('showId');
     const show = showId
@@ -368,7 +425,9 @@ export async function runRetention(env: Env, now = new Date()): Promise<void> {
     env.DB.prepare("DELETE FROM ideas WHERE status='pending' AND created_at < ? AND NOT EXISTS (SELECT 1 FROM credits WHERE credits.idea_id=ideas.id)").bind(daysAgo(90)),
     env.DB.prepare("UPDATE prompt_runs SET input_summary='[expired]',output_summary=NULL,verification_summary=NULL,actor_email=NULL,context_manifest='[]',tool_permissions='[]' WHERE retention_class='ephemeral' AND created_at < ?").bind(promptWeek),
     env.DB.prepare("UPDATE prompt_runs SET input_summary='[expired]',output_summary=NULL,verification_summary=NULL,actor_email=NULL,context_manifest='[]',tool_permissions='[]' WHERE retention_class='operational' AND created_at < ?").bind(promptYear),
-    env.DB.prepare('DELETE FROM audit_log WHERE created_at < ?').bind(auditYear)
+    env.DB.prepare('DELETE FROM audit_log WHERE created_at < ?').bind(auditYear),
+    env.DB.prepare('DELETE FROM viewer_feedback WHERE updated_at < ?').bind(daysAgo(90)),
+    env.DB.prepare('UPDATE host_workload SET notes=NULL,actor_email=NULL WHERE recorded_at < ?').bind(auditYear)
   ]);
 }
 

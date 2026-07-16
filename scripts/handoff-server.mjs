@@ -42,7 +42,7 @@ const humanTasks = [
   'Create the brand Google account and complete its recovery email, CAPTCHA, terms, and 2FA screens.',
   'Review the exact domain quote; explicitly approve or reject it. No purchase occurs from this form alone.',
   'Complete OTP/CAPTCHA/terms checkpoints for YouTube, Twitch, Discord, and social accounts.',
-  'Import the OBS collection, confirm camera/microphone/audio tracks, and install or confirm Aitum Multistream.',
+  'Open the preinstalled Tiny Signal Club OBS collection/profile, add and confirm camera/microphone/audio tracks, then configure the installed Aitum outputs with user-entered platform keys.',
   'Run the 20-minute recording, failure drills, and unlisted YouTube/Twitch simulcast rehearsal.',
   'Approve production deployment, platform schedules, public announcements, and going live.'
 ];

@@ -1,4 +1,4 @@
-import type { LiveState, PromptRun, ShowControl, ShowCue, ShowPhase, StudioSnapshot, TownState, VoteReceipt } from '@tiny-signal-club/shared';
+import type { FeedbackContext, HostWorkload, LiveState, PromptRun, ShowControl, ShowCue, ShowPhase, StudioSnapshot, TownState, VoteReceipt, WorkloadSummary } from '@tiny-signal-club/shared';
 
 const isStaticPreview = import.meta.env.VITE_PREVIEW_MODE === 'true';
 const previewTown: TownState = {
@@ -44,6 +44,11 @@ export const api = {
     isStaticPreview ? Promise.resolve({ ...previewSnapshot.control, ...body }) : call<ShowControl>(`/studio/api/shows/${showId}/control`, { method: 'PATCH', body: JSON.stringify(body) }),
   updateCue: (showId: string, cueId: string, status: ShowCue['status']) =>
     isStaticPreview ? Promise.resolve({ id: cueId, status }) : call<{ id: string; status: ShowCue['status']; completedAt?: string }>(`/studio/api/shows/${showId}/cues/${cueId}`, { method: 'PATCH', body: JSON.stringify({ status }) }),
+  feedbackContext: () => isStaticPreview ? Promise.resolve({ show: previewState.show, accepting: false } as FeedbackContext) : call<FeedbackContext>('/api/feedback/context'),
+  feedback: (body: { showId: string; clarity: number; agency: number; accessibility: number; note: string; turnstileToken: string }) =>
+    isStaticPreview ? Promise.resolve({ saved: true }) : call<{ saved: true }>('/api/feedback', { method: 'POST', body: JSON.stringify(body) }),
+  workload: () => isStaticPreview ? Promise.resolve({ entries: [], fourWeekMinutes: 0, averageStress: 0, averageRecovery: 0 } as WorkloadSummary) : call<WorkloadSummary>('/studio/api/workload'),
+  saveWorkload: (body: Omit<HostWorkload, 'recordedAt'>) => isStaticPreview ? Promise.resolve({ saved: true }) : call<{ saved: true }>('/studio/api/workload', { method: 'POST', body: JSON.stringify(body) }),
   vote: (pollId: string, optionId: string, turnstileToken: string, idempotencyKey: string) =>
     isStaticPreview ? Promise.reject(new Error('Voting is disabled on the static preview.')) : call<VoteReceipt>(`/api/polls/${pollId}/vote`, { method: 'POST', headers: { 'Idempotency-Key': idempotencyKey }, body: JSON.stringify({ optionId, turnstileToken }) }),
   idea: (body: { title: string; body: string; creditName: string; consent: boolean; turnstileToken: string }) =>

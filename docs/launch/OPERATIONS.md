@@ -30,6 +30,7 @@ Host sequence:
 ## Release checklist
 
 - `npm run check`, dependency audit, Worker dry-run, Playwright desktop/tablet/mobile.
+- `npm run launch:preflight` lists every intentionally incomplete non-secret production value. The production workflow runs the strict form and cannot deploy while placeholders or the Turnstile test key remain.
 - Local D1 backup restore into staging.
 - Production Turnstile, Access OTP, email routing/sending controlled tests.
 - Screenshot review: landing, town, open vote, results, studio, banners, mobile.

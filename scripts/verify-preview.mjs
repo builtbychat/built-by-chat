@@ -1,7 +1,7 @@
 import { chromium } from '@playwright/test';
 
 const origin = (process.argv[2] ?? 'https://built-by-chat.vercel.app').replace(/\/$/, '');
-const routes = ['/', '/live', '/town', '/roadmap', '/credits', '/support', '/privacy', '/terms'];
+const routes = ['/', '/live', '/town', '/roadmap', '/credits', '/feedback', '/support', '/privacy', '/terms'];
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage();
 const errors = [];

@@ -20,7 +20,7 @@ No account is required to participate. Support is optional and never buys votes 
 
 This npm-workspaces monorepo uses React, Vite, Cloudflare Workers Static Assets, D1, and one SQLite-backed Durable Object per show. The Durable Object persists poll state and the latest browser selection before broadcasting WebSocket events through the Hibernation API. Closing a poll writes an immutable hashed result snapshot to D1.
 
-The private Studio uses persisted show phases and run-of-show cues, provides one host clock plus health/emergency controls, and sends durable catch-up state to viewers and OBS. Production Studio APIs validate the signed Cloudflare Access JWT in the Worker in addition to the edge policy; placeholder Access configuration fails closed.
+The private Studio uses persisted show phases and run-of-show cues, provides one host clock plus health/emergency controls, tracks a private four-week workload window, and sends durable catch-up state to viewers and OBS. A post-show pulse stores replaceable pseudonymous feedback for 90 days. Production Studio APIs validate the signed Cloudflare Access JWT in the Worker in addition to the edge policy; placeholder Access configuration fails closed.
 
 ```text
 apps/web           React interface + Worker + Durable Object

@@ -54,4 +54,23 @@ describe('studio boundary', () => {
     const audit = await env.DB.prepare("SELECT COUNT(*) AS count FROM audit_log WHERE subject_id IN (?,?)").bind(id, cueId).first<{ count: number }>();
     expect(audit?.count).toBe(2);
   });
+  it('summarizes privacy-safe feedback and records a private workload check-in', async () => {
+    const id = `show-feedback-${crypto.randomUUID()}`;
+    const max = await env.DB.prepare('SELECT COALESCE(MAX(episode_number),0) AS value FROM shows').first<{ value: number }>();
+    await env.DB.batch([
+      env.DB.prepare('INSERT INTO shows (id,episode_number,title,objective,starts_at,status) VALUES (?,?,?,?,?,?)').bind(id, (max?.value ?? 0)+1, 'Feedback Test', 'Learn carefully.', '2026-07-01T00:00:00Z', 'ended'),
+      env.DB.prepare("INSERT INTO viewer_feedback (show_id,browser_hash,clarity,agency,accessibility,note,note_status) VALUES (?,?,?,?,?,?,'pending')").bind(id, 'scoped-hash', 5, 4, 3, 'Private note')
+    ]);
+    const headers = { 'Content-Type': 'application/json', 'Cf-Access-Authenticated-User-Email': 'operator@example.com' };
+    const feedback = await SELF.fetch(`https://example.com/studio/api/feedback?showId=${id}`, { headers });
+    expect(feedback.status).toBe(200);
+    expect(await feedback.json()).toEqual(expect.objectContaining({ showId: id, responseCount: 1, clarity: 5, agency: 4, accessibility: 3, pendingNotes: 1 }));
+    const saved = await SELF.fetch('https://example.com/studio/api/workload', { method: 'POST', headers, body: JSON.stringify({ showId:id,prepMinutes:180,liveMinutes:120,postMinutes:90,adminMinutes:30,stress:3,recovery:4,notes:'Recovery block protected.' }) });
+    expect(saved.status).toBe(201);
+    const workload = await SELF.fetch('https://example.com/studio/api/workload', { headers });
+    expect(workload.status).toBe(200);
+    const summary = await workload.json<{ entries: Array<{ showId: string }>; fourWeekMinutes: number }>();
+    expect(summary.entries).toContainEqual(expect.objectContaining({ showId: id }));
+    expect(summary.fourWeekMinutes).toBeGreaterThanOrEqual(420);
+  });
 });

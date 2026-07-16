@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from 'react-router-dom';
 
-const nav: Array<[string, string]> = [['/', 'Home'], ['/live', 'Live'], ['/town', 'Town'], ['/roadmap', 'Roadmap'], ['/credits', 'Credits'], ['/support', 'Support']];
+const nav: Array<[string, string]> = [['/', 'Home'], ['/live', 'Live'], ['/town', 'Town'], ['/roadmap', 'Roadmap'], ['/credits', 'Credits'], ['/feedback', 'Feedback'], ['/support', 'Support']];
 
 export function Layout() {
   return <div className="site-shell">

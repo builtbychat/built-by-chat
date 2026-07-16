@@ -21,6 +21,8 @@
     "status": "node scripts/status.mjs",
     "assets:validate": "node scripts/validate-assets.mjs",
     "prompt:validate": "node scripts/prompt-ops.mjs validate",
+    "prompt:rehearse": "node scripts/prompt-rehearsal.mjs",
+    "prompt:rehearse:record": "node scripts/prompt-rehearsal.mjs --record",
     "prompt:new": "node scripts/prompt-ops.mjs new",
     "handoff": "node scripts/handoff-server.mjs",
     "handoff:status": "node scripts/read-handoff.mjs",
@@ -32,7 +34,11 @@
     "publishing:draft": "node scripts/publishing-draft.mjs",
     "patch-notes:draft": "node scripts/patch-notes.mjs",
     "overlay:health": "node scripts/overlay-health.mjs",
+    "obs:prepare": "node scripts/obs-install.mjs",
+    "obs:install-local": "node scripts/obs-install.mjs --install",
     "preview:verify": "node scripts/verify-preview.mjs",
+    "launch:preflight": "node scripts/launch-preflight.mjs --report",
+    "launch:preflight:production": "node scripts/launch-preflight.mjs",
     "db:restore": "bash scripts/restore-d1.sh"
   },
   "devDependencies": {

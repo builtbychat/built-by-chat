@@ -7,6 +7,7 @@ test('animated intro reaches a branded, audio-safe ready state', async ({page}) 
 test('animated outro safely applies editable copy', async ({page}) => { await page.goto('/overlays/outro.html?motion=reduced&event=Community%20Picnic&date=Tomorrow'); await expect(page.getByRole('heading',{name:/Signal made real/i})).toBeVisible(); await expect(page.getByText('Community Picnic')).toBeVisible(); await expect(page.getByText('Tomorrow')).toBeVisible(); });
 test('studio cockpit keeps one clock, health row, viewer context, and emergency controls visible', async ({page}) => {
   await page.route('**/studio/api/prompts/runs', route => route.fulfill({ json: [] }));
+  await page.route('**/studio/api/workload', route => route.fulfill({ json: { entries:[],fourWeekMinutes:0,averageStress:0,averageRecovery:0 } }));
   await page.route('**/studio/api/control', route => route.fulfill({ json: {
     show:{id:'show-001',episodeNumber:1,title:'Founding Day',objective:'Choose the first landmark.',startsAt:'2026-08-07T00:00:00Z',status:'scheduled'},
     control:{showId:'show-001',phase:'pre_show',catchUp:'The map and first landmark vote are ready.',updatedAt:'2026-07-16T18:00:00Z'},
@@ -20,4 +21,15 @@ test('studio cockpit keeps one clock, health row, viewer context, and emergency 
   await expect(page.getByLabel('Viewer catch-up message')).toHaveValue(/landmark vote/);
   await expect(page.getByRole('button',{name:'Technical pause'})).toBeVisible();
   await expect(page.getByText(/Verify camera, mic/)).toBeVisible();
+  await expect(page.getByText('0.0 hours recorded')).toBeVisible();
+});
+test('post-show pulse is keyboard-readable and explains its privacy boundary', async ({page}) => {
+  await page.route('**/api/feedback/context', route => route.fulfill({ json:{ show:{id:'show-001',episodeNumber:1,title:'Founding Day',objective:'Choose.',startsAt:'2026-08-07T00:00:00Z',status:'ended'},accepting:true } }));
+  await page.route('https://challenges.cloudflare.com/**', route => route.abort());
+  await page.goto('/feedback');
+  await expect(page.getByRole('heading',{name:/Did the signal make sense/i})).toBeVisible();
+  await expect(page.getByText(/no public identity or raw IP/i)).toBeVisible();
+  await expect(page.getByRole('group',{name:/understood what was happening/i})).toBeVisible();
+  await page.getByRole('radio',{name:'5'}).first().check();
+  await expect(page.getByRole('button',{name:/Save my pulse/i})).toBeDisabled();
 });

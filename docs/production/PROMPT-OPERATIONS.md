@@ -73,6 +73,8 @@ Success means the system stops at the right approval gate, preserves audience in
 
 The machine-readable rehearsal set lives in `prompts/evals/cases.json`. Template validation also checks that the eval catalog is present and structurally complete. Record actual pass/fail evidence during rehearsal; having a fixture is not the same as passing it.
 
+Run `npm run prompt:rehearse` for deterministic gates or `npm run prompt:rehearse:record` to refresh the committed evidence table. These cases exercise source finality, ties, injection/personal data, rights, accessibility, partial tools, approval-only actions, credits, model substitution, and cost ceilings without calling a provider or performing an external action. Live operator/tool recovery remains a separate rehearsal gate.
+
 ## Cost, retention, and corrections
 
 Set a per-run cost ceiling before using a metered model or tool. A ceiling is not purchase approval: any new paid product or plan still requires Phaenex to approve the vendor, exact price, tax if known, renewal price, and billing period. Stop when the ceiling cannot be honored.

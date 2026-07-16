@@ -43,7 +43,7 @@
         { "label": "Local pilot-default, workload, moderation, and reliability handoff", "status": "done" },
         { "label": "Implement first-time orientation and persistent objective/catch-up UI", "status": "done" },
         { "label": "Implement private host cockpit clocks, cues, health, and emergency actions", "status": "done" },
-        { "label": "Implement privacy-safe feedback and four-week host workload review", "status": "pending" },
+        { "label": "Implement privacy-safe feedback and four-week host workload review", "status": "done" },
         { "label": "Confirm moderator staffing, commands, and escalation rehearsal", "status": "blocked" },
         { "label": "Confirm platform latency, DVR, captions, and accessibility settings", "status": "blocked" }
       ]
@@ -60,7 +60,7 @@
         { "label": "Admin prompt history API", "status": "done" },
         { "label": "Private studio history UI", "status": "done" },
         { "label": "Adversarial prompt eval catalog", "status": "done" },
-        { "label": "Prompt failure and injection rehearsal evals", "status": "pending" }
+        { "label": "Prompt failure and injection rehearsal evals", "status": "done" }
       ]
     },
     {
