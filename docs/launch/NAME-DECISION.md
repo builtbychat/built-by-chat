@@ -1,104 +1,166 @@
 # Umbrella brand name decision
 
-Status: **decision required; nothing has been renamed or purchased**  
-Preliminary screening date: **July 16, 2026**
+Status: **final vote required; nothing has been renamed, claimed, or purchased**
+Latest preliminary screening: **July 16, 2026**
+
+## Panel result
+
+Three independent simulated advisory roles reviewed the same eight-name final ballot:
+
+- **Mira — playful brand strategist:** memorability, visual system, emotional tone, and future projects.
+- **Jules — prospective viewer/community designer:** belonging, saying it aloud, rituals, mascots, and weekly return.
+- **Rowan — skeptical searchability reviewer:** spelling, discoverability, collision risk, handle plausibility, and extensibility.
+
+These are transparent evaluation personas, not claims that external humans or customers participated. Using an 8-to-1 Borda score, the panel produced:
+
+| Rank | Finalist | Mira | Jules | Rowan | Points | Verdict |
+| --- | --- | ---: | ---: | ---: | ---: | --- |
+| 1 | **Modem Picnic** | 1 | 3 | 1 | **22** | Panel winner and working recommendation |
+| 2 | **Odd Button Club** | 2 | 4 | 2 | **19** | Strongest explicit community identity |
+| 3 | **Moth & Modem** | 3 | 2 | 3 | **19** | Strongest mascot and visual world |
+| 4 | **Tiny Signal Club** | 4 | 1 | 4 | **18** | Strongest welcome/weekly ritual |
+| 5 | **Button Weather** | 5 | 5 | 5 | **12** | Artistic wildcard; exact YouTube handle conflict |
+| 6 | Tiny Mischief Works | 6 | 6 | 6 | 9 | Clean operational backup |
+| 7 | Button Parade | 8 | 7 | 7 | 5 | Rejected for exact title collisions |
+| 8 | Little Weird Works | 7 | 8 | 8 | 4 | Rejected for creator-name proximity |
+
+Odd Button Club wins the tie with Moth & Modem because two of three reviewers ranked it higher.
 
 ## Recommendation
 
-Use **Build With Phaenex** as the working first choice, with **Tiny Internet Town** remaining the title of the first project.
+Use **Modem Picnic** as the working first choice while **Tiny Internet Town** remains the first project title.
 
-It says what viewers are invited to do, gives the studio a distinctive owner, and still works if later seasons are not towns or even software. It also leaves the roles easy to explain:
+It makes the show feel like a recurring gathering instead of a technology product. “Modem” supplies the cozy old-internet texture; “Picnic” says everybody can bring an idea. It is easy to say, visually rich, and broad enough for future projects.
 
-> You decide. AI assists. Phaenex builds it live.
+Possible positioning:
 
-The existing house/chat/terminal icon can survive the rename. The wordmark, account handles, domains, email addresses, platform text, and embedded metadata cannot.
+> **Modem Picnic**
+> Bring an idea. We’ll build something weird.
 
-## Ranked shortlist
+Other viable taglines:
 
-Scores are directional brand judgments, not legal clearance. Each category is scored from 1–5.
+- The internet decides. We make a day of it.
+- Pack an idea. Stay for the build.
+- A live picnic for people, prompts, and peculiar projects.
 
-| Rank | Candidate | Fit | Clear aloud | Distinctive | Future-proof | Preliminary availability | Total / 25 | Main caution |
-| --- | --- | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| 1 | **Build With Phaenex** | 5 | 5 | 5 | 5 | 5 | **25** | People may initially misspell Phaenex |
-| 2 | **Phaenex & You** | 5 | 4 | 5 | 5 | 5 | **24** | Does not signal building or AI by itself |
-| 3 | **Prompt Phaenex** | 5 | 3 | 5 | 5 | 5 | **23** | Sounds like a command; needs explanation |
-| 4 | **Phaenex Assembly** | 4 | 3 | 5 | 5 | 5 | **22** | Feels more like an organization than a show |
-| 5 | **People & Prompts** | 5 | 4 | 3 | 4 | 4 | **20** | Generic search terms; weak ownership |
-| 6 | **Crowd & Cursor** | 5 | 4 | 3 | 4 | 5 | **21** | Reject despite the score: “Cursor” risks confusion with the established AI product brand |
+## What each finalist gives us
 
-## Preliminary availability screen
+### 1. Modem Picnic
 
-The checks below are snapshots, not reservations and not promises that a platform will allow a claim later. A final logged-in availability check must happen immediately before account creation. Domain registration must be rechecked at checkout with the exact first-year price, taxes/fees, and renewal price. No purchase is authorized by this document or the handoff form.
+- **Feels like:** a welcoming, slightly strange recurring event.
+- **Viewer language:** “Meet us at the picnic,” “What are we bringing this week?”
+- **Visual system:** picnic blanket grid becomes pixels/map tiles; modem lights become fireflies; basket holds project icons.
+- **Strength:** best balance of fun, participation, internet flavor, and future flexibility.
+- **Caution:** does not literally say “building,” so the tagline and trailer must demonstrate the loop.
 
-| Candidate handle | .com | .live | GitHub | YouTube | Twitch | TikTok | Bluesky | Instagram / X | Web/name collision |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| `buildwithphaenex` | RDAP not found | RDAP not found | no user/org | no channel page | no account returned | no account page | no resolution | inconclusive | no exact-match result found |
-| `phaenexandyou` | RDAP not found | inconclusive | no user/org | no channel page | no account returned | no account page | no resolution | inconclusive | no exact-match result found |
-| `promptphaenex` | RDAP not found | RDAP not found | no user/org | no channel page | no account returned | no account page | no resolution | inconclusive | no exact-match result found |
-| `phaenexassembly` | RDAP not found | RDAP not found | no user/org | no channel page | no account returned | no account page | no resolution | inconclusive | no exact-match result found |
-| `peopleandprompts` | inconclusive | RDAP not found | no user/org | no channel page | no account returned | no account page | no resolution | inconclusive | generic phrase risk |
-| `crowdandcursor` | RDAP not found | RDAP not found | no user/org | no channel page | no account returned | no account page | no resolution | inconclusive | product-confusion risk |
+### 2. Odd Button Club
 
-“RDAP not found” usually means no current registration record was returned; it is not a price quote or purchase guarantee. “No account/page” means the public check did not find an existing identity at that exact handle. Instagram and X could not be verified reliably without their logged-in claim flows.
+- **Feels like:** a playful membership club for people who enjoy making unusual choices.
+- **Viewer language:** “Odd Buttons,” “Button check,” “Press the odd button.”
+- **Visual system:** collectible buttons for episodes, residents, decisions, and supporter-free achievements.
+- **Strength:** strongest immediate fan identity and merchandise/credit system.
+- **Caution:** may initially sound like sewing, pin collecting, or a children’s club.
 
-The exact-phrase web screen and preliminary USPTO/Justia-index searches returned no obvious exact-match brand records for the leading Phaenex candidates. That is only a knockout search, not a legal trademark opinion. Before meaningful sponsorship revenue, merchandise, or a trademark filing, run a professional clearance search for confusingly similar marks.
+### 3. Moth & Modem
 
-YouTube channel names can overlap, while handles are unique and distinct from channel names. The existing name collision therefore does not necessarily block the current channel, but a more distinctive searchable brand is still the better launch choice.
+- **Feels like:** a nocturnal creative label with a lovable mascot.
+- **Viewer language:** “Follow the signal,” “The moths are online.”
+- **Visual system:** moth drawn to a modem/status light; wings echo chat bubbles and town roads.
+- **Strength:** most distinctive fictional world and avatar.
+- **Caution:** some listeners may hear “Moth & Modern”; participation needs to come from the tagline.
+
+### 4. Tiny Signal Club
+
+- **Feels like:** a warm weekly internet clubhouse.
+- **Viewer language:** opening “signal check,” club bulletin, member-made town signals.
+- **Visual system:** small radio tower/lantern, signal rings, badges, and town bulletin cards.
+- **Strength:** clearest belonging and repeat-viewer ritual.
+- **Caution:** “Tiny” may tie the umbrella too closely to Tiny Internet Town or make future ambitious projects sound small.
+
+### 5. Button Weather
+
+- **Feels like:** surreal, cheerful, and highly original.
+- **Viewer language:** “Tonight’s button forecast,” “100% chance of a weird vote.”
+- **Visual system:** weather maps made of UI controls, vote fronts, result forecasts.
+- **Strength:** boldest strange idea.
+- **Caution:** an exact YouTube handle/channel was detected, and unquoted search results are noisy with weather-device manuals. Keep it only if the concept is irresistible and a modified handle is acceptable.
+
+## Preliminary availability snapshot
+
+These checks are snapshots, not reservations, purchase guarantees, or legal clearance. A final logged-in check must happen immediately before every claim. Domain registration must be checked at checkout with exact first-year price, taxes/fees, and renewal price. No purchase is authorized here.
+
+| Candidate handle | .com RDAP | GitHub | YouTube | Twitch | TikTok | Bluesky | General exact-name screen |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `modempicnic` | not found | no user/org | no channel page | no account returned | no account page | no resolution | no obvious exact brand found |
+| `oddbuttonclub` | not found | no user/org | no channel page | no account returned | no account page | no resolution | no obvious exact brand found |
+| `mothandmodem` | not found | no user/org | no channel page | no account returned | no account page | no resolution | phrase appears in a book review, not an obvious brand |
+| `tinysignalclub` | not found | no user/org | no channel page | no account returned | no account page | no resolution | no obvious exact brand found |
+| `buttonweather` | not found | no user/org | **channel detected** | no account returned | no account page | no resolution | noisy weather-device phrase |
+
+Instagram and X were inconclusive without logged-in claim flows. Preliminary exact-phrase USPTO/Justia-index searches did not reveal an obvious exact mark for the leading four, but that is a knockout search—not a legal opinion. Before meaningful sponsorship revenue, merchandise, or a trademark filing, obtain professional confusingly-similar-mark clearance.
+
+## Names screened out
+
+- **Button Parade:** exact collectible-button book title and other title/music uses weaken searchability.
+- **Little Weird Works:** too close to an existing Weird Works creator identity.
+- **Noodle & Node:** awkward spoken search, technical jargon, and Nodle/network confusion.
+- **Moss & Modem:** attractive but reads more like a design or internet-service agency.
+- **Little Signal Society:** warm but too long and institutional.
+- **Moth & Button:** can sound like sewing/stationery and overlaps “button moth” language.
+- **Porchlight Protocol:** existing Porchlight community/technology businesses make the territory crowded.
+- **Internet Potluck** and **Loop & Lantern:** `.com` registrations were already returned.
+- **Sidequest Signal:** “SideQuest” has a strong existing VR/platform association.
+- **Signal Sprout:** `.com` registration returned and the terms resemble communications/wellness brands.
 
 ## Decision gate
 
 Do not start the rename until Nicholas saves all of the following in the local handoff dashboard:
 
-1. selected display name;
+1. selected finalist or a new candidate to screen;
 2. selected plain handle;
-3. preferred primary domain and fallback;
-4. spoken pronunciation guidance for Phaenex;
-5. approved tagline;
-6. explicit approval to begin the no-purchase rename pass.
+3. approved tagline;
+4. preferred primary domain and fallback;
+5. explicit approval to prepare the repository-only rename.
 
 Account claims and domain purchases remain separate checkpoints. Every purchase requires a fresh exact quote and explicit approval.
 
 ## Rename blast radius
 
-The current repository contains about **80 files** with a Built by Chat name, slug, handle, URL, or package reference. The rename should be one controlled migration, not a blind find-and-replace.
+The repository contains roughly **80 files** with a current display name, slug, handle, URL, package scope, or contact address. The migration must not be a blind find-and-replace.
 
 ### Safe to rename together
 
-- Visible product text, page titles, metadata, footer copy, legal-policy names, documentation, draft publishing copy, and calendar labels.
-- Code-native wordmarks, banners, panels, preview cards, animated intro/outro copy, lower thirds, thumbnail templates, and accessible SVG titles.
-- Local dashboard title, fields, recommended accounts, domain choices, download filename, and operator task text.
-- Public handle references and contact addresses after the destination accounts/domain actually exist.
+- Visible site text, metadata, footer copy, legal-policy names, documentation, publishing drafts, and calendar labels.
+- Code-native wordmarks, banners, panels, preview cards, animated intro/outro copy, lower thirds, thumbnails, and accessible SVG titles.
+- Local dashboard title/options, public-handle references, and contact labels.
 
 ### Keep stable initially
 
-- Local folder `/Users/damato/Projects/built-by-chat` so scripts and open tools do not break mid-migration.
-- Existing Cloudflare D1 database IDs and migration history. Internal database names can remain legacy identifiers because changing them adds risk without viewer value.
-- Existing Vercel and Cloudflare preview URLs until replacement deployments are verified.
-- Existing Git commit history, already-published PR links, and historical backup filenames.
-- The **Tiny Internet Town** project title and town data model.
+- Local folder `/Users/damato/Projects/built-by-chat`.
+- Cloudflare D1 database IDs and migration history.
+- Existing Vercel/Cloudflare preview URLs until replacements pass.
+- Git history, published PR links, and historical backups.
+- **Tiny Internet Town** and its town data model.
 
-### Rename only with platform checkpoints
+### Rename only at controlled checkpoints
 
-- GitHub organization and repository URLs; configure redirects and update branch protection/workflow secrets afterward.
-- npm workspace scopes such as `@built-by-chat/*`; update imports, lockfile, build configuration, and tests in one commit.
-- Cloudflare Worker names, routes, production origin, Access application, Turnstile hostname, email routes, and deployment workflows.
-- Vercel project/alias, YouTube/Twitch/Discord/social identities, calendar UIDs, public email addresses, and OBS browser-source URLs.
-- Domain, support page, sponsor contact, social preview, and public announcements.
+- GitHub organization/repository URLs and npm workspace scopes.
+- Cloudflare Worker names/routes/origin, Access, Turnstile, email, and deployment workflows.
+- Vercel project/alias, platform identities, calendar UIDs, public email, and OBS browser sources.
+- Domain, support destination, sponsor contact, social preview, and public announcements.
 
 ## Controlled migration order
 
-1. Save and approve the final identity decision; rerun the final exact-handle and domain screen.
-2. Create a rename manifest mapping old display name, slug, scope, handle, hostnames, and email addresses to the new values.
-3. Update repository-visible copy and code-native assets on a dedicated branch; keep infrastructure identifiers stable.
+1. Save the final identity decision; rerun exact logged-in handles and domain checks.
+2. Create an old-to-new rename manifest.
+3. Update repository-visible copy and code-native assets on a dedicated branch while keeping infrastructure identifiers stable.
 4. Run type, lint, unit, integration, Playwright, asset, overlay, calendar, and secret checks.
-5. Verify every public page, Studio page, overlay, mobile view, link, email label, and downloadable file locally.
-6. Claim free handles through user-operated platform checkpoints. Do not publish announcements yet.
-7. Request an exact domain quote. Purchase only after explicit amount approval.
-8. Configure and verify the new domain, email, Cloudflare, Vercel alias, OBS sources, and account links.
-9. Preserve redirects/aliases from old URLs where the provider supports them.
-10. Run an unlisted rehearsal using only new visible branding.
-11. Publish the rename once, with a short “same town, clearer name” message, after final approval.
+5. Verify public pages, Studio, overlays, mobile views, links, email labels, and downloads locally.
+6. Claim free handles through user-operated checkpoints; do not announce yet.
+7. Request exact domain pricing; purchase only after explicit amount approval.
+8. Configure and verify domain, email, Cloudflare, Vercel aliases, OBS sources, and account links.
+9. Preserve redirects/aliases where supported.
+10. Run an unlisted rehearsal using only the new visible brand.
+11. Publish one “same town, better picnic blanket” transition after approval.
 
-## Rollback rule
-
-Until the new domain, platform identities, email forwarding, site, OBS collection, and rehearsal all pass, the rename branch must remain reversible. Do not delete the old Cloudflare Worker, Vercel alias, GitHub organization, or account identifiers during the transition.
+Until the renamed rehearsal passes, keep the migration reversible and do not delete old infrastructure or identifiers.

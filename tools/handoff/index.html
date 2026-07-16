@@ -33,7 +33,7 @@
     </section>
 
     <section class="decision-banner" aria-labelledby="name-decision-title">
-      <div><p class="eyebrow">Launch-critical decision</p><h2 id="name-decision-title">Choose the umbrella name before claiming accounts</h2><p><strong>Working recommendation: Build With Phaenex.</strong> No account, repository, deployment, domain, or asset will be renamed from this page. Availability checks are snapshots, not reservations.</p></div>
+      <div><p class="eyebrow">Launch-critical decision</p><h2 id="name-decision-title">Choose the umbrella name before claiming accounts</h2><p><strong>Panel winner: Modem Picnic.</strong> No account, repository, deployment, domain, or asset will be renamed from this page. Availability checks are snapshots, not reservations.</p></div>
       <a href="#naming-title">Review and choose</a>
     </section>
 
@@ -52,21 +52,29 @@
 
       <section class="form-card naming-card" aria-labelledby="naming-title">
         <div class="form-card-head"><span>01</span><div><h3 id="naming-title">Umbrella name decision</h3><p>Choose a direction or add your own. This records a decision only; it does not rename, reserve, publish, or purchase anything.</p></div></div>
+        <div class="panel-intro"><div><p class="eyebrow">Simulated advisory panel</p><h4>Three perspectives, one common ballot</h4></div><p>These are transparent evaluator roles—not external people or customer research. Each ranked the same eight finalists independently.</p></div>
+        <div class="panel-grid">
+          <article><span class="panel-avatar" aria-hidden="true">M</span><div><strong>Mira</strong><small>Playful brand strategist</small><ol><li>Modem Picnic</li><li>Odd Button Club</li><li>Moth &amp; Modem</li></ol></div></article>
+          <article><span class="panel-avatar coral" aria-hidden="true">J</span><div><strong>Jules</strong><small>Prospective viewer + community</small><ol><li>Tiny Signal Club</li><li>Moth &amp; Modem</li><li>Modem Picnic</li></ol></div></article>
+          <article><span class="panel-avatar green" aria-hidden="true">R</span><div><strong>Rowan</strong><small>Searchability skeptic</small><ol><li>Modem Picnic</li><li>Odd Button Club</li><li>Moth &amp; Modem</li></ol></div></article>
+        </div>
+        <div class="panel-result"><strong>Combined vote</strong><ol><li><b>Modem Picnic</b><span>22 points</span></li><li><b>Odd Button Club</b><span>19</span></li><li><b>Moth &amp; Modem</b><span>19</span></li><li><b>Tiny Signal Club</b><span>18</span></li><li><b>Button Weather</b><span>12 · YouTube warning</span></li></ol></div>
         <div class="candidate-grid" role="radiogroup" aria-label="Shortlisted names">
-          <label class="candidate recommended"><input type="radio" name="naming.selectedCandidate" value="Build With Phaenex"><span><b>Recommended</b><strong>Build With Phaenex</strong><small>Clearest invitation; distinctive and expandable.</small></span></label>
-          <label class="candidate"><input type="radio" name="naming.selectedCandidate" value="Phaenex & You"><span><strong>Phaenex &amp; You</strong><small>Warmest and most community-forward.</small></span></label>
-          <label class="candidate"><input type="radio" name="naming.selectedCandidate" value="Prompt Phaenex"><span><strong>Prompt Phaenex</strong><small>Most AI-forward; needs a little explanation.</small></span></label>
-          <label class="candidate"><input type="radio" name="naming.selectedCandidate" value="Phaenex Assembly"><span><strong>Phaenex Assembly</strong><small>Collective and future-proof; less show-like.</small></span></label>
+          <label class="candidate recommended"><input type="radio" name="naming.selectedCandidate" value="Modem Picnic"><span><b>Panel winner</b><strong>Modem Picnic</strong><small>A cozy recurring gathering for strange internet projects.</small></span></label>
+          <label class="candidate"><input type="radio" name="naming.selectedCandidate" value="Odd Button Club"><span><strong>Odd Button Club</strong><small>Best fan identity: everyone gets to be an Odd Button.</small></span></label>
+          <label class="candidate"><input type="radio" name="naming.selectedCandidate" value="Moth & Modem"><span><strong>Moth &amp; Modem</strong><small>Best mascot and nocturnal cozy-digital world.</small></span></label>
+          <label class="candidate"><input type="radio" name="naming.selectedCandidate" value="Tiny Signal Club"><span><strong>Tiny Signal Club</strong><small>Best weekly belonging and “signal check” ritual.</small></span></label>
+          <label class="candidate warning-candidate"><input type="radio" name="naming.selectedCandidate" value="Button Weather"><span><b>Handle warning</b><strong>Button Weather</strong><small>Delightfully strange, but its exact YouTube handle is occupied.</small></span></label>
           <label class="candidate"><input type="radio" name="naming.selectedCandidate" value="custom"><span><strong>My own name</strong><small>Enter it below so Codex can screen it first.</small></span></label>
         </div>
         <div class="fields two naming-fields">
           <label>Custom or refined display name <input name="naming.customDisplayName" maxlength="80" placeholder="Leave blank if choosing above"></label>
-          <label>Preferred plain handle <input name="naming.preferredHandle" maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" placeholder="buildwithphaenex"></label>
-          <label>How should “Phaenex” be pronounced? <input name="naming.pronunciation" maxlength="100" placeholder="Write it phonetically for intros"></label>
-          <label>Tagline choice <select name="naming.tagline"><option value="">Undecided</option><option>You decide. AI assists. Phaenex builds it live.</option><option>You prompt it. We build it live.</option><option>The internet decides. Phaenex builds it live.</option><option value="custom">I want a different tagline</option></select></label>
+          <label>Preferred plain handle <input name="naming.preferredHandle" maxlength="30" pattern="[A-Za-z0-9_.-]{3,30}" placeholder="modempicnic"></label>
+          <label>Words or vibes to avoid <input name="naming.wordsToAvoid" maxlength="160" placeholder="Too corporate, childish, technical…"></label>
+          <label>Tagline choice <select name="naming.tagline"><option value="">Undecided</option><option>Bring an idea. We’ll build something weird.</option><option>The internet decides. We make a day of it.</option><option>Pack an idea. Stay for the build.</option><option>A live picnic for people, prompts, and peculiar projects.</option><option value="custom">I want a different tagline</option></select></label>
           <label class="span-two">Naming notes or new candidates <textarea name="naming.notes" maxlength="1000" rows="3" placeholder="What should the name feel like? Any words you love or dislike?"></textarea></label>
         </div>
-        <div class="availability-note"><strong>Preliminary result for <code>buildwithphaenex</code></strong><span>.com and .live: RDAP not found · GitHub: no user/org · YouTube: no channel page · Twitch: no account returned · TikTok: no account page · Bluesky: no resolution · Instagram/X: inconclusive. Checked July 16, 2026.</span></div>
+        <div class="availability-note"><strong>Preliminary result for the leading four</strong><span><code>modempicnic</code>, <code>oddbuttonclub</code>, <code>mothandmodem</code>, and <code>tinysignalclub</code>: .com RDAP not found · GitHub no user/org · YouTube no channel page · Twitch no account returned · TikTok no account page · Bluesky no resolution. Instagram/X and formal marks remain inconclusive. Checked July 16, 2026.</span></div>
         <div class="checks"><label class="check"><input type="checkbox" name="naming.finalChoice"><span><strong>Final choice:</strong> this is the display name I want Codex to prepare</span></label><label class="check"><input type="checkbox" name="naming.approveRepositoryRename"><span><strong>Rename approval:</strong> prepare the repository-only rename branch after saving; do not claim accounts or buy anything</span></label></div>
       </section>
 
@@ -97,7 +105,7 @@
       <section class="form-card" aria-labelledby="domain-title">
         <div class="form-card-head"><span>04</span><div><h3 id="domain-title">Domain research preferences</h3><p>This requests a quote only after the name is final. It does not authorize a purchase.</p></div></div>
         <div class="fields three">
-          <label>Preferred domain <select name="domain.preferred"><option value="">Wait for final name</option><option value="buildwithphaenex.com">buildwithphaenex.com</option><option value="buildwithphaenex.live">buildwithphaenex.live</option><option value="custom">Different domain from notes</option></select></label>
+          <label>Preferred domain <select name="domain.preferred"><option value="">Wait for final name</option><option value="modempicnic.com">modempicnic.com</option><option value="modempicnic.live">modempicnic.live</option><option value="custom">Different finalist/domain from notes</option></select></label>
           <label>Registrar preference <input name="domain.registrarPreference" maxlength="80" placeholder="Cloudflare Registrar, no preference…"></label>
           <label>Maximum first-year total (USD) <input type="number" name="domain.maxFirstYearUsd" min="0" max="100" step="1" placeholder="100"></label>
           <label>Maximum annual renewal (USD) <input type="number" name="domain.maxRenewalUsd" min="0" max="100" step="1" placeholder="Leave blank if undecided"></label>
