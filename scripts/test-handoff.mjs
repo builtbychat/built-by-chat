@@ -28,7 +28,7 @@ try {
   if (!Array.isArray(bootstrap.progress?.workstreams) || !bootstrap.agentTasks?.length || !bootstrap.humanTasks?.length) throw new Error('Bootstrap response is incomplete.');
   const dashboard = await fetch(origin).then((response) => response.text());
   if (!dashboard.includes('Approved umbrella identity') || !dashboard.includes('Tiny Signal Club') || !dashboard.includes('Combined vote')) throw new Error('Naming decision record is missing.');
-  if (!dashboard.includes('Domain options and purchase gate') || !dashboard.includes('tinysignal.club') || !dashboard.includes('$11.08')) throw new Error('Domain comparison is missing.');
+  if (!dashboard.includes('Domain options and purchase gate') || !dashboard.includes('tinysignal.club') || !dashboard.includes('$9.08') || !dashboard.includes('Cloudflare')) throw new Error('Domain comparison is missing.');
 
   const accepted = await fetch(`${origin}/api/handoff`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
