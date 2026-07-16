@@ -62,9 +62,9 @@
         { "label": "Create Turnstile production widget", "status": "blocked" },
         { "label": "Configure Access OTP policies", "status": "blocked" },
         { "label": "Configure email routing/sending", "status": "blocked" },
-        { "label": "Deploy and validate staging", "status": "pending" },
+        { "label": "Deploy and validate staging", "status": "done" },
         { "label": "Approve and deploy production", "status": "blocked" },
-        { "label": "Backup and restore drill", "status": "pending" }
+        { "label": "Backup and restore drill", "status": "done" }
       ]
     },
     {

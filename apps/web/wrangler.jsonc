@@ -33,7 +33,7 @@
     "staging": {
       "name": "built-by-chat-staging",
       "account_id": "f69477b50055c90dd1773b078d779b75",
-      "vars": { "ENVIRONMENT": "staging", "PUBLIC_ORIGIN": "https://staging.builtbychat.com", "TURNSTILE_SITE_KEY": "1x00000000000000000000AA" },
+      "vars": { "ENVIRONMENT": "staging", "PUBLIC_ORIGIN": "https://built-by-chat-staging.builtbychat.workers.dev", "TURNSTILE_SITE_KEY": "1x00000000000000000000AA" },
       "d1_databases": [{ "binding": "DB", "database_name": "built-by-chat-staging", "database_id": "1ff130ca-d066-48fd-a93f-a4c3fb61c497", "migrations_dir": "../../migrations" }],
       "durable_objects": { "bindings": [{ "name": "LIVE_SHOWS", "class_name": "LiveShow" }] },
       "send_email": [{ "name": "EMAIL" }],

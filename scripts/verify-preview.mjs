@@ -1,7 +1,7 @@
 import { chromium } from '@playwright/test';
 
 const origin = (process.argv[2] ?? 'https://built-by-chat.vercel.app').replace(/\/$/, '');
-const routes = ['/', '/live', '/town', '/roadmap', '/credits', '/support', '/privacy', '/terms', '/studio'];
+const routes = ['/', '/live', '/town', '/roadmap', '/credits', '/support', '/privacy', '/terms'];
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage();
 const errors = [];
@@ -18,8 +18,11 @@ try {
     if (headers['x-content-type-options'] !== 'nosniff') throw new Error(`${route}: missing nosniff`);
     console.log(`✓ ${route} ${response.status()} · ${heading}`);
   }
+  const studioBoundary = await page.request.get(`${origin}/studio/api/prompts/runs`);
+  if (studioBoundary.status() !== 401) throw new Error(`/studio/api boundary: expected 401, received ${studioBoundary.status()}`);
+  console.log('✓ /studio/api 401 · Access identity required');
   if (errors.length) throw new Error(`Browser errors:\n${errors.join('\n')}`);
-  console.log(`✓ ${routes.length}/${routes.length} routes, security headers present, 0 browser errors`);
+  console.log(`✓ ${routes.length}/${routes.length} public routes, security headers present, 0 browser errors`);
 } finally {
   await browser.close();
 }
