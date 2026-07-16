@@ -8,6 +8,7 @@
 - Typecheck, lint, 7 Worker tests, 18 responsive Playwright checks, dependency audit, production build, local/remote migration and seed checks, static/Worker security-header checks, real FFmpeg remux smoke test, overlay health, and Wrangler dry-run pass.
 - Cloudflare staging is deployed at `https://built-by-chat-staging.builtbychat.workers.dev` with official test-only Turnstile keys. Eight public routes, the Studio 401 boundary, session creation, D1 state, invalid submission paths, motion assets, and security headers pass live verification.
 - A complete staging D1 export restored into a temporary remote D1 database with matching show, building, resident, event, and prompt-run counts; the temporary database was then deleted.
+- GitHub `main` requires the `verify` and `playwright` checks, an approving review, resolved conversations, and linear history. Admin enforcement is on; force pushes and branch deletion are off.
 - Temporary static Vercel preview deployed at `https://built-by-chat.vercel.app` under `astral-productions/built-by-chat`. It uses Hobby at $0 for visual/device testing only; all nine UI routes render with response security headers and zero browser console/page errors.
 - `npm run status` reads `docs/launch/PROGRESS.json` and prints the required 20-character progress board plus every pending/blocked task.
 
