@@ -4,7 +4,7 @@ Publishing requires explicit Phaenex approval. Replace every bracketed field wit
 
 ## YouTube title
 
-Tiny Internet Town #1 — Founding Day | Built by Chat
+Tiny Internet Town #1 — Founding Day | Tiny Signal Club
 
 ## Description
 
@@ -21,7 +21,7 @@ Watch Thursdays at 7:00 PM CT and join the Sunday town hall at 3:00 PM CT. Parti
 
 ## Tags
 
-Built by Chat, Tiny Internet Town, live coding, creative coding, audience participation
+Tiny Signal Club, Tiny Internet Town, live coding, creative coding, audience participation
 
 ## Thumbnail copy
 

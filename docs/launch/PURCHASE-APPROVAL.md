@@ -8,6 +8,6 @@ No purchase is authorized by this repository or its automation. Before buying or
 4. remaining amount in the $100 first-month cap;
 5. an explicit yes/no approval request.
 
-As of July 16, 2026, RDAP shows `builtbychat.com` is already registered through April 1, 2027, so it must not be purchased or brokered. RDAP returned “not found” for `builtbychat.live`, which usually indicates availability, but availability and price must be rechecked at checkout. **No domain has been purchased.** Do not proceed until the registrar displays the exact first-year and renewal total and Phaenex explicitly approves it.
+As of July 16, 2026, preliminary RDAP checks returned “not found” for `tinysignalclub.com` and `tinysignalclub.live`, which usually indicates no current registration record. This is not a reservation, availability guarantee, or price quote. **No domain has been purchased.** Recheck at checkout and do not proceed until the registrar displays the exact first-year total, taxes/fees, billing period, and renewal price and Phaenex explicitly approves that exact amount.
 
 Free/test-only items currently used: local Cloudflare bindings, official Turnstile test keys, local builds, GitHub Actions definitions, generated project artwork, and draft account/community materials.

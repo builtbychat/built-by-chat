@@ -1,6 +1,6 @@
 # Prompt operations
 
-Built by Chat treats prompting as production work, not an invisible magic step. Every consequential AI-assisted change must be traceable to an audience decision or an explicitly labeled host decision, scoped before execution, verified by a person, and summarized without exposing private data.
+Tiny Signal Club treats prompting as production work, not an invisible magic step. Every consequential AI-assisted change must be traceable to an audience decision or an explicitly labeled host decision, scoped before execution, verified by a person, and summarized without exposing private data.
 
 ## The loop
 

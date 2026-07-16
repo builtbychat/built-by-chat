@@ -131,7 +131,7 @@ downloadButton.addEventListener('click', () => {
   const data = JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), fields: formFields() }, null, 2);
   const anchor = document.createElement('a');
   anchor.href = URL.createObjectURL(new Blob([data], { type: 'application/json' }));
-  anchor.download = 'launch-studio-handoff.json';
+  anchor.download = 'tiny-signal-club-handoff.json';
   anchor.click();
   URL.revokeObjectURL(anchor.href);
 });

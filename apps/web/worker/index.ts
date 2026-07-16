@@ -1,4 +1,4 @@
-import type { Building, LiveState, Poll, PromptDisposition, PromptRun, PromptSourceType, Resident, Show, TownEvent, TownState } from '@built-by-chat/shared';
+import type { Building, LiveState, Poll, PromptDisposition, PromptRun, PromptSourceType, Resident, Show, TownEvent, TownState } from '@tiny-signal-club/shared';
 import { LiveShow } from './live-show';
 import { cookieValue, createIdentity, hashIdentifier, identityCookie, readJson, verifyIdentity, verifyTurnstile } from './security';
 

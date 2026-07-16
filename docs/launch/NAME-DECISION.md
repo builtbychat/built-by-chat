@@ -1,6 +1,6 @@
 # Umbrella brand name decision
 
-Status: **final vote required; nothing has been renamed, claimed, or purchased**
+Status: **Tiny Signal Club approved on July 16, 2026; repository rebrand in progress. Nothing has been claimed or purchased.**
 Latest preliminary screening: **July 16, 2026**
 
 ## Panel result
@@ -15,7 +15,7 @@ These are transparent evaluation personas, not claims that external humans or cu
 
 | Rank | Finalist | Mira | Jules | Rowan | Points | Verdict |
 | --- | --- | ---: | ---: | ---: | ---: | --- |
-| 1 | **Modem Picnic** | 1 | 3 | 1 | **22** | Panel winner and working recommendation |
+| 1 | **Modem Picnic** | 1 | 3 | 1 | **22** | Historical panel winner; now Sunday gathering |
 | 2 | **Odd Button Club** | 2 | 4 | 2 | **19** | Strongest explicit community identity |
 | 3 | **Moth & Modem** | 3 | 2 | 3 | **19** | Strongest mascot and visual world |
 | 4 | **Tiny Signal Club** | 4 | 1 | 4 | **18** | Strongest welcome/weekly ritual |
@@ -26,7 +26,17 @@ These are transparent evaluation personas, not claims that external humans or cu
 
 Odd Button Club wins the tie with Moth & Modem because two of three reviewers ranked it higher.
 
-## Recommendation
+## Final decision
+
+Nicholas selected **Tiny Signal Club** as the umbrella brand. **Tiny Internet Town** remains Project One, and **The Modem Picnic** becomes the Sunday community gathering. The selected meaning of “Tiny” is the individual signal—an idea, prompt, vote, test, or contribution—not a limit on the scale or type of future projects.
+
+> **Tiny Signal Club**
+>
+> Small signals become big, strange things.
+
+The historical panel recommendation below is preserved as decision context.
+
+## Panel recommendation before selection
 
 Use **Modem Picnic** as the working first choice while **Tiny Internet Town** remains the first project title.
 
@@ -114,13 +124,7 @@ Instagram and X were inconclusive without logged-in claim flows. Preliminary exa
 
 ## Decision gate
 
-Do not start the rename until Nicholas saves all of the following in the local handoff dashboard:
-
-1. selected finalist or a new candidate to screen;
-2. selected plain handle;
-3. approved tagline;
-4. preferred primary domain and fallback;
-5. explicit approval to prepare the repository-only rename.
+The repository-only rename was explicitly approved in chat on July 16, 2026. That approval covers visible copy, package names, code-native brand assets, local tools, and documentation. It does not authorize account claims, external renames, deployments, announcements, or purchases.
 
 Account claims and domain purchases remain separate checkpoints. Every purchase requires a fresh exact quote and explicit approval.
 

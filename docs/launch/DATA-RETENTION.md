@@ -17,6 +17,6 @@ Collect the minimum needed for voting, moderation, credits, security, and reprod
 | Transactional email/provider logs | Provider minimum, target 30 days | Delete/export according to provider controls |
 | Local raw recordings | Target 90 days after final edits | Delete after verified master and backup; preserve published masters per content policy |
 
-No newsletter list or behavioral ad profile is created at launch. Public deletion/contact requests go to `privacy@builtbychat.com` after domain mail exists; until then the published privacy policy must name a controlled fallback. Requests are authenticated before disclosing or deleting private records.
+No newsletter list or behavioral ad profile is created at launch. Public deletion/contact requests will go to `privacy@tinysignalclub.com` only after domain ownership and mail routing are verified; until then the repository’s private Security Advisory/contact workflow is the controlled fallback. Requests are authenticated before disclosing or deleting private records.
 
 Quarterly, verify cleanup jobs, provider retention, backup expiration, and restoration behavior. A backup is not exempt from deletion: expired backups must rotate out on schedule.

@@ -151,7 +151,7 @@ h1 {
   animation: title-in 1.05s 1.45s cubic-bezier(.16,1,.3,1) forwards;
 }
 
-h1 .accent { color: var(--coral); }
+h1 .accent { color: var(--coral); margin-left: .06em; }
 
 .tagline {
   display: inline-block;

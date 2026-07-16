@@ -1,6 +1,6 @@
 # Discord setup
 
-Create the **Built by Chat** server only after explicit approval. Suggested order:
+Create the **Tiny Signal Club** server only after explicit approval. Suggested order:
 
 1. Read-only `welcome` and `announcements`.
 2. `live-chat`, `town-square`, `idea-workshop`, `bug-reports`, `clips-and-memes`, and `contributors`.

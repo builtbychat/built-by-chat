@@ -1,8 +1,8 @@
-# Built by Chat
+# Tiny Signal Club
 
-**The internet decides. We build it live.**
+**Small signals become big, strange things.**
 
-Built by Chat is a public, audience-directed live-building studio hosted by Phaenex. Its first project, **Tiny Internet Town**, is an accessible illustrated town whose buildings, residents, civic choices, and strange little problems are chosen through protected live votes.
+Tiny Signal Club is a public, audience-directed live-making studio hosted by Phaenex. Small signals—ideas, prompts, votes, tests, and contributions—become real projects in public. Project One, **Tiny Internet Town**, is an accessible illustrated town whose buildings, residents, civic choices, and strange little problems are chosen through protected live votes. Future club projects are not limited to towns or software.
 
 Temporary visual test site: [built-by-chat.vercel.app](https://built-by-chat.vercel.app). This static $0 preview does not enable voting, submissions, studio mutations, or the Cloudflare real-time backend.
 
@@ -10,9 +10,9 @@ Temporary visual test site: [built-by-chat.vercel.app](https://built-by-chat.ver
 
 - Private rehearsal: Thursday, July 30, 2026
 - Public premiere: Thursday, August 6, 2026 at 7:00 PM CT
-- First playtest/town hall: Sunday, August 9, 2026 at 3:00 PM CT
+- First **Modem Picnic** playtest/town hall: Sunday, August 9, 2026 at 3:00 PM CT
 - Thursdays: two-hour live build simulcast to YouTube and Twitch
-- Sundays: playtest and town hall
+- Sundays: **The Modem Picnic** playtest and town hall
 
 No account is required to participate. Support is optional and never buys votes or creative control.
 

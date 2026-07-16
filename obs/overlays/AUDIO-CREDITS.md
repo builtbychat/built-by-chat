@@ -1,13 +1,13 @@
 # Motion package audio credits
 
-Both files are distributed under CC0/public-domain terms. Attribution is not required, but Built by Chat credits the creators as a good community practice.
+Both files are distributed under CC0/public-domain terms. Attribution is not required, but Tiny Signal Club credits the creators as a good community practice.
 
 | Local file | Work | Creator | Source | License | SHA-256 |
 |---|---|---|---|---|---|
 | `audio/city-loop.mp3` | City Loop | wipics | https://opengameart.org/content/city-loop-0 | CC0 / Public Domain | `9349982fb8e365167bc5c89f2ac50d3b5376b9f627d506ba30a9b26c8230597e` |
 | `audio/completion-chime.mp3` | Completion sound | Brandon Morris (submitted by HaelDB) | https://opengameart.org/content/completion-sound | CC0 (also offered under OGA-BY 3.0) | `64598fb07a4fe6635ab3f5827515ea83a1b76d3b1afa4fc1d725ea7c8017c4ae` |
 
-Verified on 2026-07-16 from each source page and with FFprobe. Preserve this file whenever the audio is redistributed. The Built by Chat logo, characters, and original media remain governed by `TRADEMARKS.md`; the third-party audio does not become a Built by Chat trademark asset.
+Verified on 2026-07-16 from each source page and with FFprobe. Preserve this file whenever the audio is redistributed. The Tiny Signal Club logo, characters, and original media remain governed by `TRADEMARKS.md`; the third-party audio does not become a Tiny Signal Club trademark asset.
 
 ## OBS use
 

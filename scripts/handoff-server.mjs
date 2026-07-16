@@ -20,8 +20,8 @@ const staticFiles = new Map([
 ]);
 
 const agentTasks = [
-  'After the final name is saved, rerun exact domain and logged-in handle checks and produce a rename manifest before changing anything.',
-  'Prepare the repository-only rename branch, preserving stable infrastructure identifiers until replacement deployments pass.',
+  'Complete and verify the Tiny Signal Club repository rebrand while preserving stable infrastructure identifiers until replacement deployments pass.',
+  'Prepare exact domain and logged-in handle checks before any external claim, rename, or purchase.',
   'Turn the saved viewer defaults into first-time orientation, catch-up cues, readable vote timing, and consistent platform copy.',
   'Build the private host cockpit around one clock, one cue list, health signals, markers, and rehearsed emergency actions.',
   'Run and record the prompt-failure and injection rehearsal with the approved operator workflow.',
@@ -36,8 +36,7 @@ const agentTasks = [
 ];
 
 const humanTasks = [
-  'Choose the umbrella display name, plain handle, Phaenex pronunciation, and tagline in section 01.',
-  'Approve or reject the repository-only rename; account claims and purchases stay separate checkpoints.',
+  'Review the finished Tiny Signal Club rebrand; account claims and purchases remain separate checkpoints.',
   'Save honest workload limits, control preferences, and physical fallback availability in sections 09–12.',
   'Confirm a primary moderator and backup, then participate in the short escalation and recovery rehearsal.',
   'Confirm “Require two-factor authentication” remains enabled in the current or renamed GitHub organization.',
@@ -140,7 +139,7 @@ const server = createServer(async (request, response) => {
 
 server.listen(port, host, () => {
   const url = `http://${host}:${port}`;
-  console.log(`Built by Chat handoff dashboard: ${url}`);
+  console.log(`Tiny Signal Club handoff dashboard: ${url}`);
   console.log(`Private save file: ${savePath}`);
   console.log('Press Ctrl+C to stop.');
   if (process.platform === 'darwin' && process.env.HANDOFF_NO_OPEN !== '1') {

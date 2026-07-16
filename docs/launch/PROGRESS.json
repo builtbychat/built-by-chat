@@ -29,9 +29,9 @@
       "tasks": [
         { "label": "Identify current name collision and pause account claims", "status": "done" },
         { "label": "Screen replacement shortlist across names, domains, and handles", "status": "done" },
-        { "label": "Approve final display name, handle, pronunciation, and tagline", "status": "blocked" },
+        { "label": "Approve Tiny Signal Club identity, handle, and tagline", "status": "done" },
         { "label": "Run final logged-in handle and exact domain quote checks", "status": "blocked" },
-        { "label": "Complete repository-visible rename and full automated QA", "status": "pending" },
+        { "label": "Complete repository-visible rename and full automated QA", "status": "done" },
         { "label": "Migrate verified accounts, production services, email, and OBS", "status": "blocked" },
         { "label": "Run renamed unlisted rehearsal and approve public transition", "status": "blocked" }
       ]
@@ -70,7 +70,7 @@
         { "label": "Phaenex CLI authentication", "status": "done" },
         { "label": "MIT and reserved trademark split", "status": "done" },
         { "label": "Authorize admin:org scope", "status": "done" },
-        { "label": "Create builtbychat organization", "status": "done" },
+        { "label": "Create current legacy GitHub organization", "status": "done" },
         { "label": "Create and push public repository", "status": "done" },
         { "label": "Enable protection and security settings", "status": "done" }
       ]

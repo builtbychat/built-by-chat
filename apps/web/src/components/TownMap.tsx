@@ -1,4 +1,4 @@
-import type { Building, Resident, TownState } from '@built-by-chat/shared';
+import type { Building, Resident, TownState } from '@tiny-signal-club/shared';
 
 const cell = 80;
 function BuildingShape({ building }: { building: Building }) {

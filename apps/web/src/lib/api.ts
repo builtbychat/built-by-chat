@@ -1,4 +1,4 @@
-import type { LiveState, PromptRun, TownState, VoteReceipt } from '@built-by-chat/shared';
+import type { LiveState, PromptRun, TownState, VoteReceipt } from '@tiny-signal-club/shared';
 
 const isStaticPreview = import.meta.env.VITE_PREVIEW_MODE === 'true';
 const previewTown: TownState = {

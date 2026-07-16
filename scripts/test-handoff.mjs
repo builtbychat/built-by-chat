@@ -4,7 +4,7 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const temporaryDirectory = await mkdtemp(join(tmpdir(), 'built-by-chat-handoff-'));
+const temporaryDirectory = await mkdtemp(join(tmpdir(), 'tiny-signal-club-handoff-'));
 const savePath = join(temporaryDirectory, 'user-input.json');
 const port = 4318;
 const origin = `http://127.0.0.1:${port}`;
@@ -27,15 +27,15 @@ try {
   const bootstrap = await fetch(`${origin}/api/bootstrap`).then((response) => response.json());
   if (!Array.isArray(bootstrap.progress?.workstreams) || !bootstrap.agentTasks?.length || !bootstrap.humanTasks?.length) throw new Error('Bootstrap response is incomplete.');
   const dashboard = await fetch(origin).then((response) => response.text());
-  if (!dashboard.includes('Umbrella name decision') || !dashboard.includes('Modem Picnic') || !dashboard.includes('Combined vote')) throw new Error('Naming decision panel is missing.');
+  if (!dashboard.includes('Approved umbrella identity') || !dashboard.includes('Tiny Signal Club') || !dashboard.includes('Combined vote')) throw new Error('Naming decision record is missing.');
 
   const accepted = await fetch(`${origin}/api/handoff`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ version: 1, fields: { naming: { selectedCandidate: 'Modem Picnic', finalChoice: false }, identity: { brandGoogleEmail: 'qa@example.com' }, domain: { readyForExactQuote: true } } })
+    body: JSON.stringify({ version: 1, fields: { naming: { selectedCandidate: 'Tiny Signal Club', finalChoice: true }, identity: { brandGoogleEmail: 'qa@example.com' }, domain: { readyForExactQuote: true } } })
   });
   if (!accepted.ok) throw new Error(`Valid handoff rejected: ${accepted.status}`);
   const saved = JSON.parse(await readFile(savePath, 'utf8'));
-  if (saved.fields.naming.selectedCandidate !== 'Modem Picnic' || saved.fields.identity.brandGoogleEmail !== 'qa@example.com' || saved.source !== 'local-launch-handoff') throw new Error('Saved handoff does not match input.');
+  if (saved.fields.naming.selectedCandidate !== 'Tiny Signal Club' || saved.fields.identity.brandGoogleEmail !== 'qa@example.com' || saved.source !== 'local-launch-handoff') throw new Error('Saved handoff does not match input.');
 
   const rejected = await fetch(`${origin}/api/handoff`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },

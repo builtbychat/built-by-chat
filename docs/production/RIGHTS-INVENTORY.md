@@ -4,7 +4,7 @@ No asset enters a stream, thumbnail, recap, sponsor deck, or repository without 
 
 | Asset class | Launch source/status | Required evidence |
 |---|---|---|
-| Built by Chat logos/wordmarks/templates | Original code-native SVG in this repository; brand rights reserved | Git history and `TRADEMARKS.md` |
+| Tiny Signal Club logos/wordmarks/templates | Original code-native SVG in this repository; brand rights reserved | Git history and `TRADEMARKS.md` |
 | Tiny Internet Town hero | Generated through the image workflow and visually reviewed; no embedded mark/text | Brand guide provenance plus approved prompt/run summary for future revisions |
 | Source code | Project-authored or dependency-managed; project source under MIT | License, lockfile, dependency notices/audit |
 | Fraunces, Manrope, DM Mono | Named as preferred typography but font files are not distributed by this repository | Before bundling, store the exact font version, source, license file, and redistribution terms; otherwise use fallbacks |

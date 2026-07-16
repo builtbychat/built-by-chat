@@ -1,5 +1,5 @@
 import { DurableObject } from 'cloudflare:workers';
-import type { LiveState, Poll, VoteReceipt } from '@built-by-chat/shared';
+import type { LiveState, Poll, VoteReceipt } from '@tiny-signal-club/shared';
 import { assertPollOpen } from './poll-core';
 
 interface VoteRow extends Record<string, SqlStorageValue> { browser_id: string; option_id: string; receipt_id: string; accepted_at: string; idempotency_key: string; }
