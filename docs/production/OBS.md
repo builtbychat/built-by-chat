@@ -21,3 +21,5 @@ Set the base/output canvas to 1920×1080 at 30 fps for the pilot. Record to MKV 
 ## Browser source health check
 
 Load the overlay URLs in an ordinary browser first, then in OBS. Open a test poll, change a vote, close it, disconnect the network for ten seconds, and confirm automatic reconnect. Keep all overlay text inside 60 px safe margins and readable on a phone-sized preview.
+
+The animated intro and outro live at `/overlays/intro.html` and `/overlays/outro.html`. Their query-string copy is editable without changing source files; the sanitized collection includes starting values. Enable **Control audio via OBS**, meter the music below the host microphone, and verify that scene deactivation stops audio. The exact CC0 sources, checksums, and reduced-motion option are documented in `obs/overlays/AUDIO-CREDITS.md`.

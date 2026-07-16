@@ -3,7 +3,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['**/dist/**', '**/worker-configuration.d.ts', '**/node_modules/**', 'scripts/**', 'eslint.config.mjs', '**/vitest.config.ts'] },
+  { ignores: ['**/dist/**', 'apps/web/public/**', '**/worker-configuration.d.ts', '**/node_modules/**', 'scripts/**', 'eslint.config.mjs', '**/vitest.config.ts'] },
   js.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
   {
@@ -15,5 +15,10 @@ export default tseslint.config(
       '@typescript-eslint/no-floating-promises': 'error',
       '@typescript-eslint/consistent-type-imports': 'error'
     }
+  },
+  {
+    files: ['obs/overlays/**/*.js'],
+    ...tseslint.configs.disableTypeChecked,
+    languageOptions: { parserOptions: { projectService: false }, globals: globals.browser }
   }
 );

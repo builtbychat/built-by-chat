@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Built by Chat — animated outro</title>
+  <link rel="stylesheet" href="motion.css">
+</head>
+<body class="outro">
+  <div class="sky"></div><div class="stars"></div><div class="grid"></div><div class="town"></div><div class="vignette"></div><div class="light-sweep"></div>
+  <div class="frame" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+  <main class="content">
+    <section class="brand-lockup" aria-label="Built by Chat outro">
+      <img class="logo" src="/brand/logo-icon-dark.svg" alt="">
+      <p class="eyebrow" data-param="eyebrow">Town saved · stream complete</p>
+      <h1><span data-param="title">Thanks for</span> <span class="accent" data-param="accent">building</span></h1>
+      <div class="next-card">
+        <span class="kicker">Next<br>stream</span>
+        <span class="event" data-param="event">Sunday Playtest + Town Hall</span>
+        <span class="date" data-param="date">Sunday · 3:00 PM CT</span>
+      </div>
+    </section>
+  </main>
+  <footer class="status-row"><span>The internet decides. We build it live.</span><span data-param="handle">@builtbychat</span></footer>
+  <button class="audio-notice" type="button">Audio paused — click or press M</button>
+  <audio id="music" src="audio/city-loop.mp3" preload="auto" loop></audio>
+  <audio id="chime" src="audio/completion-chime.mp3" preload="auto"></audio>
+  <script src="motion.js"></script>
+</body>
+</html>

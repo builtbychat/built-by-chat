@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Built by Chat — animated intro</title>
+  <link rel="stylesheet" href="motion.css">
+</head>
+<body class="intro">
+  <div class="sky"></div><div class="stars"></div><div class="grid"></div><div class="town"></div><div class="vignette"></div><div class="light-sweep"></div>
+  <div class="frame" aria-hidden="true"><i class="corner tl"></i><i class="corner tr"></i><i class="corner bl"></i><i class="corner br"></i></div>
+  <main class="content">
+    <section class="brand-lockup" aria-label="Built by Chat intro">
+      <img class="logo" src="/brand/logo-icon-dark.svg" alt="">
+      <p class="eyebrow" data-param="eyebrow">Welcome to the build</p>
+      <h1><span data-param="title">Built by</span> <span class="accent" data-param="accent">Chat</span></h1>
+      <p class="tagline">The internet decides. <strong>We build it live.</strong></p>
+    </section>
+  </main>
+  <footer class="status-row"><span class="live-dot" data-param="status">Tiny Internet Town</span><span data-param="episode">Episode 01 · Founding Day</span></footer>
+  <button class="audio-notice" type="button">Audio paused — click or press M</button>
+  <audio id="music" src="audio/city-loop.mp3" preload="auto" loop></audio>
+  <audio id="chime" src="audio/completion-chime.mp3" preload="auto"></audio>
+  <script src="motion.js"></script>
+</body>
+</html>

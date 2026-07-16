@@ -12,7 +12,9 @@
     {"name":"Results","id":"scene","settings":{}}, {"name":"Break","id":"scene","settings":{}},
     {"name":"Ending / Next Stream","id":"scene","settings":{}},
     {"name":"Vote Overlay","id":"browser_source","settings":{"url":"https://builtbychat.com/overlays/vote.html?showId=show-001","width":1920,"height":1080,"fps":30,"restart_when_active":false,"shutdown":false}},
-    {"name":"Lower Third","id":"browser_source","settings":{"url":"https://builtbychat.com/overlays/lower-third.html","width":1920,"height":1080,"fps":30,"restart_when_active":false,"shutdown":false}}
+    {"name":"Lower Third","id":"browser_source","settings":{"url":"https://builtbychat.com/overlays/lower-third.html","width":1920,"height":1080,"fps":30,"restart_when_active":false,"shutdown":false}},
+    {"name":"Animated Intro","id":"browser_source","settings":{"url":"https://builtbychat.com/overlays/intro.html?audio=1&volume=.22&episode=Episode%2001%20%C2%B7%20Founding%20Day","width":1920,"height":1080,"fps":30,"restart_when_active":true,"shutdown":true}},
+    {"name":"Animated Outro","id":"browser_source","settings":{"url":"https://builtbychat.com/overlays/outro.html?audio=1&volume=.18&duration=18&event=Sunday%20Playtest%20%2B%20Town%20Hall&date=Sunday%20%C2%B7%203%3A00%20PM%20CT","width":1920,"height":1080,"fps":30,"restart_when_active":true,"shutdown":true}}
   ],
   "transitions": [{"name":"Fade","id":"fade_transition","settings":{}}],
   "quick_transitions": [],

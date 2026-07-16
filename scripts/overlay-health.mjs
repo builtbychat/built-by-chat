@@ -1,5 +1,5 @@
 const origin = (process.argv[2] ?? 'http://localhost:8787').replace(/\/$/, '');
-const paths = ['/overlays/vote.html', '/overlays/lower-third.html', '/api/state'];
+const paths = ['/overlays/vote.html', '/overlays/lower-third.html', '/overlays/intro.html', '/overlays/outro.html', '/overlays/audio/city-loop.mp3', '/overlays/audio/completion-chime.mp3', '/api/state'];
 let failed = false;
 for (const path of paths) {
   try {

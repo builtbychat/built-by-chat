@@ -45,10 +45,10 @@
         { "label": "Local repository policies and workflows", "status": "done" },
         { "label": "Phaenex CLI authentication", "status": "done" },
         { "label": "MIT and reserved trademark split", "status": "done" },
-        { "label": "Authorize admin:org scope", "status": "blocked" },
-        { "label": "Create builtbychat organization", "status": "blocked" },
-        { "label": "Create and push public repository", "status": "blocked" },
-        { "label": "Enable protection and security settings", "status": "blocked" }
+        { "label": "Authorize admin:org scope", "status": "done" },
+        { "label": "Create builtbychat organization", "status": "done" },
+        { "label": "Create and push public repository", "status": "done" },
+        { "label": "Enable protection and security settings", "status": "pending" }
       ]
     },
     {
@@ -56,13 +56,13 @@
       "tasks": [
         { "label": "Worker/D1/DO/email/Turnstile configuration", "status": "done" },
         { "label": "Authenticated Damatnic account selected", "status": "done" },
-        { "label": "Local migrations and seed", "status": "done" },
+        { "label": "Local and remote migrations and staging seed", "status": "done" },
         { "label": "Worker dry-run", "status": "done" },
-        { "label": "Create staging and production D1", "status": "blocked" },
+        { "label": "Create staging and production D1", "status": "done" },
         { "label": "Create Turnstile production widget", "status": "blocked" },
         { "label": "Configure Access OTP policies", "status": "blocked" },
         { "label": "Configure email routing/sending", "status": "blocked" },
-        { "label": "Deploy and validate staging", "status": "blocked" },
+        { "label": "Deploy and validate staging", "status": "pending" },
         { "label": "Approve and deploy production", "status": "blocked" },
         { "label": "Backup and restore drill", "status": "pending" }
       ]
@@ -94,6 +94,14 @@
         { "label": "Run unlisted dual-platform rehearsal", "status": "blocked" },
         { "label": "Run failure and recovery drills", "status": "blocked" },
         { "label": "Approve premiere checklist", "status": "blocked" }
+      ]
+    },
+    {
+      "name": "Animated intro/outro",
+      "tasks": [
+        { "label": "Code-native animated intro and outro overlays", "status": "done" },
+        { "label": "CC0 music/SFX provenance and audio validation", "status": "done" },
+        { "label": "1080p, reduced-motion, safe-area, and compositor QA", "status": "done" }
       ]
     },
     {
