@@ -48,7 +48,7 @@
         { "label": "Authorize admin:org scope", "status": "done" },
         { "label": "Create builtbychat organization", "status": "done" },
         { "label": "Create and push public repository", "status": "done" },
-        { "label": "Enable protection and security settings", "status": "pending" }
+        { "label": "Enable protection and security settings", "status": "done" }
       ]
     },
     {
