@@ -19,4 +19,7 @@ jobs:
       - run: npm audit --audit-level=high
       - run: npm run cf:dry-run
       - uses: actions/upload-artifact@v4
-        with: { name: web-preview-${{ github.sha }}, path: apps/web/dist/client, retention-days: 14 }
+        with:
+          name: web-preview-${{ github.sha }}
+          path: apps/web/dist/client
+          retention-days: 14
