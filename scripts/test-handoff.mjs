@@ -28,14 +28,15 @@ try {
   if (!Array.isArray(bootstrap.progress?.workstreams) || !bootstrap.agentTasks?.length || !bootstrap.humanTasks?.length) throw new Error('Bootstrap response is incomplete.');
   const dashboard = await fetch(origin).then((response) => response.text());
   if (!dashboard.includes('Approved umbrella identity') || !dashboard.includes('Tiny Signal Club') || !dashboard.includes('Combined vote')) throw new Error('Naming decision record is missing.');
+  if (!dashboard.includes('Domain options and purchase gate') || !dashboard.includes('tinysignal.club') || !dashboard.includes('$11.08')) throw new Error('Domain comparison is missing.');
 
   const accepted = await fetch(`${origin}/api/handoff`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ version: 1, fields: { naming: { selectedCandidate: 'Tiny Signal Club', finalChoice: true }, identity: { brandGoogleEmail: 'qa@example.com' }, domain: { readyForExactQuote: true } } })
+    body: JSON.stringify({ version: 1, fields: { naming: { selectedCandidate: 'Tiny Signal Club', finalChoice: true }, identity: { brandGoogleEmail: 'qa@example.com' }, domain: { quotedChoice: 'tinysignalclub.com', readyForExactQuote: true } } })
   });
   if (!accepted.ok) throw new Error(`Valid handoff rejected: ${accepted.status}`);
   const saved = JSON.parse(await readFile(savePath, 'utf8'));
-  if (saved.fields.naming.selectedCandidate !== 'Tiny Signal Club' || saved.fields.identity.brandGoogleEmail !== 'qa@example.com' || saved.source !== 'local-launch-handoff') throw new Error('Saved handoff does not match input.');
+  if (saved.fields.naming.selectedCandidate !== 'Tiny Signal Club' || saved.fields.identity.brandGoogleEmail !== 'qa@example.com' || saved.fields.domain.quotedChoice !== 'tinysignalclub.com' || saved.source !== 'local-launch-handoff') throw new Error('Saved handoff does not match input.');
 
   const rejected = await fetch(`${origin}/api/handoff`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },

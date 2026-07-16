@@ -103,15 +103,36 @@
       </section>
 
       <section class="form-card" aria-labelledby="domain-title">
-        <div class="form-card-head"><span>04</span><div><h3 id="domain-title">Domain research preferences</h3><p>This requests a quote only after the name is final. It does not authorize a purchase.</p></div></div>
+        <div class="form-card-head"><span>04</span><div><h3 id="domain-title">Domain options and purchase gate</h3><p>Current published pricing and preliminary availability are shown below. Selecting anything records a preference only—it never authorizes a purchase.</p></div></div>
+        <div class="domain-recommendation">
+          <div><span class="quote-badge">Recommended primary</span><h4>tinysignalclub.com</h4><p>The clearest long-term address, easiest to say aloud, and broad enough for every project after Tiny Internet Town.</p></div>
+          <div class="recommendation-price"><small>Porkbun benchmark</small><strong>$11.08</strong><span>first year and renewal</span></div>
+        </div>
+        <fieldset class="domain-quotes">
+          <legend>Choose a domain to take to final checkout verification</legend>
+          <div class="domain-quote-grid">
+            <label class="domain-option recommended"><input type="radio" name="domain.quotedChoice" value="tinysignalclub.com"><span class="domain-name">tinysignalclub.com</span><span class="domain-fit">Best primary · exact brand</span><span class="domain-price"><b>$11.08</b> first year <i>$11.08 renewal · $33.24 estimated 3 years</i></span></label>
+            <label class="domain-option"><input type="radio" name="domain.quotedChoice" value="tinysignal.club"><span class="domain-name">tinysignal.club</span><span class="domain-fit">Most playful · clever brand lockup</span><span class="domain-price"><b>$4.12</b> first year <i>$15.96 renewal · $36.04 estimated 3 years</i></span></label>
+            <label class="domain-option"><input type="radio" name="domain.quotedChoice" value="tinysignalclub.org"><span class="domain-name">tinysignalclub.org</span><span class="domain-fit">Community tone · less commercial</span><span class="domain-price"><b>$7.98</b> first year <i>$11.84 renewal · $31.66 estimated 3 years</i></span></label>
+            <label class="domain-option"><input type="radio" name="domain.quotedChoice" value="tinysignalclub.live"><span class="domain-name">tinysignalclub.live</span><span class="domain-fit">Strong broadcast cue · costly renewal</span><span class="domain-price"><b>$2.57</b> first year <i>$26.26 renewal · $55.09 estimated 3 years</i></span></label>
+            <label class="domain-option"><input type="radio" name="domain.quotedChoice" value="tinysignalclub.tv"><span class="domain-name">tinysignalclub.tv</span><span class="domain-fit">Video-forward · narrower umbrella</span><span class="domain-price"><b>$26.26</b> first year <i>$26.26 renewal · $78.78 estimated 3 years</i></span></label>
+            <label class="domain-option"><input type="radio" name="domain.quotedChoice" value="tinysignalclub.studio"><span class="domain-name">tinysignalclub.studio</span><span class="domain-fit">Creator label · longest address</span><span class="domain-price"><b>$11.84</b> first year <i>$32.44 renewal · $76.72 estimated 3 years</i></span></label>
+          </div>
+        </fieldset>
+        <div class="quote-notes">
+          <p><strong>Availability snapshot:</strong> all six returned no RDAP registration record on July 16, 2026. That suggests they may be unregistered; it is not a reservation and does not rule out a premium price or a checkout-time change.</p>
+          <p><strong>Price basis:</strong> current Porkbun public prices for one-year, non-premium registrations. Porkbun states these USD figures include ICANN and other fees. Sales can change. Taxes, premium status, and the final cart total are still unverified.</p>
+          <p><strong>Cloudflare option:</strong> Cloudflare Registrar charges registry and ICANN cost without markup and includes redacted WHOIS/DNSSEC, but its exact name-specific total requires the authenticated checkout. We will compare that total with the benchmark before asking you to approve anything.</p>
+          <p class="quote-links"><a href="https://porkbun.com/products/domains" target="_blank" rel="noreferrer">Porkbun pricing</a><a href="https://www.cloudflare.com/products/registrar/" target="_blank" rel="noreferrer">Cloudflare policy</a><a href="https://domains.cloudflare.com/" target="_blank" rel="noreferrer">Cloudflare search</a></p>
+        </div>
         <div class="fields three">
-          <label>Preferred domain <select name="domain.preferred"><option value="">Request a quote later</option><option value="tinysignalclub.com">tinysignalclub.com</option><option value="tinysignalclub.live">tinysignalclub.live</option><option value="custom">Different domain from notes</option></select></label>
+          <label>Preferred domain <select name="domain.preferred"><option value="">Not selected</option><option value="tinysignalclub.com">tinysignalclub.com — recommended</option><option value="tinysignal.club">tinysignal.club</option><option value="tinysignalclub.org">tinysignalclub.org</option><option value="tinysignalclub.live">tinysignalclub.live</option><option value="tinysignalclub.tv">tinysignalclub.tv</option><option value="tinysignalclub.studio">tinysignalclub.studio</option><option value="custom">Different domain from notes</option></select></label>
           <label>Registrar preference <input name="domain.registrarPreference" maxlength="80" placeholder="Cloudflare Registrar, no preference…"></label>
           <label>Maximum first-year total (USD) <input type="number" name="domain.maxFirstYearUsd" min="0" max="100" step="1" placeholder="100"></label>
           <label>Maximum annual renewal (USD) <input type="number" name="domain.maxRenewalUsd" min="0" max="100" step="1" placeholder="Leave blank if undecided"></label>
           <label class="span-two">Domain notes <input name="domain.notes" maxlength="240" placeholder="Alternatives, privacy requirements, timing…"></label>
         </div>
-        <label class="check"><input type="checkbox" name="domain.readyForExactQuote"><span><strong>Research request:</strong> show me an exact vendor/price/tax/renewal quote next. I understand I must approve again before purchase.</span></label>
+        <div class="checks"><label class="check"><input type="checkbox" name="domain.readyForExactQuote"><span><strong>Checkout verification request:</strong> verify this choice at the registrar and show vendor, first-year total, tax, billing period, and renewal.</span></label><label class="check"><input type="checkbox" name="domain.understandsPurchaseGate"><span><strong>Purchase boundary:</strong> I understand this form does not approve a purchase. Codex must ask me again with the exact total.</span></label></div>
       </section>
 
       <section class="form-card" aria-labelledby="cloudflare-title">
