@@ -1,0 +1,133 @@
+{
+  "lastVerified": "2026-07-16",
+  "workstreams": [
+    {
+      "name": "Product + test site",
+      "tasks": [
+        { "label": "TypeScript monorepo and shared contracts", "status": "done" },
+        { "label": "Eight public routes and responsive UI", "status": "done" },
+        { "label": "Accessible data-driven SVG town", "status": "done" },
+        { "label": "Worker, D1, Durable Object, WebSocket APIs", "status": "done" },
+        { "label": "Protected voting and idea submission", "status": "done" },
+        { "label": "Studio boundary and control surface", "status": "done" },
+        { "label": "Automated type/lint/unit/build checks", "status": "done" },
+        { "label": "Vercel visual test site", "status": "done" }
+      ]
+    },
+    {
+      "name": "Brand + production kit",
+      "tasks": [
+        { "label": "Logo system and brand guide", "status": "done" },
+        { "label": "Hero art and platform assets", "status": "done" },
+        { "label": "Thumbnail and sponsor templates", "status": "done" },
+        { "label": "OBS scenes and browser overlays", "status": "done" },
+        { "label": "Media kit and sponsor policy", "status": "done" }
+      ]
+    },
+    {
+      "name": "Prompt + show system",
+      "tasks": [
+        { "label": "Prompt lifecycle and safety policy", "status": "done" },
+        { "label": "Versioned build, visual, and recap templates", "status": "done" },
+        { "label": "Sanitized run-record generator and validator", "status": "done" },
+        { "label": "Private D1 prompt ledger schema", "status": "done" },
+        { "label": "Episode prompt-pack integration", "status": "done" },
+        { "label": "Decision/tie/unsafe-result policy", "status": "done" },
+        { "label": "Admin prompt history API", "status": "done" },
+        { "label": "Private studio history UI", "status": "done" },
+        { "label": "Adversarial prompt eval catalog", "status": "done" },
+        { "label": "Prompt failure and injection rehearsal evals", "status": "pending" }
+      ]
+    },
+    {
+      "name": "GitHub public repo",
+      "tasks": [
+        { "label": "Local repository policies and workflows", "status": "done" },
+        { "label": "Phaenex CLI authentication", "status": "done" },
+        { "label": "MIT and reserved trademark split", "status": "done" },
+        { "label": "Authorize admin:org scope", "status": "blocked" },
+        { "label": "Create builtbychat organization", "status": "blocked" },
+        { "label": "Create and push public repository", "status": "blocked" },
+        { "label": "Enable protection and security settings", "status": "blocked" }
+      ]
+    },
+    {
+      "name": "Cloudflare launch",
+      "tasks": [
+        { "label": "Worker/D1/DO/email/Turnstile configuration", "status": "done" },
+        { "label": "Authenticated Damatnic account selected", "status": "done" },
+        { "label": "Local migrations and seed", "status": "done" },
+        { "label": "Worker dry-run", "status": "done" },
+        { "label": "Create staging and production D1", "status": "blocked" },
+        { "label": "Create Turnstile production widget", "status": "blocked" },
+        { "label": "Configure Access OTP policies", "status": "blocked" },
+        { "label": "Configure email routing/sending", "status": "blocked" },
+        { "label": "Deploy and validate staging", "status": "blocked" },
+        { "label": "Approve and deploy production", "status": "blocked" },
+        { "label": "Backup and restore drill", "status": "pending" }
+      ]
+    },
+    {
+      "name": "Accounts + domain",
+      "tasks": [
+        { "label": "Fallback names and handles documented", "status": "done" },
+        { "label": "Approve domain vendor and exact price", "status": "blocked" },
+        { "label": "Purchase approved domain", "status": "blocked" },
+        { "label": "Create brand Google account and 2FA", "status": "blocked" },
+        { "label": "Reserve YouTube and Twitch", "status": "blocked" },
+        { "label": "Create Discord and moderation roles", "status": "blocked" },
+        { "label": "Create social handles", "status": "blocked" },
+        { "label": "Create hello/sponsors/security/privacy forwarding", "status": "blocked" },
+        { "label": "Create optional support destination", "status": "blocked" }
+      ]
+    },
+    {
+      "name": "OBS + rehearsal",
+      "tasks": [
+        { "label": "OBS installed", "status": "done" },
+        { "label": "DaVinci Resolve installed", "status": "done" },
+        { "label": "FFmpeg and FFprobe installed", "status": "done" },
+        { "label": "Sanitized scene collection prepared", "status": "done" },
+        { "label": "Install and configure Aitum Multistream", "status": "blocked" },
+        { "label": "Import scenes and verify local overlays", "status": "blocked" },
+        { "label": "Run 20-minute recording test", "status": "blocked" },
+        { "label": "Run unlisted dual-platform rehearsal", "status": "blocked" },
+        { "label": "Run failure and recovery drills", "status": "blocked" },
+        { "label": "Approve premiere checklist", "status": "blocked" }
+      ]
+    },
+    {
+      "name": "Content + launch ops",
+      "tasks": [
+        { "label": "Six-episode season arc", "status": "done" },
+        { "label": "Episode and weekly issue templates", "status": "done" },
+        { "label": "Moderation and community policy", "status": "done" },
+        { "label": "Recording, clip, backup, and publishing scripts", "status": "done" },
+        { "label": "Legal/privacy/security/contribution policies", "status": "done" },
+        { "label": "Episode 1 complete run sheet and host pack", "status": "done" },
+        { "label": "Episodes 2–6 complete host packs", "status": "done" },
+        { "label": "Transactional email delivery test", "status": "blocked" },
+        { "label": "Calendar/platform schedules published", "status": "blocked" },
+        { "label": "Final launch announcement approval", "status": "blocked" }
+      ]
+    },
+    {
+      "name": "Safety + governance",
+      "tasks": [
+        { "label": "Audience decision and correction policy", "status": "done" },
+        { "label": "Threat model", "status": "done" },
+        { "label": "Data retention schedule", "status": "done" },
+        { "label": "Incident response runbook", "status": "done" },
+        { "label": "Privacy/security/contribution policies", "status": "done" },
+        { "label": "Sponsor and affiliate integrity policy", "status": "done" },
+        { "label": "Automated retention cleanup", "status": "done" },
+        { "label": "Response security headers and CSP", "status": "done" },
+        { "label": "Provider cost and usage alerts", "status": "blocked" },
+        { "label": "Music/art/font/clip rights inventory", "status": "done" },
+        { "label": "Captions and transcript workflow", "status": "done" },
+        { "label": "Privacy-safe analytics and success metrics", "status": "done" },
+        { "label": "Account recovery drill", "status": "blocked" }
+      ]
+    }
+  ]
+}

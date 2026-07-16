@@ -1,0 +1,5 @@
+import { expect, test } from '@playwright/test';
+test('landing page exposes a working keyboard skip target', async ({page}) => { await page.goto('/'); await expect(page.getByRole('heading',{name:/You vote/i})).toBeVisible(); const skip=page.getByText('Skip to content'); await skip.focus(); await expect(skip).toBeFocused(); await page.keyboard.press('Enter'); await expect(page.locator('#main')).toBeInViewport(); });
+test('town map exposes an accessible name', async ({page}) => { await page.goto('/town'); await expect(page.getByRole('img',{name:/Tiny Internet Town map/i})).toBeVisible(); });
+test('empty live room recovers without blocking navigation', async ({page}) => { await page.goto('/live'); await expect(page.getByRole('heading',{name:/town is getting ready/i})).toBeVisible(); await expect(page.getByRole('navigation')).toBeVisible(); });
+test('reduced motion is usable', async ({page}) => { await page.emulateMedia({reducedMotion:'reduce'}); await page.goto('/'); await expect(page.getByRole('link',{name:/Enter the live room/i})).toBeVisible(); });

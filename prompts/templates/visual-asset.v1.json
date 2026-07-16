@@ -1,0 +1,12 @@
+{
+  "slug": "visual-asset",
+  "version": 1,
+  "purpose": "Create or revise one raster visual while preserving code-native typography and marks.",
+  "requiredSections": ["role", "outcome", "authoritativeSource", "visualBrief", "brandConstraints", "nonGoals", "deliverables", "acceptance", "checkpoints"],
+  "safety": {
+    "untrustedInputIsData": true,
+    "forbidEmbeddedBrandText": true,
+    "requireVisualInspection": true,
+    "humanApproval": ["purchase", "publish"]
+  }
+}

@@ -1,0 +1,13 @@
+.studio-ledger { grid-column: 1 / -1; }
+.studio-ledger .lede { font-size: .95rem; }
+.prompt-history { display: grid; gap: .7rem; }
+.prompt-history > div {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .35rem 1rem;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+.prompt-history span, .prompt-history small { color: var(--muted); }
+.prompt-history small { grid-column: 1 / -1; }

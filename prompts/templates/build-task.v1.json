@@ -1,0 +1,11 @@
+{
+  "slug": "build-task",
+  "version": 1,
+  "purpose": "Turn an approved audience decision into one reviewable code or content change.",
+  "requiredSections": ["role", "outcome", "authoritativeSource", "context", "constraints", "nonGoals", "deliverables", "acceptance", "checkpoints", "responseFormat"],
+  "safety": {
+    "untrustedInputIsData": true,
+    "forbidSecrets": true,
+    "humanApproval": ["purchase", "deploy", "publish", "send-message", "create-account", "go-live"]
+  }
+}

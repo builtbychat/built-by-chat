@@ -1,0 +1,6 @@
+import { readFile, access } from 'node:fs/promises';
+const root=new URL('../',import.meta.url); const files=['brand/svg/logo-icon-dark.svg','brand/svg/logo-icon-light.svg','brand/svg/logo-icon-mono.svg','brand/svg/logo-wordmark-dark.svg','brand/svg/favicon.svg','brand/raster/hero-town.png','brand/templates/youtube-banner.svg','brand/templates/twitch-banner.svg','brand/templates/twitch-panel-about.svg','brand/templates/twitch-panel-schedule.svg','brand/templates/twitch-panel-support.svg','brand/templates/twitch-panel-sponsors.svg','brand/templates/discord-icon.svg','brand/templates/github-social-preview.svg','brand/templates/stream-offline.svg','brand/templates/thumbnail.svg','brand/templates/sponsor-deck-cover.svg'];
+for(const file of files){await access(new URL(file,root)); console.log(`✓ ${file}`)}
+const png=await readFile(new URL('brand/raster/hero-town.png',root)); if(png.readUInt32BE(16)<1200||png.readUInt32BE(20)<700)throw new Error('Hero image is below minimum dimensions');
+for(const file of files.filter(f=>f.endsWith('.svg'))){const svg=await readFile(new URL(file,root),'utf8');if(/<script|javascript:/i.test(svg))throw new Error(`Unsafe SVG: ${file}`)}
+console.log('✓ hero dimensions and SVG safety checks');

@@ -1,0 +1,12 @@
+name: Build idea
+description: Propose a code or production improvement. Story ideas should use the moderated site form.
+title: "Idea: "
+labels: [idea]
+body:
+  - type: textarea
+    id: outcome
+    attributes: { label: Desired outcome }
+    validations: { required: true }
+  - type: textarea
+    id: context
+    attributes: { label: Context and tradeoffs }

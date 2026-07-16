@@ -1,0 +1,13 @@
+name: Create weekly episode issue
+on:
+  schedule: [{ cron: '0 15 * * 1' }]
+  workflow_dispatch:
+permissions: { issues: write, contents: read }
+jobs:
+  plan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Open planning issue
+        env: { GH_TOKEN: '${{ github.token }}' }
+        run: gh issue create --title "Episode planning · week of $(date -u +%F)" --label episode --body-file docs/episodes/ISSUE-TEMPLATE.md

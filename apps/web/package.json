@@ -1,0 +1,35 @@
+{
+  "name": "@built-by-chat/web",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node ../../scripts/export-assets.mjs",
+    "dev": "vite",
+    "prebuild": "node ../../scripts/export-assets.mjs",
+    "build": "vite build",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "cf:types": "wrangler types worker-configuration.d.ts",
+    "cf:dry-run": "wrangler deploy --dry-run --env=\"\"",
+    "db:migrate:local": "wrangler d1 migrations apply built-by-chat --local",
+    "db:seed:local": "wrangler d1 execute built-by-chat --local --file ../../seeds/seed.sql"
+  },
+  "dependencies": {
+    "@built-by-chat/shared": "*",
+    "@vitejs/plugin-react": "latest",
+    "cloudflare": "latest",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.9.0",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-pool-workers": "latest",
+    "@types/react": "^19.1.9",
+    "@types/react-dom": "^19.1.7",
+    "@types/node": "^24.1.0",
+    "vitest": "latest",
+    "wrangler": "latest"
+  }
+}

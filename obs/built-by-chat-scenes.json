@@ -1,0 +1,21 @@
+{
+  "name": "Built by Chat (sanitized)",
+  "current_scene": "Starting Soon",
+  "current_program_scene": "Starting Soon",
+  "scene_order": [
+    {"name":"Starting Soon"},{"name":"Welcome / Previously On"},{"name":"Live Build"},{"name":"Full-Screen Code"},{"name":"Town Tour"},{"name":"Active Vote"},{"name":"Results"},{"name":"Break"},{"name":"Ending / Next Stream"}
+  ],
+  "sources": [
+    {"name":"Starting Soon","id":"scene","settings":{}}, {"name":"Welcome / Previously On","id":"scene","settings":{}},
+    {"name":"Live Build","id":"scene","settings":{}}, {"name":"Full-Screen Code","id":"scene","settings":{}},
+    {"name":"Town Tour","id":"scene","settings":{}}, {"name":"Active Vote","id":"scene","settings":{}},
+    {"name":"Results","id":"scene","settings":{}}, {"name":"Break","id":"scene","settings":{}},
+    {"name":"Ending / Next Stream","id":"scene","settings":{}},
+    {"name":"Vote Overlay","id":"browser_source","settings":{"url":"https://builtbychat.com/overlays/vote.html?showId=show-001","width":1920,"height":1080,"fps":30,"restart_when_active":false,"shutdown":false}},
+    {"name":"Lower Third","id":"browser_source","settings":{"url":"https://builtbychat.com/overlays/lower-third.html","width":1920,"height":1080,"fps":30,"restart_when_active":false,"shutdown":false}}
+  ],
+  "transitions": [{"name":"Fade","id":"fade_transition","settings":{}}],
+  "quick_transitions": [],
+  "modules": {},
+  "groups": []
+}

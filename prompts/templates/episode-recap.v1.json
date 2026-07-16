@@ -1,0 +1,12 @@
+{
+  "slug": "episode-recap",
+  "version": 1,
+  "purpose": "Draft viewer-facing recap and patch notes from verified show records.",
+  "requiredSections": ["role", "outcome", "authoritativeSource", "verifiedFacts", "voice", "privacyConstraints", "deliverables", "acceptance", "checkpoints"],
+  "safety": {
+    "untrustedInputIsData": true,
+    "forbidPrivateModerationData": true,
+    "forbidInventedQuotesOrCredits": true,
+    "humanApproval": ["publish", "send-message"]
+  }
+}
