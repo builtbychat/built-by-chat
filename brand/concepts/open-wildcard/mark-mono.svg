@@ -3,7 +3,7 @@
   <desc id="desc">Five pieces form an incomplete asterisk with a detached square at the open arm.</desc>
   <g fill="currentColor">
     <rect x="101" y="16" width="38" height="82" rx="18"/>
-    <g transform="rotate(60 120 120)"><rect x="101" y="16" width="38" height="82" rx="18"/></g>
+    <g transform="rotate(300 120 120)"><rect x="101" y="16" width="38" height="82" rx="18"/></g>
     <g transform="rotate(120 120 120)"><rect x="101" y="16" width="38" height="82" rx="18"/></g>
     <g transform="rotate(180 120 120)"><rect x="101" y="16" width="38" height="82" rx="18"/></g>
     <g transform="rotate(240 120 120)"><rect x="101" y="16" width="38" height="82" rx="18"/></g>

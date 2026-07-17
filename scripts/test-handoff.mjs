@@ -32,18 +32,20 @@ try {
   if (!dashboard.includes('Previous brand and broadcast previews') || !dashboard.includes('ANIMATED INTRO') || !dashboard.includes('Project One hero')) throw new Error('Rejected brand comparison is missing.');
   if (!dashboard.includes('Playable motion studies') || !dashboard.includes('Patch Signal') || !dashboard.includes('data-motion-action="replay"')) throw new Error('Playable identity motion lab is missing.');
   if (!dashboard.includes('One idea, tested as a system') || !dashboard.includes('Open wildcard mark') || !dashboard.includes('Project architecture')) throw new Error('Round 03 wildcard system is missing.');
-  const [logo, hero, intro, wildcard, identityReset] = await Promise.all([
+  const [logo, hero, intro, wildcard, identityReset, cursorPrompts] = await Promise.all([
     fetch(`${origin}/showcase/brand/svg/logo-wordmark-dark.svg`),
     fetch(`${origin}/showcase/brand/raster/hero-town.png`),
     fetch(`${origin}/showcase/overlays/intro.html?motion=reduced`),
     fetch(`${origin}/showcase/overlays/wildcard-lab.html?mode=mark`),
-    fetch(`${origin}/showcase/brand-docs/IDENTITY-RESET.md`)
+    fetch(`${origin}/showcase/brand-docs/IDENTITY-RESET.md`),
+    fetch(`${origin}/showcase/brand-docs/CURSOR-BRAND-PROMPTS.md`)
   ]);
   if (!logo.ok || !logo.headers.get('content-type')?.includes('svg')) throw new Error('Brand logo is not served safely.');
   if (!hero.ok || !hero.headers.get('content-type')?.includes('png')) throw new Error('Brand hero is not served safely.');
   if (!intro.ok || intro.headers.get('x-frame-options') !== 'SAMEORIGIN') throw new Error('Animation preview is not same-origin frameable.');
   if (!wildcard.ok || wildcard.headers.get('x-frame-options') !== 'SAMEORIGIN') throw new Error('Wildcard preview is not same-origin frameable.');
   if (!identityReset.ok || !identityReset.headers.get('content-type')?.includes('markdown')) throw new Error('Identity reset reasoning is not served safely.');
+  if (!cursorPrompts.ok || !cursorPrompts.headers.get('content-type')?.includes('markdown')) throw new Error('Cursor brand prompt pack is not served safely.');
 
   const accepted = await fetch(`${origin}/api/handoff`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
