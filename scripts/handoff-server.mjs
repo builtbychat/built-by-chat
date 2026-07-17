@@ -1,7 +1,7 @@
 import { createServer } from 'node:http';
 import { readFile, mkdir, rename, writeFile } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
-import { dirname, resolve } from 'node:path';
+import { dirname, extname, resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
 const publicDir = resolve(root, 'tools/handoff');
@@ -11,6 +11,11 @@ const progressPath = resolve(root, 'docs/launch/PROGRESS.json');
 const host = '127.0.0.1';
 const port = Number(process.env.HANDOFF_PORT || 4317);
 const maxBodyBytes = 256 * 1024;
+const showcaseRoots = new Map([
+  ['/showcase/brand/', resolve(root, 'brand')],
+  ['/showcase/overlays/', resolve(root, 'obs/overlays')],
+  ['/brand/', resolve(root, 'apps/web/public/brand')]
+]);
 
 const staticFiles = new Map([
   ['/', ['index.html', 'text/html; charset=utf-8']],
@@ -57,6 +62,17 @@ function headers(contentType = 'application/json; charset=utf-8') {
     'X-Frame-Options': 'DENY',
     'Permissions-Policy': 'camera=(), microphone=(), geolocation=(), payment=()'
   };
+}
+
+function assetContentType(path) {
+  return ({ '.html':'text/html; charset=utf-8', '.css':'text/css; charset=utf-8', '.js':'text/javascript; charset=utf-8', '.svg':'image/svg+xml', '.png':'image/png', '.mp3':'audio/mpeg', '.md':'text/markdown; charset=utf-8' })[extname(path).toLowerCase()] ?? 'application/octet-stream';
+}
+
+function showcaseHeaders(path) {
+  const values = headers(assetContentType(path));
+  values['X-Frame-Options'] = 'SAMEORIGIN';
+  values['Content-Security-Policy'] = "default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'self'; object-src 'none'; base-uri 'none'; frame-ancestors 'self'";
+  return values;
 }
 
 function sendJson(response, status, value) {
@@ -120,6 +136,17 @@ const server = createServer(async (request, response) => {
     }
 
     if (request.method === 'GET' && url.pathname === '/health') return sendJson(response, 200, { ok: true });
+
+    if (request.method === 'GET') {
+      for (const [prefix, assetRoot] of showcaseRoots) {
+        if (!url.pathname.startsWith(prefix)) continue;
+        const candidate = resolve(assetRoot, decodeURIComponent(url.pathname.slice(prefix.length)));
+        if (!candidate.startsWith(`${assetRoot}/`)) return sendJson(response, 403, { error: 'invalid_asset_path' });
+        response.writeHead(200, showcaseHeaders(candidate));
+        response.end(await readFile(candidate));
+        return;
+      }
+    }
 
     const staticEntry = staticFiles.get(url.pathname);
     if (request.method === 'GET' && staticEntry) {

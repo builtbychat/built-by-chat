@@ -29,6 +29,15 @@ try {
   const dashboard = await fetch(origin).then((response) => response.text());
   if (!dashboard.includes('Approved umbrella identity') || !dashboard.includes('Tiny Signal Club') || !dashboard.includes('Combined vote')) throw new Error('Naming decision record is missing.');
   if (!dashboard.includes('Domain options and purchase gate') || !dashboard.includes('tinysignal.club') || !dashboard.includes('$9.08') || !dashboard.includes('Cloudflare')) throw new Error('Domain comparison is missing.');
+  if (!dashboard.includes('Brand and broadcast previews') || !dashboard.includes('ANIMATED INTRO') || !dashboard.includes('Project One hero')) throw new Error('Brand showcase is missing.');
+  const [logo, hero, intro] = await Promise.all([
+    fetch(`${origin}/showcase/brand/svg/logo-wordmark-dark.svg`),
+    fetch(`${origin}/showcase/brand/raster/hero-town.png`),
+    fetch(`${origin}/showcase/overlays/intro.html?motion=reduced`)
+  ]);
+  if (!logo.ok || !logo.headers.get('content-type')?.includes('svg')) throw new Error('Brand logo is not served safely.');
+  if (!hero.ok || !hero.headers.get('content-type')?.includes('png')) throw new Error('Brand hero is not served safely.');
+  if (!intro.ok || intro.headers.get('x-frame-options') !== 'SAMEORIGIN') throw new Error('Animation preview is not same-origin frameable.');
 
   const accepted = await fetch(`${origin}/api/handoff`, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
