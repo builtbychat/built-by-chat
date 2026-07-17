@@ -1,4 +1,14 @@
 const form = document.querySelector('#handoff-form');
+const motionLab = document.querySelector('.motion-lab');
+const rejectedBrand = document.querySelector('.rejected-system');
+if (motionLab && rejectedBrand) rejectedBrand.before(motionLab);
+
+for (const control of document.querySelectorAll('[data-motion-action]')) {
+  control.addEventListener('click', () => {
+    const frame = control.closest('.motion-study')?.querySelector('[data-motion-frame]');
+    frame?.contentWindow?.postMessage({ channel: 'identity-lab', action: control.dataset.motionAction }, location.origin);
+  });
+}
 const saveButton = document.querySelector('#save-button');
 const downloadButton = document.querySelector('#download-button');
 const saveState = document.querySelector('#save-state');

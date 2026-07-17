@@ -29,7 +29,8 @@ try {
   const dashboard = await fetch(origin).then((response) => response.text());
   if (!dashboard.includes('Approved umbrella identity') || !dashboard.includes('Tiny Signal Club') || !dashboard.includes('Combined vote')) throw new Error('Naming decision record is missing.');
   if (!dashboard.includes('Domain options and purchase gate') || !dashboard.includes('tinysignal.club') || !dashboard.includes('$9.08') || !dashboard.includes('Cloudflare')) throw new Error('Domain comparison is missing.');
-  if (!dashboard.includes('Brand and broadcast previews') || !dashboard.includes('ANIMATED INTRO') || !dashboard.includes('Project One hero')) throw new Error('Brand showcase is missing.');
+  if (!dashboard.includes('Previous brand and broadcast previews') || !dashboard.includes('ANIMATED INTRO') || !dashboard.includes('Project One hero')) throw new Error('Rejected brand comparison is missing.');
+  if (!dashboard.includes('Playable motion studies') || !dashboard.includes('Patch Signal') || !dashboard.includes('data-motion-action="replay"')) throw new Error('Playable identity motion lab is missing.');
   const [logo, hero, intro] = await Promise.all([
     fetch(`${origin}/showcase/brand/svg/logo-wordmark-dark.svg`),
     fetch(`${origin}/showcase/brand/raster/hero-town.png`),

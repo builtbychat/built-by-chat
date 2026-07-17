@@ -37,8 +37,8 @@
       <a href="#naming-title">Review decision</a>
     </section>
 
-    <section class="brand-showcase" aria-labelledby="brand-showcase-title">
-      <div class="section-heading"><div><p class="eyebrow">Current creative system</p><h2 id="brand-showcase-title">Brand and broadcast previews</h2><p>These are the actual editable repository assets. Animation previews run locally and never publish or connect to a platform.</p></div><a class="showcase-guide" href="/showcase/brand/DELIVERY.md" target="_blank">Open delivery guide</a></div>
+    <section class="brand-showcase rejected-system" aria-labelledby="brand-showcase-title">
+      <div class="section-heading"><div><p class="eyebrow">Rejected v1 · retained for comparison</p><h2 id="brand-showcase-title">Previous brand and broadcast previews</h2><p>These editable repository assets are not approved and will be replaced after the identity workbench produces a coherent winner. They remain visible only to make regressions and improvements obvious.</p></div><a class="showcase-guide" href="/showcase/brand/DELIVERY.md" target="_blank">Open delivery guide</a></div>
       <div class="logo-showcase">
         <figure class="wordmark-card dark"><img src="/showcase/brand/svg/logo-wordmark-dark.svg" alt="Tiny Signal Club dark wordmark"><figcaption>Primary dark wordmark</figcaption></figure>
         <figure class="wordmark-card light"><img src="/showcase/brand/svg/logo-wordmark-light.svg" alt="Tiny Signal Club light wordmark"><figcaption>Light-background wordmark</figcaption></figure>
@@ -56,6 +56,33 @@
         <article><div><span>ANIMATED OUTRO</span><a href="/showcase/overlays/outro.html?event=The%20Modem%20Picnic&amp;date=Sunday%20%C2%B7%203%3A00%20PM%20CT&amp;audio=1&amp;volume=.18" target="_blank">Open full size</a></div><iframe src="/showcase/overlays/outro.html?event=The%20Modem%20Picnic&amp;date=Sunday%20%C2%B7%203%3A00%20PM%20CT&amp;motion=reduced" title="Tiny Signal Club animated outro preview" loading="lazy"></iframe></article>
       </div>
       <p class="showcase-note">Full package: <code>/Users/damato/Desktop/Tiny-Signal-Club-Brand-and-Animations.zip</code> · Logos and typography remain code-native · Audio provenance and checksums are included.</p>
+    </section>
+
+    <section class="motion-lab" aria-labelledby="motion-lab-title">
+      <div class="section-heading"><div><p class="eyebrow">Identity redesign · live workbench</p><h2 id="motion-lab-title">Playable motion studies</h2><p>These are code-native SVG prototypes, not finished logos. Play, pause, and replay them here to judge the movement system before any direction replaces the current assets.</p></div><span class="lab-status">ROUND 02 · JUL 16</span></div>
+      <div class="motion-study-grid">
+        <article class="motion-study">
+          <div class="study-head"><div><span>01</span><strong>The Receiver</strong><small>Best mascot silhouette</small></div><a href="/showcase/overlays/identity-lab.html?concept=receiver" target="_blank">Full size</a></div>
+          <iframe data-motion-frame src="/showcase/overlays/identity-lab.html?concept=receiver" title="The Receiver animated identity study"></iframe>
+          <div class="motion-controls" role="group" aria-label="The Receiver playback controls"><button type="button" data-motion-action="play">Play</button><button type="button" data-motion-action="pause">Pause</button><button type="button" data-motion-action="replay">Replay</button></div>
+        </article>
+        <article class="motion-study">
+          <div class="study-head"><div><span>02</span><strong>The Traveling Pulse</strong><small>Best motion grammar</small></div><a href="/showcase/overlays/identity-lab.html?concept=pulse" target="_blank">Full size</a></div>
+          <iframe data-motion-frame src="/showcase/overlays/identity-lab.html?concept=pulse" title="The Traveling Pulse animated identity study"></iframe>
+          <div class="motion-controls" role="group" aria-label="The Traveling Pulse playback controls"><button type="button" data-motion-action="play">Play</button><button type="button" data-motion-action="pause">Pause</button><button type="button" data-motion-action="replay">Replay</button></div>
+        </article>
+        <article class="motion-study">
+          <div class="study-head"><div><span>03</span><strong>Patch Pal</strong><small>Best modular character system</small></div><a href="/showcase/overlays/identity-lab.html?concept=patch" target="_blank">Full size</a></div>
+          <iframe data-motion-frame src="/showcase/overlays/identity-lab.html?concept=patch" title="Patch Pal animated identity study"></iframe>
+          <div class="motion-controls" role="group" aria-label="Patch Pal playback controls"><button type="button" data-motion-action="play">Play</button><button type="button" data-motion-action="pause">Pause</button><button type="button" data-motion-action="replay">Replay</button></div>
+        </article>
+        <article class="motion-study synthesis">
+          <div class="study-head"><div><span>04</span><strong>Patch Signal</strong><small>Synthesis · icon plus motion rule</small></div><a href="/showcase/overlays/identity-lab.html?concept=clubmark" target="_blank">Full size</a></div>
+          <iframe data-motion-frame src="/showcase/overlays/identity-lab.html?concept=clubmark" title="Patch Signal animated identity study"></iframe>
+          <div class="motion-controls" role="group" aria-label="Patch Signal playback controls"><button type="button" data-motion-action="play">Play</button><button type="button" data-motion-action="pause">Pause</button><button type="button" data-motion-action="replay">Replay</button></div>
+        </article>
+      </div>
+      <p class="lab-note"><strong>Keyboard:</strong> open a study full size, then press Space to play/pause or R to replay. Reduced-motion preferences are respected automatically.</p>
     </section>
 
     <section class="progress-section" aria-labelledby="progress-title">
@@ -101,6 +128,25 @@
 
       <section class="form-card" aria-labelledby="identity-title">
         <div class="form-card-head"><span>02</span><div><h3 id="identity-title">Brand identity and recovery</h3><p>Needed for Cloudflare Access, forwarding, and platform ownership after the name is final.</p></div></div>
+        <div class="identity-feedback">
+          <p class="eyebrow">Visual identity workbench feedback</p>
+          <div class="fields two">
+            <label>Strongest motion study
+              <select name="brand.strongestStudy">
+                <option value="">Not selected yet</option>
+                <option value="receiver">01 · The Receiver</option>
+                <option value="pulse">02 · The Traveling Pulse</option>
+                <option value="patch">03 · Patch Pal</option>
+                <option value="clubmark">04 · Patch Signal</option>
+                <option value="none">None — keep exploring</option>
+              </select>
+            </label>
+            <label>Overall direction <select name="brand.directionConfidence"><option value="">Not selected</option><option value="strong">This has real potential</option><option value="mixed">Keep parts, rethink parts</option><option value="reject">Reject this round</option></select></label>
+            <label>What feels ownable or exciting? <textarea name="brand.keep" maxlength="800" rows="3" placeholder="Shape, movement, texture, attitude, mascot, colors…"></textarea></label>
+            <label>What still feels generic or wrong? <textarea name="brand.change" maxlength="800" rows="3" placeholder="Be blunt—this is the useful field."></textarea></label>
+          </div>
+          <label class="check"><input type="checkbox" name="brand.approveRefinement"><span><strong>Refinement only:</strong> use this feedback for another round; do not replace public assets yet</span></label>
+        </div>
         <div class="fields two">
           <label>Brand Google account status
             <select name="identity.brandGoogleChoice">

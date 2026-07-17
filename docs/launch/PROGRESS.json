@@ -17,10 +17,13 @@
     {
       "name": "Brand + production kit",
       "tasks": [
-        { "label": "Logo system and brand guide", "status": "done" },
-        { "label": "Hero art and platform assets", "status": "done" },
-        { "label": "Thumbnail and sponsor templates", "status": "done" },
-        { "label": "OBS scenes and browser overlays", "status": "done" },
+        { "label": "Audit and explicitly reject generic v1 identity", "status": "done" },
+        { "label": "Build four playable code-native identity studies", "status": "done" },
+        { "label": "Approve an ownable identity direction", "status": "blocked" },
+        { "label": "Finalize replacement logo system and brand guide", "status": "blocked" },
+        { "label": "Finalize replacement hero art and platform assets", "status": "blocked" },
+        { "label": "Rebuild thumbnail and sponsor templates", "status": "blocked" },
+        { "label": "Re-skin OBS scenes and browser overlays", "status": "blocked" },
         { "label": "Media kit and sponsor policy", "status": "done" }
       ]
     },
@@ -123,7 +126,9 @@
     {
       "name": "Animated intro/outro",
       "tasks": [
-        { "label": "Code-native animated intro and outro overlays", "status": "done" },
+        { "label": "Legacy code-native intro and outro retained for comparison", "status": "done" },
+        { "label": "Playable identity motion lab with four studies", "status": "done" },
+        { "label": "Rebuild intro and outro from approved identity", "status": "blocked" },
         { "label": "CC0 music/SFX provenance and audio validation", "status": "done" },
         { "label": "1080p, reduced-motion, safe-area, and compositor QA", "status": "done" }
       ]
