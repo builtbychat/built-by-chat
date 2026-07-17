@@ -19,6 +19,7 @@
       "tasks": [
         { "label": "Audit and explicitly reject generic v1 identity", "status": "done" },
         { "label": "Build four playable code-native identity studies", "status": "done" },
+        { "label": "Build Round 03 open-wildcard brand architecture", "status": "done" },
         { "label": "Approve an ownable identity direction", "status": "blocked" },
         { "label": "Finalize replacement logo system and brand guide", "status": "blocked" },
         { "label": "Finalize replacement hero art and platform assets", "status": "blocked" },

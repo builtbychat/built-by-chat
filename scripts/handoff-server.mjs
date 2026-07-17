@@ -13,6 +13,7 @@ const port = Number(process.env.HANDOFF_PORT || 4317);
 const maxBodyBytes = 256 * 1024;
 const showcaseRoots = new Map([
   ['/showcase/brand/', resolve(root, 'brand')],
+  ['/showcase/brand-docs/', resolve(root, 'docs/brand')],
   ['/showcase/overlays/', resolve(root, 'obs/overlays')],
   ['/brand/', resolve(root, 'apps/web/public/brand')]
 ]);

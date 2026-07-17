@@ -1,6 +1,8 @@
 const form = document.querySelector('#handoff-form');
 const motionLab = document.querySelector('.motion-lab');
+const wildcardShowcase = document.querySelector('.wildcard-showcase');
 const rejectedBrand = document.querySelector('.rejected-system');
+if (wildcardShowcase && rejectedBrand) rejectedBrand.before(wildcardShowcase);
 if (motionLab && rejectedBrand) rejectedBrand.before(motionLab);
 
 for (const control of document.querySelectorAll('[data-motion-action]')) {
