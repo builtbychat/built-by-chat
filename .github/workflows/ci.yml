@@ -18,7 +18,7 @@ jobs:
       - run: npm run check
       - run: npm audit --audit-level=high
       - run: npm run cf:dry-run
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: web-preview-${{ github.sha }}
           path: apps/web/dist/client
