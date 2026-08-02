@@ -12,6 +12,7 @@ tmp/
 coverage/
 recordings/
 backups/*.sql
+private/handoff/
 *.pem
 *.key
 *.mkv

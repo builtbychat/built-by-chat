@@ -17,7 +17,7 @@ export default tseslint.config(
     }
   },
   {
-    files: ['obs/overlays/**/*.js'],
+    files: ['obs/overlays/**/*.js', 'tools/handoff/**/*.js'],
     ...tseslint.configs.disableTypeChecked,
     languageOptions: { parserOptions: { projectService: false }, globals: globals.browser }
   }

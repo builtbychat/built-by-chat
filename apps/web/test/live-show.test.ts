@@ -1,5 +1,5 @@
 import { env } from 'cloudflare:test';
-import type { Poll } from '@built-by-chat/shared';
+import type { Poll } from '@tiny-signal-club/shared';
 import { describe, expect, it } from 'vitest';
 import { assertPollOpen } from '../worker/poll-core';
 

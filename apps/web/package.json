@@ -1,5 +1,5 @@
 {
-  "name": "@built-by-chat/web",
+  "name": "@tiny-signal-club/web",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -16,9 +16,10 @@
     "db:seed:local": "wrangler d1 execute built-by-chat --local --file ../../seeds/seed.sql"
   },
   "dependencies": {
-    "@built-by-chat/shared": "*",
+    "@tiny-signal-club/shared": "*",
     "@vitejs/plugin-react": "latest",
     "cloudflare": "latest",
+    "jose": "^6.2.3",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-router-dom": "^7.9.0",
@@ -26,9 +27,9 @@
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "latest",
+    "@types/node": "^24.1.0",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
-    "@types/node": "^24.1.0",
     "vitest": "latest",
     "wrangler": "latest"
   }

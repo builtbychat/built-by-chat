@@ -1,22 +1,21 @@
 BEGIN:VCALENDAR
 VERSION:2.0
-PRODID:-//Built by Chat//Season One//EN
+PRODID:-//Tiny Signal Club//Project One//EN
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
-UID:premiere-20260806@builtbychat.com
+UID:premiere-20260806@tinysignalclub
 DTSTAMP:20260716T180000Z
 DTSTART:20260807T000000Z
 DTEND:20260807T020000Z
-RRULE:FREQ=WEEKLY;COUNT=6;BYDAY=TH
-SUMMARY:Built by Chat — Live Build
-DESCRIPTION:The internet decides. We build it live.
+SUMMARY:Tiny Signal Club — Tiny Internet Town Live Build
+DESCRIPTION:Small signals become big, strange things. Project One is Tiny Internet Town.
 END:VEVENT
 BEGIN:VEVENT
-UID:townhall-20260809@builtbychat.com
+UID:modem-picnic-20260809@tinysignalclub
 DTSTAMP:20260716T180000Z
 DTSTART:20260809T200000Z
-DTEND:20260809T210000Z
-RRULE:FREQ=WEEKLY;COUNT=6;BYDAY=SU
-SUMMARY:Built by Chat — Playtest + Town Hall
+DTEND:20260809T213000Z
+SUMMARY:The Modem Picnic — Tiny Signal Club Playtest
+DESCRIPTION:Sunday playtest, town hall, and community signal check for Tiny Internet Town.
 END:VEVENT
 END:VCALENDAR

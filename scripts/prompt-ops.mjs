@@ -28,7 +28,7 @@ async function validate() {
   const evalIds = new Set();
   if (!Array.isArray(evals) || evals.length < 10) throw new Error('At least ten prompt eval cases are required.');
   for (const testCase of evals) {
-    if (!testCase.id || !testCase.category || !testCase.input || !testCase.expected || evalIds.has(testCase.id)) throw new Error('Each prompt eval needs a unique id, category, input, and expected behavior.');
+    if (!testCase.id || !testCase.category || !testCase.input || !testCase.expected || !testCase.expectedGate || !testCase.request || evalIds.has(testCase.id)) throw new Error('Each prompt eval needs a unique id, category, input, structured request, expected gate, and expected behavior.');
     evalIds.add(testCase.id);
   }
   console.log(`Validated ${names.length} prompt templates (${[...keys].join(', ')}) and ${evals.length} adversarial eval cases.`);

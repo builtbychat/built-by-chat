@@ -36,6 +36,10 @@ export async function hashIdentifier(secret: string, value: string, date = new D
   return hmac(secret, `${rotation}:${value}`);
 }
 
+export async function hashScopedIdentifier(secret: string, scope: string, value: string): Promise<string> {
+  return hmac(secret, `${scope}:${value}`);
+}
+
 export function cookieValue(request: Request, name: string): string | undefined {
   const cookies = request.headers.get('Cookie') ?? '';
   for (const item of cookies.split(';')) {

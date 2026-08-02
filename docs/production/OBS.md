@@ -1,6 +1,10 @@
 # OBS production setup
 
-Import `obs/built-by-chat-scenes.json`, then add local camera, microphone, display/window capture, and town browser sources to the named scenes. The collection is intentionally sanitized: it contains no service credentials, stream keys, camera identifiers, or local file paths.
+Import `obs/tiny-signal-club-scenes.json`, then add local camera, microphone, display/window capture, and town browser sources to the named scenes. The collection is intentionally sanitized: it contains no service credentials, stream keys, camera identifiers, or local file paths. `npm run obs:install-local` installs a separate local collection and 1080p30 profile with MKV recording and automatic MP4 remux without changing an existing profile or collection.
+
+On Nicholas’s current Mac, the separate collection and profile were installed on July 16, 2026 while OBS was closed. Select **Scene Collection → Tiny Signal Club** and **Profile → Tiny Signal Club**. The browser overlays point to the local repository so they can be checked before a hostname exists. The existing Untitled collection/profile remains unchanged. Installation does not add camera, microphone, display capture, Aitum outputs, or service credentials; those require an attended visual/audio checkpoint.
+
+Aitum Multistream 1.0.8 was installed as a per-user plugin on July 16, 2026 from the official GitHub release. The package SHA-256 matched `10850620fe0d85a36be092e8104524750a0031668031c66408c8c6f3ee8bf3d4`; Apple reported an Aitum LTD developer signature and trusted notarization, and the copied bundle passed strict code-signing verification. No root installer was run. YouTube/Twitch output creation and keys remain intentionally unconfigured.
 
 ## Scene intent
 

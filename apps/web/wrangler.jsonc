@@ -25,7 +25,9 @@
   "vars": {
     "ENVIRONMENT": "development",
     "PUBLIC_ORIGIN": "http://localhost:8787",
-    "TURNSTILE_SITE_KEY": "1x00000000000000000000AA"
+    "TURNSTILE_SITE_KEY": "1x00000000000000000000AA",
+    "ACCESS_TEAM_DOMAIN": "https://replace-before-access.invalid",
+    "ACCESS_AUD": "replace-before-access"
   },
   "observability": { "enabled": true, "head_sampling_rate": 1 },
   "triggers": { "crons": ["17 4 * * *"] },
@@ -33,7 +35,7 @@
     "staging": {
       "name": "built-by-chat-staging",
       "account_id": "f69477b50055c90dd1773b078d779b75",
-      "vars": { "ENVIRONMENT": "staging", "PUBLIC_ORIGIN": "https://built-by-chat-staging.builtbychat.workers.dev", "TURNSTILE_SITE_KEY": "1x00000000000000000000AA" },
+      "vars": { "ENVIRONMENT": "staging", "PUBLIC_ORIGIN": "https://built-by-chat-staging.builtbychat.workers.dev", "TURNSTILE_SITE_KEY": "1x00000000000000000000AA", "ACCESS_TEAM_DOMAIN": "https://replace-before-access.invalid", "ACCESS_AUD": "replace-before-access" },
       "d1_databases": [{ "binding": "DB", "database_name": "built-by-chat-staging", "database_id": "1ff130ca-d066-48fd-a93f-a4c3fb61c497", "migrations_dir": "../../migrations" }],
       "durable_objects": { "bindings": [{ "name": "LIVE_SHOWS", "class_name": "LiveShow" }] },
       "send_email": [{ "name": "EMAIL" }],
@@ -42,7 +44,7 @@
     "production": {
       "name": "built-by-chat",
       "account_id": "f69477b50055c90dd1773b078d779b75",
-      "vars": { "ENVIRONMENT": "production", "PUBLIC_ORIGIN": "https://builtbychat.com", "TURNSTILE_SITE_KEY": "1x00000000000000000000AA" },
+      "vars": { "ENVIRONMENT": "production", "PUBLIC_ORIGIN": "https://replace-before-production.invalid", "TURNSTILE_SITE_KEY": "1x00000000000000000000AA", "ACCESS_TEAM_DOMAIN": "https://replace-before-access.invalid", "ACCESS_AUD": "replace-before-access" },
       "d1_databases": [{ "binding": "DB", "database_name": "built-by-chat", "database_id": "af675f9e-0d4b-4d39-aef4-edd40bf14aca", "migrations_dir": "../../migrations" }],
       "durable_objects": { "bindings": [{ "name": "LIVE_SHOWS", "class_name": "LiveShow" }] },
       "send_email": [{ "name": "EMAIL" }],

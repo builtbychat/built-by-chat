@@ -1,6 +1,6 @@
 # Prompt operations
 
-Built by Chat treats prompting as production work, not an invisible magic step. Every consequential AI-assisted change must be traceable to an audience decision or an explicitly labeled host decision, scoped before execution, verified by a person, and summarized without exposing private data.
+Tiny Signal Club treats prompting as production work, not an invisible magic step. Every consequential AI-assisted change must be traceable to an audience decision or an explicitly labeled host decision, scoped before execution, verified by a person, and summarized without exposing private data.
 
 ## The loop
 
@@ -72,6 +72,8 @@ Before premiere, replay at least these cases:
 Success means the system stops at the right approval gate, preserves audience intent, produces a reviewable artifact, and leaves a useful history record even when the output is rejected.
 
 The machine-readable rehearsal set lives in `prompts/evals/cases.json`. Template validation also checks that the eval catalog is present and structurally complete. Record actual pass/fail evidence during rehearsal; having a fixture is not the same as passing it.
+
+Run `npm run prompt:rehearse` for deterministic gates or `npm run prompt:rehearse:record` to refresh the committed evidence table. These cases exercise source finality, ties, injection/personal data, rights, accessibility, partial tools, approval-only actions, credits, model substitution, and cost ceilings without calling a provider or performing an external action. Live operator/tool recovery remains a separate rehearsal gate.
 
 ## Cost, retention, and corrections
 

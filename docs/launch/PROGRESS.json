@@ -17,11 +17,39 @@
     {
       "name": "Brand + production kit",
       "tasks": [
-        { "label": "Logo system and brand guide", "status": "done" },
-        { "label": "Hero art and platform assets", "status": "done" },
-        { "label": "Thumbnail and sponsor templates", "status": "done" },
-        { "label": "OBS scenes and browser overlays", "status": "done" },
+        { "label": "Audit and explicitly reject generic v1 identity", "status": "done" },
+        { "label": "Build four playable code-native identity studies", "status": "done" },
+        { "label": "Build Round 03 open-wildcard brand architecture", "status": "done" },
+        { "label": "Approve an ownable identity direction", "status": "blocked" },
+        { "label": "Finalize replacement logo system and brand guide", "status": "blocked" },
+        { "label": "Finalize replacement hero art and platform assets", "status": "blocked" },
+        { "label": "Rebuild thumbnail and sponsor templates", "status": "blocked" },
+        { "label": "Re-skin OBS scenes and browser overlays", "status": "blocked" },
         { "label": "Media kit and sponsor policy", "status": "done" }
+      ]
+    },
+    {
+      "name": "Name decision + migration",
+      "tasks": [
+        { "label": "Identify current name collision and pause account claims", "status": "done" },
+        { "label": "Screen replacement shortlist across names, domains, and handles", "status": "done" },
+        { "label": "Approve Tiny Signal Club identity, handle, and tagline", "status": "done" },
+        { "label": "Run final logged-in handle and exact domain quote checks", "status": "blocked" },
+        { "label": "Complete repository-visible rename and full automated QA", "status": "done" },
+        { "label": "Migrate verified accounts, production services, email, and OBS", "status": "blocked" },
+        { "label": "Run renamed unlisted rehearsal and approve public transition", "status": "blocked" }
+      ]
+    },
+    {
+      "name": "Viewer + host experience",
+      "tasks": [
+        { "label": "Prioritized viewer journey and host-sustainability plan", "status": "done" },
+        { "label": "Local pilot-default, workload, moderation, and reliability handoff", "status": "done" },
+        { "label": "Implement first-time orientation and persistent objective/catch-up UI", "status": "done" },
+        { "label": "Implement private host cockpit clocks, cues, health, and emergency actions", "status": "done" },
+        { "label": "Implement privacy-safe feedback and four-week host workload review", "status": "done" },
+        { "label": "Confirm moderator staffing, commands, and escalation rehearsal", "status": "blocked" },
+        { "label": "Confirm platform latency, DVR, captions, and accessibility settings", "status": "blocked" }
       ]
     },
     {
@@ -36,7 +64,7 @@
         { "label": "Admin prompt history API", "status": "done" },
         { "label": "Private studio history UI", "status": "done" },
         { "label": "Adversarial prompt eval catalog", "status": "done" },
-        { "label": "Prompt failure and injection rehearsal evals", "status": "pending" }
+        { "label": "Prompt failure and injection rehearsal evals", "status": "done" }
       ]
     },
     {
@@ -46,9 +74,9 @@
         { "label": "Phaenex CLI authentication", "status": "done" },
         { "label": "MIT and reserved trademark split", "status": "done" },
         { "label": "Authorize admin:org scope", "status": "done" },
-        { "label": "Create builtbychat organization", "status": "done" },
+        { "label": "Create current legacy GitHub organization", "status": "done" },
         { "label": "Create and push public repository", "status": "done" },
-        { "label": "Enable protection and security settings", "status": "pending" }
+        { "label": "Enable protection and security settings", "status": "done" }
       ]
     },
     {
@@ -70,7 +98,7 @@
     {
       "name": "Accounts + domain",
       "tasks": [
-        { "label": "Fallback names and handles documented", "status": "done" },
+        { "label": "Replacement name shortlist and preliminary handle/domain screen", "status": "done" },
         { "label": "Approve domain vendor and exact price", "status": "blocked" },
         { "label": "Purchase approved domain", "status": "blocked" },
         { "label": "Create brand Google account and 2FA", "status": "blocked" },
@@ -99,9 +127,19 @@
     {
       "name": "Animated intro/outro",
       "tasks": [
-        { "label": "Code-native animated intro and outro overlays", "status": "done" },
+        { "label": "Legacy code-native intro and outro retained for comparison", "status": "done" },
+        { "label": "Playable identity motion lab with four studies", "status": "done" },
+        { "label": "Rebuild intro and outro from approved identity", "status": "blocked" },
         { "label": "CC0 music/SFX provenance and audio validation", "status": "done" },
         { "label": "1080p, reduced-motion, safe-area, and compositor QA", "status": "done" }
+      ]
+    },
+    {
+      "name": "Local launch handoff",
+      "tasks": [
+        { "label": "Categorized Codex and Nicholas remaining-work dashboard", "status": "done" },
+        { "label": "Localhost-only private save API and secret guardrails", "status": "done" },
+        { "label": "Responsive, persistence, security, and CI verification", "status": "done" }
       ]
     },
     {

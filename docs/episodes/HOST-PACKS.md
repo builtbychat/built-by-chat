@@ -106,7 +106,7 @@ If the site vote fails, freeze the decision and run the fallback—never substit
 
 **Promise:** Celebrate the accumulated history, build an accessible festival, credit contributors, and let the audience choose the next direction without erasing Season One.
 
-**Vote pack:** Poll A chooses festival theme: lantern walk, river picnic, or tiny inventions fair. Poll B chooses next direction: expand the town, start a new district, or shortlist a new Built by Chat project. The next-direction result is a roadmap commitment, not an instant unscoped build.
+**Vote pack:** Poll A chooses festival theme: lantern walk, river picnic, or tiny inventions fair. Poll B chooses next direction: expand the town, start a new district, or shortlist a new Tiny Signal Club project. The next-direction result is a roadmap commitment, not an instant unscoped build.
 
 **Build beats:** Festival decorations with reduced-motion alternative, event schedule, season timeline, verified credit roll, final versioned snapshot. Acceptance: credits from approved records only, no paid tier priority, timeline links immutable results, final backup/export completes before patch-note approval.
 

@@ -1,8 +1,8 @@
-# Built by Chat
+# Tiny Signal Club
 
-**The internet decides. We build it live.**
+**Small signals become big, strange things.**
 
-Built by Chat is a public, audience-directed live-building studio hosted by Phaenex. Its first project, **Tiny Internet Town**, is an accessible illustrated town whose buildings, residents, civic choices, and strange little problems are chosen through protected live votes.
+Tiny Signal Club is a public, audience-directed live-making studio hosted by Phaenex. Small signals—ideas, prompts, votes, tests, and contributions—become real projects in public. Project One, **Tiny Internet Town**, is an accessible illustrated town whose buildings, residents, civic choices, and strange little problems are chosen through protected live votes. Future club projects are not limited to towns or software.
 
 Temporary visual test site: [built-by-chat.vercel.app](https://built-by-chat.vercel.app). This static $0 preview does not enable voting, submissions, studio mutations, or the Cloudflare real-time backend.
 
@@ -10,15 +10,17 @@ Temporary visual test site: [built-by-chat.vercel.app](https://built-by-chat.ver
 
 - Private rehearsal: Thursday, July 30, 2026
 - Public premiere: Thursday, August 6, 2026 at 7:00 PM CT
-- First playtest/town hall: Sunday, August 9, 2026 at 3:00 PM CT
+- First **Modem Picnic** playtest/town hall: Sunday, August 9, 2026 at 3:00 PM CT
 - Thursdays: two-hour live build simulcast to YouTube and Twitch
-- Sundays: playtest and town hall
+- Sundays: **The Modem Picnic** playtest and town hall
 
 No account is required to participate. Support is optional and never buys votes or creative control.
 
 ## Architecture
 
 This npm-workspaces monorepo uses React, Vite, Cloudflare Workers Static Assets, D1, and one SQLite-backed Durable Object per show. The Durable Object persists poll state and the latest browser selection before broadcasting WebSocket events through the Hibernation API. Closing a poll writes an immutable hashed result snapshot to D1.
+
+The private Studio uses persisted show phases and run-of-show cues, provides one host clock plus health/emergency controls, tracks a private four-week workload window, and sends durable catch-up state to viewers and OBS. A post-show pulse stores replaceable pseudonymous feedback for 90 days. Production Studio APIs validate the signed Cloudflare Access JWT in the Worker in addition to the edge policy; placeholder Access configuration fails closed.
 
 ```text
 apps/web           React interface + Worker + Durable Object
