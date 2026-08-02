@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Club Bench mono</title>
+  <desc id="desc">One-color stepped bench with member pills.</desc>
+  <path fill="#171613" d="M36 56H128V100H220V208H36Z"/>
+  <rect x="140" y="62" width="48" height="28" rx="14" fill="#171613" opacity=".5" transform="rotate(-6 164 76)"/>
+  <rect x="178" y="68" width="40" height="24" rx="12" fill="none" stroke="#171613" stroke-width="3" opacity=".35"/>
+  <rect x="204" y="72" width="32" height="20" rx="10" fill="none" stroke="#171613" stroke-width="2.5" opacity=".22"/>
+</svg>

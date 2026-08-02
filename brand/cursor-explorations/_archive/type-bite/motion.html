@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tiny Scale · Type Bite (finalist)</title>
+  <link rel="stylesheet" href="motion.css">
+</head>
+<body>
+  <main class="board" data-motion-root>
+    <header class="top">
+      <p class="label"><i></i>Tiny Scale · Finalist · Type Bite</p>
+      <p class="phase" data-phase>WHOLE</p>
+    </header>
+
+    <svg class="mark" viewBox="0 0 256 256" role="img" aria-label="Period starts whole, TINY bites a chunk out, then seats in the wound">
+      <!-- Stage 1: complete period -->
+      <path class="body-full" fill="#171613" d="M44 44h168v168H44z"/>
+      <!-- Stage 2: bitten period (tooth-marked scoop) -->
+      <path class="body-bitten" fill="#171613" opacity="0" d="
+        M44 44
+        H146
+        V68
+        C158 68 172 78 172 94
+        C172 110 158 120 146 120
+        V120
+        H212
+        V212
+        H44
+        Z"/>
+      <!-- The chunk that gets bitten off and spat out -->
+      <path class="crumb" fill="#171613" opacity="0" d="
+        M146 44
+        H212
+        V120
+        H146
+        C158 120 172 110 172 94
+        C172 78 158 68 146 68
+        Z"/>
+      <!-- Jaw / teeth cue (opens then snaps) -->
+      <g class="jaws" opacity="0" fill="none" stroke="#ff5b3d" stroke-width="3" stroke-linecap="round">
+        <path class="jaw-top" d="M168 48c18 4 34 18 38 36"/>
+        <path class="jaw-bot" d="M168 128c18-4 34-18 38-36"/>
+      </g>
+      <!-- TINY: the thing doing the biting -->
+      <g class="tiny" fill="#ff5b3d" transform="translate(150 72)" opacity="0">
+        <path class="L0" d="M0 0h17v3.5H10.5v18.5H6.5V3.5H0z"/>
+        <path class="L1" d="M21 0h9v3.5h-2.75v15H30v3.5H21v-3.5h2.75v-15H21z"/>
+        <path class="L2" d="M34 0h3.5v22H34zm3.5 0 11 22H45L34 0zm14.5 0H52v22h-3.5z"/>
+        <path class="L3" d="M56 0h3.75l5 11 5-11H73.5L65.5 14.5V22h-3.5v-7.5z"/>
+      </g>
+    </svg>
+
+    <div class="copy">
+      <span>VERSION 3 · FINALIST</span>
+      <strong>Tiny takes<br>a bite.</strong>
+      <p>Period starts whole. TINY chomps the corner — a real chunk comes off — then the word sits in the wound it made.</p>
+      <ul class="rules">
+        <li>Bite is physical, not a pre-cut notch</li>
+        <li>Letters are the teeth / contribution</li>
+        <li>Lockup starts at SIGNAL</li>
+      </ul>
+    </div>
+
+    <aside class="proofs" aria-label="Scale and application proofs">
+      <div class="proof-block">
+        <span>SIZES</span>
+        <div class="sizes">
+          <img src="mark.svg" width="16" height="16" alt="">
+          <img src="mark.svg" width="24" height="24" alt="">
+          <img src="mark.svg" width="32" height="32" alt="">
+          <img src="mark.svg" width="48" height="48" alt="">
+        </div>
+      </div>
+      <div class="proof-block">
+        <span>MONO</span>
+        <div class="mono-chip"><img src="mark-mono.svg" width="40" height="40" alt=""></div>
+        <div class="mono-chip dark"><img src="mark-mono.svg" width="40" height="40" alt=""></div>
+      </div>
+      <div class="proof-block">
+        <span>AVATAR</span>
+        <div class="avatar"><img src="mark.svg" width="52" height="52" alt=""></div>
+      </div>
+      <div class="proof-block stamp">
+        <span>DARK LOCKUP CROP</span>
+        <div class="lock-crop"><img src="lockup.svg" alt=""></div>
+      </div>
+    </aside>
+
+    <div class="wordstack" aria-hidden="true">
+      <em>already bitten</em>
+      <b>SIGNAL</b>
+      <b>CLUB<span>.</span></b>
+    </div>
+
+    <p class="tag">Small signals become big, strange things.</p>
+  </main>
+  <script src="../_motion-engine.js"></script>
+  <script src="motion.js"></script>
+</body>
+</html>

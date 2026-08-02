@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club Margin Note lockup</title>
+  <desc id="desc">Margin bracket mark beside stacked Tiny Signal Club wordmark.</desc>
+  <rect width="1000" height="300" fill="#171613"/>
+  <g transform="translate(40 30) scale(.95)">
+    <g fill="#f1eadb">
+      <rect x="48" y="44" width="28" height="152" rx="2"/>
+      <rect x="48" y="44" width="92" height="24" rx="2"/>
+      <rect x="48" y="172" width="92" height="24" rx="2"/>
+    </g>
+    <rect x="128" y="98" width="34" height="34" rx="2" fill="#ff5b3d" transform="rotate(11 145 115)"/>
+  </g>
+  <g fill="#f1eadb" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="320" y="78" font-family="ui-monospace, monospace" font-size="26" letter-spacing="7"><tspan fill="#ff5b3d">TINY</tspan></text>
+    <text x="312" y="178" font-size="118" letter-spacing="-7">SIGNAL</text>
+    <text x="312" y="268" font-size="118" letter-spacing="-7">CLUB<tspan fill="#c8ef52">.</tspan></text>
+  </g>
+</svg>

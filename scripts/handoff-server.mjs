@@ -15,6 +15,7 @@ const showcaseRoots = new Map([
   ['/showcase/brand/', resolve(root, 'brand')],
   ['/showcase/brand-docs/', resolve(root, 'docs/brand')],
   ['/showcase/overlays/', resolve(root, 'obs/overlays')],
+  ['/showcase/cursor-explorations/', resolve(root, 'brand/cursor-explorations')],
   ['/brand/', resolve(root, 'apps/web/public/brand')]
 ]);
 
@@ -77,6 +78,7 @@ function showcaseHeaders(path) {
 }
 
 function sendJson(response, status, value) {
+  if (response.headersSent) return;
   response.writeHead(status, headers());
   response.end(JSON.stringify(value));
 }
@@ -143,8 +145,15 @@ const server = createServer(async (request, response) => {
         if (!url.pathname.startsWith(prefix)) continue;
         const candidate = resolve(assetRoot, decodeURIComponent(url.pathname.slice(prefix.length)));
         if (!candidate.startsWith(`${assetRoot}/`)) return sendJson(response, 403, { error: 'invalid_asset_path' });
+        let data;
+        try {
+          data = await readFile(candidate);
+        } catch (error) {
+          if (error?.code === 'ENOENT') return sendJson(response, 404, { error: 'not_found' });
+          throw error;
+        }
         response.writeHead(200, showcaseHeaders(candidate));
-        response.end(await readFile(candidate));
+        response.end(data);
         return;
       }
     }

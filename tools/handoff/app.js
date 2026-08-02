@@ -1,14 +1,66 @@
 const form = document.querySelector('#handoff-form');
-const motionLab = document.querySelector('.motion-lab');
-const wildcardShowcase = document.querySelector('.wildcard-showcase');
-const rejectedBrand = document.querySelector('.rejected-system');
-if (wildcardShowcase && rejectedBrand) rejectedBrand.before(wildcardShowcase);
-if (motionLab && rejectedBrand) rejectedBrand.before(motionLab);
+
+function loadPanelFrames(panel) {
+  if (!panel) return;
+  for (const frame of panel.querySelectorAll('iframe[data-src]')) {
+    if (!frame.getAttribute('src')) frame.setAttribute('src', frame.dataset.src);
+  }
+}
+
+function activateBrandTab(tabId, { focus = false } = {}) {
+  const tabs = [...document.querySelectorAll('[data-brand-tab]')];
+  const panels = [...document.querySelectorAll('[data-brand-panel]')];
+  const selected = tabs.find((tab) => tab.dataset.brandTab === tabId) || tabs[0];
+  if (!selected) return;
+  for (const tab of tabs) {
+    const on = tab === selected;
+    tab.setAttribute('aria-selected', on ? 'true' : 'false');
+    tab.tabIndex = on ? 0 : -1;
+  }
+  for (const panel of panels) {
+    const on = panel.dataset.brandPanel === selected.dataset.brandTab;
+    panel.hidden = !on;
+    if (on) loadPanelFrames(panel);
+  }
+  if (focus) selected.focus();
+  const url = new URL(location.href);
+  url.hash = `brand-${selected.dataset.brandTab}`;
+  history.replaceState(null, '', url);
+}
+
+const brandTabs = document.querySelectorAll('[data-brand-tab]');
+for (const tab of brandTabs) {
+  tab.addEventListener('click', () => activateBrandTab(tab.dataset.brandTab));
+  tab.addEventListener('keydown', (event) => {
+    const tabs = [...brandTabs];
+    const index = tabs.indexOf(tab);
+    if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+      event.preventDefault();
+      const next = tabs[(index + (event.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      activateBrandTab(next.dataset.brandTab, { focus: true });
+    }
+    if (event.key === 'Home') { event.preventDefault(); activateBrandTab(tabs[0].dataset.brandTab, { focus: true }); }
+    if (event.key === 'End') { event.preventDefault(); activateBrandTab(tabs.at(-1).dataset.brandTab, { focus: true }); }
+  });
+}
+
+const hashTab = location.hash.replace(/^#brand-/, '');
+activateBrandTab(hashTab && document.querySelector(`[data-brand-tab="${hashTab}"]`) ? hashTab : 'corner-seat');
 
 for (const control of document.querySelectorAll('[data-motion-action]')) {
   control.addEventListener('click', () => {
     const frame = control.closest('.motion-study')?.querySelector('[data-motion-frame]');
-    frame?.contentWindow?.postMessage({ channel: 'identity-lab', action: control.dataset.motionAction }, location.origin);
+    frame?.contentWindow?.postMessage({ channel: 'tiny-signal-ident', action: control.dataset.motionAction }, location.origin);
+  });
+}
+
+for (const control of document.querySelectorAll('[data-overlay-replay]')) {
+  control.addEventListener('click', () => {
+    const frame = control.closest('article')?.querySelector('[data-overlay-frame]');
+    if (!frame) return;
+    const url = new URL(frame.src);
+    url.searchParams.set('replay', Date.now().toString());
+    frame.src = url;
   });
 }
 const saveButton = document.querySelector('#save-button');

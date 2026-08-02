@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Modular void geometry study</title>
+  <desc id="desc">Five non-radial pieces around an irregular central void with one detached contribution.</desc>
+  <g fill="#171613">
+    <rect x="98" y="22" width="44" height="58" rx="4"/>
+    <path d="M168 58h46v54h-34l-12-20z"/>
+    <rect x="154" y="132" width="58" height="40" rx="4" transform="rotate(18 183 152)"/>
+    <path d="M78 148h58v54H54l24-54z"/>
+    <rect x="34" y="72" width="50" height="46" rx="4" transform="rotate(-12 59 95)"/>
+  </g>
+  <rect x="188" y="28" width="28" height="28" rx="2" fill="#ff5b3d" transform="rotate(9 202 42)"/>
+  <!-- central void is the unfilled irregular gap between pieces -->
+</svg>

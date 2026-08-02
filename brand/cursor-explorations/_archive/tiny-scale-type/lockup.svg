@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club Tiny Scale Type lockup</title>
+  <desc id="desc">Notched period mark beside a stacked Tiny Signal Club wordmark.</desc>
+  <rect width="1000" height="300" fill="#f1eadb"/>
+  <g transform="translate(40 30) scale(.95)">
+    <path fill="#171613" d="M52 52h96v40h40v96H52z"/>
+    <rect x="156" y="48" width="28" height="28" rx="2" fill="#ff5b3d" transform="rotate(8 170 62)"/>
+  </g>
+  <g fill="#171613" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="320" y="78" font-family="ui-monospace, monospace" font-size="28" letter-spacing="8"><tspan fill="#ff5b3d">TINY</tspan></text>
+    <text x="312" y="178" font-size="118" letter-spacing="-7">SIGNAL</text>
+    <text x="312" y="268" font-size="118" letter-spacing="-7">CLUB<tspan fill="#c8ef52">.</tspan></text>
+  </g>
+</svg>

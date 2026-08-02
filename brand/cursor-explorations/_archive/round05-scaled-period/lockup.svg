@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" role="img" aria-labelledby="title desc">
+  <title id="title">Scaled Period lockup</title>
+  <desc id="desc">Notched period beside Tiny set small and Signal Club set huge.</desc>
+  <rect width="1000" height="320" fill="#f1eadb"/>
+  <g transform="translate(36 40) scale(.9)">
+    <path fill="#171613" d="M40 40h110v48h50v112H40z"/>
+    <rect x="158" y="36" width="36" height="36" rx="2" fill="#ff5b3d" transform="rotate(6 176 54)"/>
+  </g>
+  <g fill="#171613" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="300" y="78" font-family="ui-monospace, monospace" font-size="22" letter-spacing="10" fill="#ff5b3d">TINY</text>
+    <text x="292" y="188" font-size="128" letter-spacing="-8">SIGNAL</text>
+    <text x="292" y="288" font-size="128" letter-spacing="-8">CLUB<tspan fill="#c8ef52">.</tspan></text>
+  </g>
+</svg>

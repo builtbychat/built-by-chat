@@ -1,1 +1,19 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080"><rect width="1920" height="1080" fill="#0b1026"/><image href="../raster/hero-town.png" width="1620" height="1080" x="300" opacity=".48"/><rect width="1180" height="1080" fill="url(#g)"/><defs><linearGradient id="g"><stop offset="65%" stop-color="#0b1026"/><stop offset="100%" stop-color="#0b1026" stop-opacity="0"/></linearGradient></defs><text x="130" y="350" fill="#ff7b72" font-family="DM Mono,monospace" font-size="28">TINY SIGNAL CLUB · SIGNAL QUIET</text><text x="130" y="490" fill="#eef6ff" font-family="Manrope,Arial" font-size="90" font-weight="800">See you Thursday.</text><text x="130" y="575" fill="#5de4e7" font-family="Manrope,Arial" font-size="38" font-weight="700">Live Build · 7:00 PM Central</text><text x="130" y="650" fill="#eef6ff" font-family="DM Mono,monospace" font-size="25">Small signals become big, strange things.</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club stream offline card</title>
+  <desc id="desc">Town illustration with a restrained return schedule and brand wordmark.</desc>
+  <defs>
+  <style>
+    @font-face { font-family: Bricolage; src: url('../fonts/bricolage-grotesque/BricolageGrotesque-Variable.ttf'); font-weight: 200 800; }
+    .display { font-family: Bricolage, Arial Black, sans-serif; font-weight: 800; font-variation-settings: 'opsz' 96, 'wdth' 84, 'wght' 800; }
+    .meta { font-family: ui-monospace, Menlo, monospace; font-weight: 800; letter-spacing: .14em; }
+  </style>
+  <linearGradient id="shade" x1="0" x2="1"><stop offset="0" stop-color="#171613" stop-opacity="1"/><stop offset=".58" stop-color="#171613" stop-opacity=".96"/><stop offset="1" stop-color="#171613" stop-opacity=".12"/></linearGradient>
+</defs>
+  <image href="../raster/hero-town.png" width="1920" height="1080" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1920" height="1080" fill="url(#shade)"/>
+  <image href="../svg/logo-wordmark-dark.svg" x="120" y="130" width="720" height="200"/>
+  <text x="120" y="575" fill="#f1eadb" class="display" font-size="132">CHANNEL CLOSED.</text>
+  <rect x="120" y="635" width="840" height="12" fill="#ff5b3d"/>
+  <text x="120" y="735" fill="#c8ef52" class="display" font-size="72">BACK THURSDAY · 7 PM CT</text>
+  <text x="124" y="815" fill="#f1eadb" opacity=".64" class="meta" font-size="24">TOWN HALL SUNDAY · 3 PM CT</text>
+</svg>

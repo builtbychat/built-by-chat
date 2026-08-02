@@ -4,12 +4,19 @@ Tagline: **Small signals become big, strange things.**
 
 ## Brand files
 
-- `svg/`: dark, light, monochrome, icon, wordmark, and favicon masters.
+- `svg/`: Tiny / Big dark, light, monochrome, outlined wordmark, SC monogram, and favicon masters.
+- `fonts/bricolage-grotesque/`: official variable display font and SIL Open Font License.
+- `identity/`: complete local specimen and controllable animated ident.
 - `raster/hero-town.png`: illustrated Project One hero without embedded text.
+- `raster/exports/`: upload-ready PNG avatar, banners, social preview, thumbnail, offline card, sponsor cover, and Twitch panels generated from the SVG masters.
 - `templates/`: editable YouTube, Twitch, Discord, GitHub, thumbnail, offline, and sponsor-cover SVGs.
 - `BRAND-GUIDE.md`: palette, typography, spacing, voice, and usage rules.
 
+The retired speech-bubble logo and exploratory square/seat/wildcard studies are not public identity assets. They remain only in the documented exploration archive.
+
 Keep logos and platform typography code-native. Export PNG copies from the SVG masters only at the platform’s required dimensions. Tiny Signal Club names, marks, characters, and original media remain reserved under `TRADEMARKS.md`.
+
+Regenerate vector masters with `python3 scripts/build-brand-vectors.py`, platform masters with `python3 scripts/build-brand-templates.py`, and every PNG with `npm run brand:raster:export`; do not hand-edit generated copies.
 
 ## Animated overlays
 

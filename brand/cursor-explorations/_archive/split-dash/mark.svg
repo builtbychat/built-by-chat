@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club Split Dash mark</title>
+  <desc id="desc">A heavy horizontal dash broken by a gap, with a persimmon contribution bridging the break.</desc>
+  <rect x="28" y="98" width="72" height="44" rx="4" fill="#171613"/>
+  <rect x="140" y="98" width="72" height="44" rx="4" fill="#171613"/>
+  <rect x="108" y="104" width="24" height="32" rx="2" fill="#ff5b3d" transform="rotate(-8 120 120)"/>
+</svg>

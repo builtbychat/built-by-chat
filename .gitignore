@@ -13,6 +13,7 @@ coverage/
 recordings/
 backups/*.sql
 private/handoff/
+private/rehearsal-sims/
 *.pem
 *.key
 *.mkv

@@ -1,0 +1,14 @@
+.applications { padding:110px 0; border-bottom:1px solid #4c483f; }
+.application-grid { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:45px; }
+.application-grid figure { display:grid; grid-template-rows:auto auto; margin:0; overflow:hidden; border:1px solid #4c483f; background:#24221e; }
+.application-grid .app-wide { grid-column:1/-1; }
+.application-grid figure img,.application-grid figure iframe { width:100%; height:auto; object-fit:contain; border:0; background:#171613; }
+.application-grid figure iframe { aspect-ratio:16/9; }
+.application-grid .app-twitch iframe { aspect-ratio:5/2; }
+.application-grid .app-github iframe { aspect-ratio:2/1; }
+.application-grid .app-icon img { width:min(66%,360px); height:auto; place-self:center; }
+.application-grid figcaption { padding:12px 14px; background:#24221e; color:#bdb4a4; font:800 11px monospace; letter-spacing:.08em; }
+@media(max-width:800px) {
+  .application-grid { grid-template-columns:1fr; }
+  .application-grid .app-wide { grid-column:auto; }
+}

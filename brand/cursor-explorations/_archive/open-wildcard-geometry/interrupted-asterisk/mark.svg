@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Interrupted asterisk geometry study</title>
+  <desc id="desc">Typographic six-stroke asterisk with one arm visibly broken and a detached contribution in the gap.</desc>
+  <g fill="none" stroke="#171613" stroke-width="22" stroke-linecap="square">
+    <path d="M120 28v70"/>
+    <path d="M120 142v70"/>
+    <path d="M28 120h70"/>
+    <path d="M142 120h70"/>
+    <path d="M48 48l49 49"/>
+    <!-- intentional break on NE diagonal: only outer half drawn -->
+    <path d="M168 48l-18 18"/>
+  </g>
+  <rect x="176" y="36" width="26" height="26" rx="2" fill="#ff5b3d" transform="rotate(14 189 49)"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 340" role="img" aria-labelledby="title desc">
+  <title id="title">Corner Seat lockup</title>
+  <desc id="desc">Corner-seat mark with Tiny as scale caption, Signal Club as the display stack, acid period echo.</desc>
+  <rect width="1080" height="340" fill="#f1eadb"/>
+  <g transform="translate(28 28)">
+    <path fill="#171613" d="M44 44h112v68h68v100H44z"/>
+    <rect x="164" y="56" width="44" height="44" rx="3" fill="#ff5b3d" transform="rotate(4.5 186 78)"/>
+  </g>
+  <g fill="#171613" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="310" y="78" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" letter-spacing="14" fill="#ff5b3d">TINY</text>
+    <text x="300" y="188" font-size="132" letter-spacing="-9">SIGNAL</text>
+    <text x="300" y="298" font-size="132" letter-spacing="-9">CLUB<tspan fill="#c8ef52">.</tspan></text>
+  </g>
+  <text x="310" y="318" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="3" fill="#3157ff">SMALL SIGNALS BECOME BIG, STRANGE THINGS.</text>
+</svg>

@@ -1,0 +1,72 @@
+@font-face {
+  font-family: Bricolage;
+  src: url('/brand/fonts/BricolageGrotesque-Variable.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 200 800;
+}
+
+:root {
+  --midnight: #171613;
+  --midnight-soft: #24221e;
+  --cyan: #c8ef52;
+  --coral: #ff5b3d;
+  --cream: #f1eadb;
+  --ink: #171613;
+}
+
+body { font-family: Bricolage, Arial, sans-serif; }
+
+.sky {
+  background:
+    linear-gradient(90deg, rgb(23 22 19 / 92%) 0 35%, rgb(23 22 19 / 56%) 62%, rgb(49 87 255 / 30%)),
+    #171613;
+}
+
+.stars { opacity: .24; }
+.grid { display: none; }
+.town { opacity: .68; filter: saturate(.9) contrast(1.06) brightness(.64); }
+.vignette { background: linear-gradient(90deg, rgb(23 22 19 / 88%), transparent 55%, rgb(23 22 19 / 22%)), linear-gradient(0deg, rgb(23 22 19 / 64%), transparent 44%); }
+.frame { border-color: rgb(241 234 219 / 24%); border-radius: 0; box-shadow: none; }
+.corner { display: none; }
+
+.brand-lockup { text-align: left; }
+.logo.wordmark-logo { width: min(790px, 64vw); height: auto; aspect-ratio: auto; margin-inline: 0; }
+.eyebrow { color: var(--coral); }
+
+h1 {
+  font-family: Bricolage, Arial, sans-serif;
+  font-weight: 800;
+  font-variation-settings: 'opsz' 96, 'wdth' 84, 'wght' 800;
+  letter-spacing: -.025em;
+  word-spacing: .1em;
+  text-align: left;
+}
+
+h1 .accent { margin-left: .14em; }
+
+.tagline,
+.outro .next-card {
+  border-color: rgb(241 234 219 / 32%);
+  border-radius: 0;
+  background: rgb(23 22 19 / 88%);
+}
+
+.tagline { margin-left: 0; }
+.tagline strong, .next-card .date { color: var(--cyan); }
+.outro .next-card { margin-left: 0; }
+.status-row { border-top: 1px solid rgb(241 234 219 / 22%); padding-top: 18px; }
+
+body.preview { --safe-x: 28px; --safe-y: 22px; }
+body.preview .content { padding: 8vh 9vw; }
+body.preview .brand-lockup { width: 82vw; }
+body.preview .logo.wordmark-logo { width: min(510px, 58vw); }
+body.preview .eyebrow { margin: 12px 0 7px; font-size: clamp(8px, 1.5vw, 13px); }
+body.preview h1 { font-size: clamp(34px, 7.2vw, 66px); }
+body.preview .tagline { margin-top: 14px; padding: 8px 12px; font-size: clamp(11px, 2vw, 17px); }
+body.preview .status-row { display: none; }
+body.preview.outro .brand-lockup { width: 86vw; }
+body.preview.outro h1 { font-size: clamp(30px, 6.3vw, 58px); }
+body.preview.outro .next-card { width: 82vw; margin-top: 14px; padding: 10px 14px; gap: 5px 12px; }
+body.preview .next-card .kicker { font-size: 9px; }
+body.preview .next-card .event { font-size: clamp(13px, 2.4vw, 22px); }
+body.preview .next-card .date { font-size: clamp(10px, 1.6vw, 15px); }

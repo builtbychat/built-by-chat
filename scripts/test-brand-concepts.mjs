@@ -2,57 +2,59 @@ import { readFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
 const root = resolve(import.meta.dirname, '..');
-const conceptFiles = [
-  'brand/concepts/open-wildcard/mark.svg',
-  'brand/concepts/open-wildcard/mark-mono.svg',
-  'brand/concepts/open-wildcard/lockup.svg',
-  'obs/overlays/wildcard-lab.html'
+const read = (file) => readFile(resolve(root, file), 'utf8');
+const icons = ['dark', 'light', 'mono'].map((theme) => `brand/svg/logo-icon-${theme}.svg`);
+const wordmarks = ['dark', 'light', 'mono'].map((theme) => `brand/svg/logo-wordmark-${theme}.svg`);
+
+for (const file of [...icons, ...wordmarks]) {
+  const source = await read(file);
+  if (source.includes('<text')) throw new Error(`${file}: logo must use exact outlined geometry, not live text`);
+  if ((source.match(/<path\b/g) || []).length < 5) throw new Error(`${file}: outlined Bricolage letter geometry is incomplete`);
+  if (/M181 58C164 38|stroke-width="38"|speech bubble/i.test(source)) throw new Error(`${file}: rejected Open Channel or speech-bubble geometry remains`);
+}
+
+for (const file of icons) {
+  const source = await read(file);
+  if (!source.includes('scale monogram') || !source.includes('Signal Club monogram')) throw new Error(`${file}: scale-monogram accessibility copy is missing`);
+}
+
+for (const file of wordmarks) {
+  const source = await read(file);
+  if (!source.includes('deliberately small') || !source.includes('<rect x="20" y="25"')) throw new Error(`${file}: Tiny / Big hierarchy is missing`);
+}
+
+const favicon = await read('brand/svg/favicon.svg');
+if (!favicon.includes('rx="44"') || !favicon.includes('#3157ff') || !favicon.includes('#ff5b3d') || favicon.includes('<text')) throw new Error('Favicon is not the simplified outlined Tiny-T / SC mark.');
+
+const identity = await read('brand/identity/index.html');
+if (!identity.includes('Tiny is a scale rule.') || !identity.includes('REAL-WORLD SIZES') || /style="/i.test(identity)) throw new Error('Identity specimen is incomplete or violates the local CSP.');
+
+const ident = await read('brand/identity/ident.html');
+const identCss = await read('brand/identity/ident.css');
+const identScript = await read('brand/identity/ident.js');
+if (!ident.includes('ONE VIEWER SIGNAL') || !ident.includes('ADD A NIGHT MARKET') || !ident.includes('BUILT + TESTED') || !ident.includes('data-animated')) throw new Error('Animated ident does not show a real input becoming a verified result.');
+if (!identCss.includes('infinite both') || !identCss.includes('body:not(.force-motion)') || !identCss.includes('body.reduced')) throw new Error('Animated ident must loop and preserve explicit full/reduced motion modes.');
+if (!identScript.includes("channel !== 'tiny-signal-ident'") || !identScript.includes('event.origin !== location.origin') || !identScript.includes("motion === 'full'")) throw new Error('Animated ident controls or full-motion review mode are incomplete.');
+
+const platformTemplates = [
+  'youtube-banner.svg', 'twitch-banner.svg', 'github-social-preview.svg', 'stream-offline.svg',
+  'thumbnail.svg', 'sponsor-deck-cover.svg', 'discord-icon.svg'
 ];
-
-function circularDistance(a, b) {
-  const difference = Math.abs(a - b) % 360;
-  return Math.min(difference, 360 - difference);
+for (const name of platformTemplates) {
+  const source = await read(`brand/templates/${name}`);
+  if (!source.includes('#3157ff') && !source.includes('#171613')) throw new Error(`${name}: approved primary field is missing`);
+  if (name === 'discord-icon.svg') {
+    if (!source.includes('../svg/logo-icon-dark.svg')) throw new Error('discord-icon.svg: outlined monogram reference is missing');
+  } else if (!source.includes('#f1eadb') || !source.includes('#ff5b3d')) throw new Error(`${name}: cream/coral identity contrast is missing`);
+  if (!source.includes('Bricolage') && name !== 'discord-icon.svg') throw new Error(`${name}: packaged display system is missing`);
+  if (/#0b1026|#5de4e7|#ff7b72/i.test(source)) throw new Error(`${name}: retired palette remains`);
 }
 
-function armAngles(source, file) {
-  const rotations = [...source.matchAll(/rotate\((\d+) 120 120\)/g)].map((match) => Number(match[1]));
-  const unique = [...new Set([0, ...rotations])].sort((a, b) => a - b);
-  if (unique.length !== 5) throw new Error(`${file}: expected exactly five unique arm angles, found ${unique.join(', ')}`);
-  return unique;
-}
+const motionCss = await read('obs/overlays/motion.css');
+const motionScript = await read('obs/overlays/motion.js');
+if (!motionCss.includes('body:not(.force-motion)') || !motionScript.includes("params.get('motion') === 'full'")) throw new Error('OBS review scenes do not provide explicit full-motion playback.');
 
-function squareAngle(source, file) {
-  const tags = [...source.matchAll(/<rect\b[^>]*>/g)].map((match) => match[0]);
-  const square = tags.find((tag) => tag.includes('loose-signal') || tag.includes('rotate(12 199 55)'));
-  if (!square) throw new Error(`${file}: detached signal square geometry was not found`);
-  const attribute = (name) => {
-    const match = square.match(new RegExp(`${name}="(\\d+)"`));
-    if (!match) throw new Error(`${file}: detached square is missing ${name}`);
-    return Number(match[1]);
-  };
-  const x = attribute('x');
-  const y = attribute('y');
-  const width = attribute('width');
-  const height = attribute('height');
-  const centerX = x + width / 2;
-  const centerY = y + height / 2;
-  return (Math.atan2(centerX - 120, 120 - centerY) * 180 / Math.PI + 360) % 360;
-}
+const voteOverlay = await read('obs/overlays/vote.js');
+if (voteOverlay.includes('innerHTML') || !voteOverlay.includes('textContent')) throw new Error('Vote overlay must render poll labels without HTML injection.');
 
-for (const file of conceptFiles) {
-  const source = await readFile(resolve(root, file), 'utf8');
-  const arms = armAngles(source, file);
-  const candidates = [0, 60, 120, 180, 240, 300];
-  const missing = candidates.filter((angle) => !arms.includes(angle));
-  if (missing.length !== 1) throw new Error(`${file}: expected one missing arm sector, found ${missing.join(', ') || 'none'}`);
-
-  const signal = squareAngle(source, file);
-  if (circularDistance(signal, missing[0]) > 18) {
-    throw new Error(`${file}: detached square is at ${signal.toFixed(1)}°, not in the missing ${missing[0]}° sector`);
-  }
-  if (arms.some((angle) => circularDistance(signal, angle) < 18)) {
-    throw new Error(`${file}: detached square overlaps an occupied arm sector`);
-  }
-}
-
-console.log('Open-wildcard semantic geometry passed: five arms, one opening, detached square in the opening.');
+console.log('Tiny / Big identity passed: outlined logo family, scale monogram, looping ident, platform masters, and safe overlays.');

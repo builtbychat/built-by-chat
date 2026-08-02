@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Signal Seat mono</title>
+  <desc id="desc">One-color scooped period with signal bead.</desc>
+  <path fill="#171613" d="
+    M48 48
+    H148
+    C148 48 148 78 178 96
+    C198 108 208 118 208 140
+    V208
+    H48
+    Z"/>
+  <circle cx="168" cy="78" r="22" fill="#171613" opacity=".48"/>
+</svg>

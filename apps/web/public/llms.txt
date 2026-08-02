@@ -1,0 +1,20 @@
+# Tiny Signal Club
+
+> Tiny Signal Club makes small, interactive worlds from verified audience choices. People decide, tools assist, and people remain responsible for every release.
+
+## Public interactive artifacts
+
+- [Home](/): Project promise, premiere, and weekly rhythm.
+- [Founding Day demo](/demo): A local decision-to-reveal loop that creates a versioned town artifact.
+- [Tiny Internet Town](/town): The current public map and town memory.
+- [Season One roadmap](/roadmap): Six planned episodes and their audience consequences.
+- [How we make](/making): Human craft, AI boundaries, release proofs, disclosure guidance, and learning log.
+- [Living playbook](/playbook): Launch work, Project One, growth, future concepts, rehearsal, and safety guardrails.
+- [Future project map](/future): Ten bounded prototype ideas waiting for evidence, not announcements.
+
+## Participation boundaries
+
+- The protected site result is the authoritative vote result.
+- Chat reactions never substitute for a verified vote.
+- Participation is free; payment does not buy votes, ownership, moderation influence, or creative priority.
+- Consequential synthetic media is disclosed, provenance is recorded, and the human operator remains accountable.

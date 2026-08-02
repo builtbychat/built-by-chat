@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Type Bite mono</title>
+  <desc id="desc">One-color bitten period with TINY in the wound.</desc>
+  <path fill="#171613" d="
+    M44 44
+    H146
+    V68
+    C158 68 172 78 172 94
+    C172 110 158 120 146 120
+    V120
+    H212
+    V212
+    H44
+    Z"/>
+  <g fill="#171613" opacity=".5" transform="translate(150 72)">
+    <path d="M0 0h17v3.5H10.5v18.5H6.5V3.5H0z"/>
+    <path d="M21 0h9v3.5h-2.75v15H30v3.5H21v-3.5h2.75v-15H21z"/>
+    <path d="M34 0h3.5v22H34zm3.5 0 11 22H45L34 0zm14.5 0H52v22h-3.5z"/>
+    <path d="M56 0h3.75l5 11 5-11H73.5L65.5 14.5V22h-3.5v-7.5z"/>
+  </g>
+</svg>

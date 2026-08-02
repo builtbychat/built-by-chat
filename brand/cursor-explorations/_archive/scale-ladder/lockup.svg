@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" role="img" aria-labelledby="title desc">
+  <title id="title">Scale Ladder lockup</title>
+  <desc id="desc">Scale-ladder mark with Tiny Signal Club wordmark.</desc>
+  <rect width="1000" height="320" fill="#f1eadb"/>
+  <g transform="translate(28 30) scale(.92)">
+    <path fill="#171613" d="M28 28h120v48h64v136H28z"/>
+    <path fill="#3157ff" d="M64 64h78v32h42v88H64z"/>
+    <path fill="#ff5b3d" d="M96 96h42v20h24v48H96z"/>
+  </g>
+  <g fill="#171613" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="300" y="76" font-family="ui-monospace, monospace" font-size="18" letter-spacing="10" fill="#ff5b3d">TINY</text>
+    <text x="300" y="118" font-family="ui-monospace, monospace" font-size="28" letter-spacing="6" fill="#3157ff">SIGNAL</text>
+    <text x="292" y="250" font-size="118" letter-spacing="-8">CLUB<tspan fill="#c8ef52">.</tspan></text>
+  </g>
+</svg>

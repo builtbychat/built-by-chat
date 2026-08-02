@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Footnote monochrome</title>
+  <desc id="desc">One-color period with footnote step and contribution.</desc>
+  <path fill="currentColor" d="M48 52h128v128H48z"/>
+  <path fill="currentColor" d="M176 52h20v44h-20z"/>
+  <rect x="182" y="28" width="28" height="28" rx="2" fill="currentColor" opacity=".5" transform="rotate(-7 196 42)"/>
+</svg>

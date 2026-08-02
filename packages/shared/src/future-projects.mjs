@@ -1,0 +1,173 @@
+export const futureProjectCatalog = {
+  "version": 1,
+  "statusMeaning": {
+    "front-runner": "Strong fit for a prototype after Project One evidence exists; not announced.",
+    "candidate": "Promising format that needs a bounded prototype.",
+    "wildcard": "Distinctive but operationally uncertain; test only as a one-night special.",
+    "hold": "Do not schedule until the named risks have a credible control."
+  },
+  "weights": {
+    "audienceAgency": 25,
+    "visualPayoff": 20,
+    "episodeEngine": 20,
+    "clipPotential": 15,
+    "safety": 10,
+    "hostSustainability": 10
+  },
+  "projects": [
+    {
+      "id": "town-season-two",
+      "title": "Tiny Internet Town: The Next District",
+      "lane": "Expansion",
+      "status": "front-runner",
+      "horizon": "Season 2 option",
+      "format": "Six episodes",
+      "premise": "Grow beyond the original river crossing without erasing the first season’s history.",
+      "audienceControls": ["district purpose", "transit connection", "public space", "new resident roles"],
+      "artifact": "A second connected district, transit layer, and cross-season town timeline.",
+      "prototype": "One local night: connect a four-cell district stub and test one transit choice.",
+      "growthHook": "Continuity gives returning viewers payoff while a new district gives first-time viewers a clean entry point.",
+      "risks": ["Map crowding", "Lore becoming hard for newcomers", "More regression surface"],
+      "scores": { "audienceAgency": 5, "visualPayoff": 4, "episodeEngine": 5, "clipPotential": 4, "safety": 5, "hostSustainability": 4 }
+    },
+    {
+      "id": "signal-arcade",
+      "title": "The Signal Arcade",
+      "lane": "Playable systems",
+      "status": "front-runner",
+      "horizon": "Project 2 option",
+      "format": "Six episodes or three-game anthology",
+      "premise": "Build a tiny browser arcade where each audience decision adds one mechanic, rule, character, or cabinet.",
+      "audienceControls": ["core mechanic", "risk/reward rule", "visual theme", "final challenge"],
+      "artifact": "A free accessible arcade of small, replayable audience-designed games.",
+      "prototype": "One-button game with three pre-scoped mechanic options and a 60-second run.",
+      "growthHook": "Every reveal is immediately playable, challengeable, and easy to clip without requiring town lore.",
+      "risks": ["Game feel can consume unbounded polish time", "Leaderboard abuse if identities are added"],
+      "scores": { "audienceAgency": 5, "visualPayoff": 5, "episodeEngine": 5, "clipPotential": 5, "safety": 4, "hostSustainability": 3 }
+    },
+    {
+      "id": "one-button-space-program",
+      "title": "One-Button Space Program",
+      "lane": "Playable systems",
+      "status": "front-runner",
+      "horizon": "Project 2 option",
+      "format": "Six episodes",
+      "premise": "A tiny space agency gets one launch button and lets the audience decide what the missions value.",
+      "audienceControls": ["mission objective", "vehicle tradeoff", "crew specialty", "response to discoveries"],
+      "artifact": "A mission simulator with a persistent fleet, discoveries, failures, and recovery log.",
+      "prototype": "Launch one probe using a single fuel-versus-instruments vote and a deterministic outcome table.",
+      "growthHook": "Clear stakes, countdowns, launches, and unexpected outcomes create strong episode promises and clips.",
+      "risks": ["Simulation scope", "Avoiding fake scientific authority", "Failure must remain playful rather than punitive"],
+      "scores": { "audienceAgency": 5, "visualPayoff": 5, "episodeEngine": 5, "clipPotential": 5, "safety": 4, "hostSustainability": 3 }
+    },
+    {
+      "id": "impossible-museum",
+      "title": "The Museum of Impossible Little Things",
+      "lane": "Collection world",
+      "status": "candidate",
+      "horizon": "Project 2 option",
+      "format": "Six episodes",
+      "premise": "Curate a walkable digital museum of objects that could not exist anywhere else.",
+      "audienceControls": ["exhibit theme", "object behavior", "gallery layout", "label tone"],
+      "artifact": "An accessible museum with six galleries, provenance cards, and a visitor route.",
+      "prototype": "Build one room and choose which of three original impossible objects it contains.",
+      "growthHook": "Each object stands alone as a thumbnail, short, meme, or shareable artifact while the museum accumulates.",
+      "risks": ["Audience submissions need rights screening", "Generated objects can become visually generic"],
+      "scores": { "audienceAgency": 5, "visualPayoff": 5, "episodeEngine": 4, "clipPotential": 4, "safety": 4, "hostSustainability": 4 }
+    },
+    {
+      "id": "machine-garden",
+      "title": "The Machine Garden",
+      "lane": "Living system",
+      "status": "candidate",
+      "horizon": "Project 2 option",
+      "format": "Four to six episodes",
+      "premise": "Grow a generative garden whose plants, weather, caretakers, and strange ecological rules are chosen live.",
+      "audienceControls": ["plant morphology", "weather cycle", "pollinator", "garden rule"],
+      "artifact": "A persistent reduced-motion-safe generative ecosystem with a field journal.",
+      "prototype": "Grow three deterministic plant forms from one audience-selected rule.",
+      "growthHook": "Transformation, time-lapse, and before/after visuals travel well while the persistent garden rewards returns.",
+      "risks": ["Motion and photosensitivity", "Generative output must remain inspectable and reproducible"],
+      "scores": { "audienceAgency": 4, "visualPayoff": 5, "episodeEngine": 4, "clipPotential": 5, "safety": 5, "hostSustainability": 4 }
+    },
+    {
+      "id": "tiny-transit-authority",
+      "title": "Tiny Transit Authority",
+      "lane": "Playable systems",
+      "status": "candidate",
+      "horizon": "Season 2 or Project 3",
+      "format": "Four episodes",
+      "premise": "Build a small fictional transit network where every route visibly changes how the world moves.",
+      "audienceControls": ["first route", "station purpose", "vehicle character", "service tradeoff"],
+      "artifact": "An animated network map with accessible route descriptions and resident journeys.",
+      "prototype": "Connect three fictional destinations and choose one service tradeoff.",
+      "growthHook": "Maps communicate quickly, route debates invite participation, and network transformations create clean reveals.",
+      "risks": ["Avoid implying real transport expertise", "Pathfinding complexity", "Color-independent route design"],
+      "scores": { "audienceAgency": 5, "visualPayoff": 4, "episodeEngine": 5, "clipPotential": 4, "safety": 5, "hostSustainability": 4 }
+    },
+    {
+      "id": "internet-field-guide",
+      "title": "The Internet Field Guide",
+      "lane": "Collection world",
+      "status": "candidate",
+      "horizon": "Project 3 option",
+      "format": "Six short expeditions",
+      "premise": "Document fictional digital phenomena as if a tiny research team encountered them in the wild.",
+      "audienceControls": ["expedition biome", "phenomenon trait", "instrument", "classification name"],
+      "artifact": "An illustrated, searchable field guide with specimens, observations, and expedition maps.",
+      "prototype": "Document one phenomenon with three traits and an accessible specimen card.",
+      "growthHook": "Every specimen is a standalone shareable image, while completionists can follow the whole collection.",
+      "risks": ["Rights-safe naming", "Avoid pseudo-scientific claims", "Consistent illustration load"],
+      "scores": { "audienceAgency": 4, "visualPayoff": 5, "episodeEngine": 5, "clipPotential": 4, "safety": 5, "hostSustainability": 4 }
+    },
+    {
+      "id": "creature-lab",
+      "title": "Creature Assembly Lab",
+      "lane": "Living system",
+      "status": "wildcard",
+      "horizon": "One-night prototype",
+      "format": "Three episodes if prototype passes",
+      "premise": "Assemble an original creature, then build the habitat and behavior its chosen traits require.",
+      "audienceControls": ["body system", "movement", "social behavior", "habitat pressure"],
+      "artifact": "An animated creature, habitat simulation, and transparent trait lineage.",
+      "prototype": "Choose locomotion and one sensory trait, then test both in a tiny habitat.",
+      "growthHook": "Creature reveals are immediately legible and highly clip-friendly; trait consequences encourage return viewing.",
+      "risks": ["Visual scope", "Avoiding accidental stereotypes", "Animation workload"],
+      "scores": { "audienceAgency": 5, "visualPayoff": 5, "episodeEngine": 5, "clipPotential": 5, "safety": 3, "hostSustainability": 3 }
+    },
+    {
+      "id": "after-midnight-radio",
+      "title": "Public Radio After Midnight",
+      "lane": "Narrative experiment",
+      "status": "wildcard",
+      "horizon": "One-night special",
+      "format": "Three episodes if prototype passes",
+      "premise": "Build a fictional late-night station whose schedule, callers, jingles, and ongoing mystery come from bounded choices.",
+      "audienceControls": ["show format", "caller premise", "station rule", "next broadcast lead"],
+      "artifact": "A browsable radio dial, episode archive, transcript, and original station mythology.",
+      "prototype": "Produce one five-minute text-first broadcast with an original audio sting and transcript.",
+      "growthHook": "Strong voice and recurring segments can build attachment beyond coding, with quotable audio moments.",
+      "risks": ["Audio rights", "Live improvisation load", "Caption/transcript dependency", "Submission moderation"],
+      "scores": { "audienceAgency": 4, "visualPayoff": 3, "episodeEngine": 5, "clipPotential": 4, "safety": 3, "hostSustainability": 3 }
+    },
+    {
+      "id": "community-mystery",
+      "title": "The Community Mystery Machine",
+      "lane": "Narrative experiment",
+      "status": "hold",
+      "horizon": "Future special",
+      "format": "Three episodes maximum",
+      "premise": "The audience builds and investigates a fictional mystery while the system preserves which clues are genuinely known.",
+      "audienceControls": ["investigation route", "tool to examine a clue", "theory shortlist", "final test"],
+      "artifact": "A case board with immutable clues, theory history, and an accessible solution replay.",
+      "prototype": "A fixed three-clue case with no open-text suspect nominations and a deterministic solution.",
+      "growthHook": "Theories and reveals reward weekly return, discussion, and recap viewing.",
+      "risks": ["Spoilers and bad-faith clues", "Real-person accusations", "Narrative continuity load", "Audience frustration if agency is unclear"],
+      "scores": { "audienceAgency": 4, "visualPayoff": 4, "episodeEngine": 4, "clipPotential": 5, "safety": 2, "hostSustainability": 2 }
+    }
+  ]
+};
+
+export function scoreFutureProject(project) {
+  return Math.round(Object.entries(futureProjectCatalog.weights).reduce((sum,[name,weight]) => sum + project.scores[name] * weight,0)/5);
+}

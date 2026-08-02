@@ -1,1 +1,23 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720"><rect width="1280" height="720" fill="#0b1026"/><image href="../raster/hero-town.png" x="430" width="1080" height="720"/><path fill="#0b1026" d="M0 0h730l210 720H0Z"/><text x="70" y="62" fill="#5de4e7" font-family="DM Mono,monospace" font-size="18">TINY SIGNAL CLUB PRESENTS</text><rect x="70" y="82" width="180" height="50" rx="25" fill="#ff7b72"/><text x="160" y="116" text-anchor="middle" fill="#0b1026" font-family="DM Mono,monospace" font-size="22" font-weight="700">EPISODE 01</text><text x="70" y="265" fill="#eef6ff" font-family="Manrope,Arial" font-size="88" font-weight="800"><tspan x="70">FOUNDING</tspan><tspan x="70" dy="90">DAY</tspan></text><text x="70" y="515" fill="#5de4e7" font-family="DM Mono,monospace" font-size="25">YOU CHOSE: [VOTE RESULT]</text><circle cx="1090" cy="555" r="120" fill="#ff7b72" stroke="#eef6ff" stroke-width="10"/><text x="1090" y="565" text-anchor="middle" fill="#0b1026" font-family="Manrope,Arial" font-size="27" font-weight="800">PHAENEX</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club episode thumbnail</title>
+  <desc id="desc">Editable episode, title, vote result, town art, and hidden optional host cutout position.</desc>
+  <defs>
+  <style>
+    @font-face { font-family: Bricolage; src: url('../fonts/bricolage-grotesque/BricolageGrotesque-Variable.ttf'); font-weight: 200 800; }
+    .display { font-family: Bricolage, Arial Black, sans-serif; font-weight: 800; font-variation-settings: 'opsz' 96, 'wdth' 84, 'wght' 800; }
+    .meta { font-family: ui-monospace, Menlo, monospace; font-weight: 800; letter-spacing: .14em; }
+  </style>
+  <linearGradient id="shade" x1="0" x2="1"><stop offset="0" stop-color="#171613" stop-opacity=".98"/><stop offset=".49" stop-color="#171613" stop-opacity=".9"/><stop offset=".79" stop-color="#171613" stop-opacity=".18"/><stop offset="1" stop-color="#171613" stop-opacity="0"/></linearGradient>
+</defs>
+  <image href="../raster/hero-town.png" width="1280" height="720" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1280" height="720" fill="url(#shade)"/>
+  <image href="../svg/logo-wordmark-dark.svg" x="48" y="35" width="390" height="109"/>
+  <rect x="50" y="180" width="178" height="44" fill="#ff5b3d"/>
+  <text x="139" y="209" text-anchor="middle" fill="#171613" class="meta" font-size="16">EPISODE 01</text>
+  <text x="48" y="352" fill="#f1eadb" class="display" font-size="102"><tspan x="48">FOUNDING</tspan><tspan x="48" dy="86">DAY</tspan></text>
+  <rect x="50" y="493" width="430" height="8" fill="#ff5b3d"/>
+  <text x="50" y="548" fill="#ff5b3d" class="meta" font-size="17">THE CLUB CHOSE</text>
+  <text x="48" y="612" fill="#f1eadb" class="display" font-size="48">[VOTE RESULT]</text>
+  <!-- Optional host cutout safe position: x=1000 y=380 width=250 height=320. Keep hidden until a real cutout is supplied. -->
+  <g id="optional-host-cutout" opacity="0"><rect x="1000" y="380" width="250" height="320" rx="125" fill="#ff5b3d"/><text x="1125" y="550" text-anchor="middle" fill="#171613" class="meta" font-size="16">HOST CUTOUT</text></g>
+</svg>

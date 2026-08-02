@@ -1,0 +1,32 @@
+:root { --paper:#f1eadb; --black:#171613; --orange:#ff5b3d; --blue:#3157ff; --acid:#c8ef52; --line:#d9d0bc; }
+* { box-sizing: border-box; }
+body { margin: 0; padding: 32px; background: var(--paper); color: var(--black); font-family: "Arial Narrow", Arial, sans-serif; }
+h1 { font-size: clamp(28px, 4vw, 48px); letter-spacing: -.04em; margin: 0 0 8px; }
+.meta { color: #5c5648; margin-bottom: 28px; max-width: 720px; }
+h2 { margin: 36px 0 12px; font-size: 18px; letter-spacing: .08em; text-transform: uppercase; }
+.row { display: flex; flex-wrap: wrap; gap: 16px; align-items: end; margin-bottom: 18px; }
+figure { margin: 0; text-align: center; }
+figcaption { margin-top: 6px; font: 700 11px/1.2 ui-monospace, monospace; }
+.swatch-field { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.panel { padding: 18px; border: 1px solid var(--line); min-height: 120px; display: grid; place-items: center; }
+.panel.dark { background: var(--black); color: var(--paper); }
+.panel.blue { background: var(--blue); }
+.panel.paper { background: #fff8ea; }
+.panel.dark img, .panel.blue img { filter: brightness(0) invert(1); }
+.cards { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.card { padding: 18px; border: 2px solid var(--black); min-height: 180px; }
+.card.town { background: var(--blue); color: var(--paper); }
+.card.future { background: var(--acid); }
+.card small { display: block; font: 800 10px/1.2 ui-monospace, monospace; letter-spacing: .08em; margin-bottom: 10px; }
+.card strong { font-size: clamp(28px, 3vw, 42px); line-height: .9; letter-spacing: -.05em; }
+.card p { margin: 12px 0 0; font-weight: 650; }
+.crops { display: grid; grid-template-columns: 320px 96px; gap: 14px; }
+.thumb { aspect-ratio: 16/9; background: var(--black); color: var(--paper); display: grid; place-items: center; position: relative; overflow: hidden; }
+.thumb-label { position: absolute; left: 18px; bottom: 16px; font: 900 22px/1 "Arial Narrow", sans-serif; }
+.avatar { aspect-ratio: 1; background: var(--paper); border: 2px solid var(--black); display: grid; place-items: center; }
+.lockup { width: min(100%, 640px); height: auto; }
+.preview-frame { width: 100%; max-width: 960px; aspect-ratio: 16/9; border: 1px solid var(--line); background: #000; }
+.warn { margin-top: 28px; padding: 14px; border-left: 4px solid var(--orange); background: #fff; max-width: 760px; }
+@media (max-width: 720px) {
+  .swatch-field, .cards, .crops { grid-template-columns: 1fr; }
+}

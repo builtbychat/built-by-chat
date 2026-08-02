@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Scaled Period monochrome</title>
+  <desc id="desc">One-color notched period with contribution using currentColor.</desc>
+  <path fill="currentColor" d="M40 40h110v48h50v112H40z"/>
+  <rect x="158" y="36" width="36" height="36" rx="2" fill="currentColor" opacity=".5" transform="rotate(6 176 54)"/>
+</svg>

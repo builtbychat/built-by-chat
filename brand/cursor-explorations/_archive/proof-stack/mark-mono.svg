@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club Proof Stack monochrome mark</title>
+  <desc id="desc">Single-color proof stack with a lighter incoming slab using currentColor.</desc>
+  <g fill="currentColor">
+    <rect x="42" y="168" width="150" height="22" rx="3"/>
+    <rect x="42" y="140" width="128" height="22" rx="3"/>
+    <rect x="42" y="112" width="104" height="22" rx="3"/>
+    <rect x="42" y="84" width="86" height="22" rx="3"/>
+  </g>
+  <rect x="118" y="48" width="52" height="18" rx="3" fill="currentColor" opacity=".45" transform="rotate(-6 144 57)"/>
+</svg>

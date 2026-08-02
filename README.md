@@ -33,6 +33,35 @@ docs               Brand, launch, episode, community, and production guides
 prompts            Versioned templates + sanitized run-record workflow
 ```
 
+## Try Project One
+
+The standalone Founding Day demo lets you choose a sample town name and first landmark, see the map change, and inspect the resulting decision receipt. It does not need Cloudflare credentials, D1, Turnstile, OBS, or streaming accounts.
+
+```sh
+npm install
+npm run demo
+```
+
+Open `http://localhost:5173/demo` to run it.
+
+## Open the living playbook
+
+Open `http://localhost:5173/playbook` instead of reading static guide files. It provides a persistent interactive menu for launch readiness, Project One, channel growth, future projects, rehearsals, decision guardrails, and executable run commands. Search spans tasks, experiments, concepts, and commands; local checklists remember working state without changing official evidence.
+
+The Playbook launches the real working surfaces directly:
+
+- `/demo` — Project One decision-to-artifact experience
+- `/making` — public human-craft contract, anti-slop gate, disclosure tool, materials, and learning log
+- `/studio/rehearsal` — incident practice, alerts, timeline, and evidence
+- `/studio/growth` — aggregate metric tracker, alerts, experiments, and roadmap
+- `/future` — public future-project evaluator and portfolio
+
+```sh
+npm run growth:status
+```
+
+This validates the app-native project portfolio and growth experiment backlog. Scores qualify ideas for testing; they do not announce or schedule projects.
+
 ## Start locally
 
 ```sh
@@ -51,7 +80,7 @@ Source code is MIT licensed. Brand names, logo, characters, and original media a
 
 External purchases, publishing, sending messages, production deployment, and going live always require explicit owner approval.
 
-AI-assisted production follows the auditable workflow in [Prompt operations](docs/production/PROMPT-OPERATIONS.md). Validate templates with `npm run prompt:validate`; create a sanitized episode run record with `npm run prompt:new -- <episode> <template-slug> <short-title>`.
+Human accountability and AI-assisted production are visible in the interactive `/making` journey and the Playbook’s Human Craft + AI release gate. Validate internal prompt templates with `npm run prompt:validate`; create a sanitized episode run record with `npm run prompt:new -- <episode> <template-slug> <short-title>`.
 
 Run `npm run status` for the repository-backed launch progress board and complete list of remaining tasks.
 

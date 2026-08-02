@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Club Bench</title>
+  <desc id="desc">Stepped stadium body — a real bench, not an L. One filled member pill seated; two open pill seats wait.</desc>
+  <!-- Stepped club body -->
+  <path fill="#171613" d="
+    M36 56
+    H128
+    V100
+    H220
+    V208
+    H36
+    Z"/>
+  <!-- Member pills (stadiums), not squares -->
+  <rect x="140" y="62" width="48" height="28" rx="14" fill="#ff5b3d" transform="rotate(-6 164 76)"/>
+  <rect x="178" y="68" width="40" height="24" rx="12" fill="none" stroke="#f1eadb" stroke-width="3" opacity=".55"/>
+  <rect x="204" y="72" width="32" height="20" rx="10" fill="none" stroke="#f1eadb" stroke-width="2.5" opacity=".35"/>
+</svg>

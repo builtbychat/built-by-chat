@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Footnote bracket monochrome</title>
+  <desc id="desc">One-color footnote bracket with contribution square.</desc>
+  <g fill="currentColor">
+    <path d="M40 36h36v168H40z"/>
+    <path d="M40 36h108v28H40z"/>
+    <path d="M40 176h108v28H40z"/>
+    <path d="M148 96h28v48h-28z"/>
+  </g>
+  <rect x="168" y="108" width="30" height="30" rx="2" fill="currentColor" opacity=".5" transform="rotate(-8 183 123)"/>
+</svg>

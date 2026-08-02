@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 340" role="img" aria-labelledby="title desc">
+  <title id="title">Type Bite lockup</title>
+  <desc id="desc">Bitten-period mark beside Signal Club. Tiny already bit the mark — the wordmark starts at Signal.</desc>
+  <rect width="1080" height="340" fill="#171613"/>
+  <g transform="translate(28 28)">
+    <path fill="#f1eadb" d="
+      M44 44
+      H146
+      V68
+      C158 68 172 78 172 94
+      C172 110 158 120 146 120
+      V120
+      H212
+      V212
+      H44
+      Z"/>
+    <g fill="#ff5b3d" transform="translate(150 72)">
+      <path d="M0 0h17v3.5H10.5v18.5H6.5V3.5H0z"/>
+      <path d="M21 0h9v3.5h-2.75v15H30v3.5H21v-3.5h2.75v-15H21z"/>
+      <path d="M34 0h3.5v22H34zm3.5 0 11 22H45L34 0zm14.5 0H52v22h-3.5z"/>
+      <path d="M56 0h3.75l5 11 5-11H73.5L65.5 14.5V22h-3.5v-7.5z"/>
+    </g>
+  </g>
+  <g fill="#f1eadb" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="310" y="92" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" letter-spacing="8" fill="#ff5b3d">BIT ALREADY TAKEN</text>
+    <text x="300" y="188" font-size="128" letter-spacing="-9">SIGNAL</text>
+    <text x="300" y="298" font-size="128" letter-spacing="-9">CLUB<tspan fill="#c8ef52">.</tspan></text>
+  </g>
+  <text x="310" y="322" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" letter-spacing="3" fill="#5de4e7">SMALL SIGNALS BECOME BIG, STRANGE THINGS.</text>
+</svg>

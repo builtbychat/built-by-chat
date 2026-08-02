@@ -6,6 +6,8 @@ for (const element of document.querySelectorAll('[data-param]')) {
 }
 
 if (params.get('motion') === 'reduced') document.body.classList.add('reduced');
+if (params.get('motion') === 'full') document.body.classList.add('force-motion');
+if (params.get('preview') === '1') document.body.classList.add('preview');
 
 const music = document.querySelector('#music');
 const chime = document.querySelector('#chime');

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Wedge Seat · Club Period</title>
+  <link rel="stylesheet" href="motion.css">
+</head>
+<body>
+  <main class="board" data-motion-root>
+    <header class="top">
+      <p class="label"><i></i>Corner Seat family · Wedge Seat</p>
+      <p class="phase" data-phase>WAITING</p>
+    </header>
+
+    <svg class="mark" viewBox="0 0 256 256" role="img" aria-label="V-notch body receiving a wedge then a club period">
+      <path class="body" fill="#171613" d="M44 44H130L178 108L226 44H226V212H44Z"/>
+      <g class="wedge">
+        <path fill="#ff5b3d" d="M152 50 L178 98 L204 50 Z"/>
+      </g>
+      <g class="period" opacity="0">
+        <circle cx="210" cy="192" r="14" fill="#c8ef52"/>
+      </g>
+      <path class="ledge" d="M130 44L178 108L226 44" fill="none" stroke="#3157ff" stroke-width="2" stroke-dasharray="4 5" opacity="0"/>
+    </svg>
+
+    <div class="copy">
+      <span>CLUB · NEW SHAPE</span>
+      <strong>Wedge, then<br>the stop.</strong>
+      <p>Body is a V-notch, not an L. Contribution is a triangle that drives in. Club is a round period that stamps after.</p>
+      <ul class="rules">
+        <li>V-body = sharp seat</li>
+        <li>Triangle = contribution</li>
+        <li>Round stop = Club</li>
+      </ul>
+    </div>
+
+    <aside class="proofs" aria-label="Proofs">
+      <div class="proof-block"><span>SIZES</span><div class="sizes">
+        <img src="mark.svg" width="16" height="16" alt=""><img src="mark.svg" width="24" height="24" alt=""><img src="mark.svg" width="32" height="32" alt=""><img src="mark.svg" width="48" height="48" alt="">
+      </div></div>
+      <div class="proof-block"><span>MONO</span>
+        <div class="mono-chip"><img src="mark-mono.svg" width="40" height="40" alt=""></div>
+        <div class="mono-chip dark"><img src="mark-mono.svg" width="40" height="40" alt=""></div>
+      </div>
+      <div class="proof-block"><span>AVATAR</span><div class="avatar"><img src="mark.svg" width="52" height="52" alt=""></div></div>
+    </aside>
+
+    <div class="wordstack" aria-hidden="true"><i>TINY</i><b>SIGNAL</b><b>CLUB<span>.</span></b></div>
+    <p class="tag">Small signals become big, strange things.</p>
+  </main>
+  <script src="../_motion-engine.js"></script>
+  <script src="motion.js"></script>
+</body>
+</html>

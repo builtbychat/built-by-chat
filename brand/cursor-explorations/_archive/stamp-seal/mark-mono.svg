@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club Stamp Seal monochrome</title>
+  <desc id="desc">One-color seal ring with gap and contribution square.</desc>
+  <circle cx="120" cy="120" r="78" fill="none" stroke="currentColor" stroke-width="36" stroke-linecap="butt" stroke-dasharray="420 70" transform="rotate(-55 120 120)"/>
+  <rect x="168" y="36" width="30" height="30" rx="2" fill="currentColor" opacity=".5" transform="rotate(18 183 51)"/>
+</svg>

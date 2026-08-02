@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Corner Seat mono</title>
+  <desc id="desc">One-color corner-seat period. Contribution reads lighter so the seat stays legible at small sizes.</desc>
+  <path fill="#171613" d="M44 44h112v68h68v100H44z"/>
+  <rect x="164" y="56" width="44" height="44" rx="3" fill="#171613" opacity=".48" transform="rotate(4.5 186 78)"/>
+</svg>

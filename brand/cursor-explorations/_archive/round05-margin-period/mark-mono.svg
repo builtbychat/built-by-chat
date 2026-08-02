@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Margin Period monochrome</title>
+  <desc id="desc">One-color bracket and notched period with contribution.</desc>
+  <g fill="currentColor">
+    <rect x="34" y="36" width="24" height="168" rx="2"/>
+    <rect x="34" y="36" width="78" height="22" rx="2"/>
+    <rect x="34" y="182" width="78" height="22" rx="2"/>
+    <path d="M118 78h70v40h28v66H118z"/>
+  </g>
+  <rect x="176" y="68" width="26" height="26" rx="2" fill="currentColor" opacity=".5" transform="rotate(9 189 81)"/>
+</svg>

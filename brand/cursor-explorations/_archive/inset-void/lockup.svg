@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" role="img" aria-labelledby="title desc">
+  <title id="title">Inset Void lockup</title>
+  <desc id="desc">Inset-void mark with Tiny Signal Club wordmark on ultramarine.</desc>
+  <rect width="1000" height="320" fill="#3157ff"/>
+  <g transform="translate(32 36) scale(.92)">
+    <path fill="#f1eadb" fill-rule="evenodd" d="M40 40h160v160H40zm108 18h46v46h-46z"/>
+    <rect x="116" y="66" width="30" height="30" rx="2" fill="#ff5b3d" transform="rotate(8 131 81)"/>
+  </g>
+  <g fill="#f1eadb" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="300" y="76" font-family="ui-monospace, monospace" font-size="20" letter-spacing="11" fill="#ff5b3d">TINY</text>
+    <text x="292" y="186" font-size="128" letter-spacing="-8">SIGNAL</text>
+    <text x="292" y="286" font-size="128" letter-spacing="-8">CLUB<tspan fill="#c8ef52">.</tspan></text>
+  </g>
+</svg>

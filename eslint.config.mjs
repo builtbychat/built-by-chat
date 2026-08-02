@@ -3,7 +3,7 @@ import globals from 'globals';
 import tseslint from 'typescript-eslint';
 
 export default tseslint.config(
-  { ignores: ['**/dist/**', 'apps/web/public/**', '**/worker-configuration.d.ts', '**/node_modules/**', 'scripts/**', 'eslint.config.mjs', '**/vitest.config.ts'] },
+  { ignores: ['**/dist/**', '**/.wrangler/**', 'apps/web/public/**', '**/worker-configuration.d.ts', '**/node_modules/**', 'scripts/**', 'eslint.config.mjs', '**/vitest.config.ts'] },
   js.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
   {
@@ -17,7 +17,7 @@ export default tseslint.config(
     }
   },
   {
-    files: ['obs/overlays/**/*.js', 'tools/handoff/**/*.js'],
+    files: ['obs/overlays/**/*.js', 'tools/handoff/**/*.js', 'brand/cursor-explorations/**/*.js', 'brand/identity/**/*.js', 'packages/shared/src/**/*.mjs'],
     ...tseslint.configs.disableTypeChecked,
     languageOptions: { parserOptions: { projectService: false }, globals: globals.browser }
   }

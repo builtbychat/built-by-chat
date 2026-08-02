@@ -7,6 +7,20 @@ function BuildingShape({ building }: { building: Building }) {
     <rect x={x + 8} y={y + 8} width={w - 16} height={h - 16} rx="12" fill="none" stroke="#7994c9" strokeDasharray="9 9" strokeWidth="3" />
     <text x={x + w / 2} y={y + h / 2} textAnchor="middle" fill="#b7c8e8" className="map-label">?</text>
   </g>;
+  if (building.kind === 'garden') return <g aria-label={building.name} role="img">
+    <rect x={x + 12} y={y + 18} width={w - 24} height={h - 36} rx="34" fill="#245f4d" stroke={building.color} strokeWidth="4" />
+    <path d={`M${x + 28} ${y + h - 38} Q${x + w / 2} ${y + 42} ${x + w - 28} ${y + h - 38}`} fill="none" stroke="#f8dfb6" strokeWidth="12" />
+    {([[46,55],[105,48],[52,112],[116,106]] as Array<[number, number]>).map(([dx,dy], index) => <g key={index}><circle cx={x + dx} cy={y + dy} r="13" fill={index % 2 ? '#c8ef52' : building.color} /><circle cx={x + dx} cy={y + dy} r="4" fill="#ff7b72" /></g>)}
+    <text x={x + w / 2} y={y + h + 18} textAnchor="middle" fill="#eef6ff" className="map-name">{building.name}</text>
+  </g>;
+  if (building.kind === 'tower') return <g aria-label={building.name} role="img">
+    <path d={`M${x + 38} ${y + 45} L${x + w / 2} ${y + 10} L${x + w - 38} ${y + 45}Z`} fill={building.color} />
+    <rect x={x + 48} y={y + 42} width={w - 96} height={h - 52} rx="5" fill="#f8dfb6" />
+    <circle cx={x + w / 2} cy={y + 72} r="20" fill="#eef6ff" stroke="#26345c" strokeWidth="4" />
+    <path d={`M${x + w / 2} ${y + 72}v-12m0 12l10 7`} stroke="#26345c" strokeWidth="3" strokeLinecap="round" />
+    <rect x={x + w / 2 - 12} y={y + h - 35} width="24" height="25" rx="3" fill="#26345c" />
+    <text x={x + w / 2} y={y + h + 18} textAnchor="middle" fill="#eef6ff" className="map-name">{building.name}</text>
+  </g>;
   return <g aria-label={building.name} role="img">
     <path d={`M${x + 10} ${y + 65} L${x + w / 2} ${y + 16} L${x + w - 10} ${y + 65}Z`} fill={building.color} />
     <rect x={x + 24} y={y + 62} width={w - 48} height={h - 76} rx="6" fill="#f8dfb6" />
@@ -22,9 +36,11 @@ function ResidentShape({ resident }: { resident: Resident }) {
   </g>;
 }
 export function TownMap({ town }: { town: TownState }) {
+  const places = town.buildings.map((building) => building.name).join(', ');
+  const residents = town.residents.map((resident) => resident.name).join(', ');
   return <div className="town-frame">
     <svg className="town-map" viewBox="0 0 960 640" role="img" aria-labelledby="town-title town-desc">
-      <title id="town-title">{town.name} map</title><desc id="town-desc">A twelve by eight town grid with Town Hall, three empty lots, a river, roads, and resident Pip.</desc>
+      <title id="town-title">{town.name} map</title><desc id="town-desc">A twelve by eight town grid with a river and roads. Places: {places}. Residents: {residents}.</desc>
       <defs><pattern id="grass" width="32" height="32" patternUnits="userSpaceOnUse"><rect width="32" height="32" fill="#183f46" /><circle cx="7" cy="8" r="1" fill="#2d6361" /><circle cx="24" cy="22" r="1.5" fill="#2d6361" /></pattern></defs>
       <rect width="960" height="640" rx="24" fill="url(#grass)" />
       <path d="M0 425 C180 365 285 510 470 446 S760 338 960 410 L960 520 C740 452 650 545 470 523 S180 458 0 520Z" fill="#168aad" stroke="#5de4e7" strokeWidth="4" />

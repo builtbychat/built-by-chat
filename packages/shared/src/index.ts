@@ -76,3 +76,33 @@ export interface HostWorkload {
   stress: number; recovery: number; notes?: string; recordedAt: string;
 }
 export interface WorkloadSummary { entries: HostWorkload[]; fourWeekMinutes: number; averageStress: number; averageRecovery: number; }
+
+export {
+  SHOW_CUES,
+  REHEARSAL_ACTIONS,
+  REHEARSAL_SCENARIOS,
+  getRehearsalScenario,
+  createRehearsal,
+  startRehearsal,
+  injectRehearsalIncident,
+  advanceRehearsal,
+  applyRehearsalAction,
+  rehearsalScore,
+  runReferenceRehearsal,
+  formatRehearsalClock
+} from './rehearsal.mjs';
+export { futureProjectCatalog, scoreFutureProject } from './future-projects.mjs';
+export type { FutureProject, ProjectStatus, ProjectScoreName } from './future-projects.mjs';
+export { growthCatalog } from './growth-experiments.mjs';
+export type { GrowthExperiment, GrowthPhase, CatalogExperimentStatus } from './growth-experiments.mjs';
+export type {
+  RehearsalSeverity,
+  RehearsalStatus,
+  RehearsalLogType,
+  RehearsalCue,
+  RehearsalAction,
+  RehearsalScenario,
+  RehearsalLog,
+  RehearsalState,
+  RehearsalScore
+} from './rehearsal.mjs';

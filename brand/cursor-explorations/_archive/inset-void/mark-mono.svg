@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Inset Void mono</title>
+  <desc id="desc">One-color period with inset void and nested square.</desc>
+  <path fill="currentColor" fill-rule="evenodd" d="M40 40h160v160H40zm108 18h46v46h-46z"/>
+  <rect x="116" y="66" width="30" height="30" rx="2" fill="currentColor" opacity=".45" transform="rotate(8 131 81)"/>
+</svg>

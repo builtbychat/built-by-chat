@@ -1,0 +1,4 @@
+progress.bar { display:block; width:100%; height:9px; margin-top:13px; overflow:hidden; appearance:none; border:0; background:#3a3731; }
+progress.bar::-webkit-progress-bar { background:#3a3731; }
+progress.bar::-webkit-progress-value { background:linear-gradient(90deg,#ff5b3d,#c8ef52); }
+progress.bar::-moz-progress-bar { background:linear-gradient(90deg,#ff5b3d,#c8ef52); }

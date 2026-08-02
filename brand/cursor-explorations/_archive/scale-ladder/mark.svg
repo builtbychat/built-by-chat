@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Scale · Scale Ladder</title>
+  <desc id="desc">Three nested notched periods at different scales; the smallest is persimmon.</desc>
+  <path fill="#171613" d="M28 28h120v48h64v136H28z"/>
+  <path fill="#3157ff" d="M64 64h78v32h42v88H64z"/>
+  <path fill="#ff5b3d" d="M96 96h42v20h24v48H96z"/>
+</svg>

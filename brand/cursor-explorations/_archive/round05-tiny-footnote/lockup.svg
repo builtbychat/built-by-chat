@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Footnote lockup</title>
+  <desc id="desc">Footnote period mark with Tiny Signal Club wordmark on ultramarine.</desc>
+  <rect width="1000" height="320" fill="#3157ff"/>
+  <g transform="translate(36 40) scale(.9)">
+    <path fill="#f1eadb" d="M48 52h128v128H48z"/>
+    <path fill="#f1eadb" d="M176 52h20v44h-20z"/>
+    <rect x="182" y="28" width="28" height="28" rx="2" fill="#ff5b3d" transform="rotate(-7 196 42)"/>
+  </g>
+  <g fill="#f1eadb" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="300" y="78" font-family="ui-monospace, monospace" font-size="22" letter-spacing="10" fill="#ff5b3d">TINY</text>
+    <text x="292" y="188" font-size="128" letter-spacing="-8">SIGNAL</text>
+    <text x="292" y="288" font-size="128" letter-spacing="-8">CLUB<tspan fill="#c8ef52">.</tspan></text>
+  </g>
+</svg>

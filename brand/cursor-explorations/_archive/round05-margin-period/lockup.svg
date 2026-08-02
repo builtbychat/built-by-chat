@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" role="img" aria-labelledby="title desc">
+  <title id="title">Margin Period lockup</title>
+  <desc id="desc">Margin period mark with stacked Tiny Signal Club wordmark on soft black.</desc>
+  <rect width="1000" height="320" fill="#171613"/>
+  <g transform="translate(36 40) scale(.9)">
+    <g fill="#f1eadb">
+      <rect x="34" y="36" width="24" height="168" rx="2"/>
+      <rect x="34" y="36" width="78" height="22" rx="2"/>
+      <rect x="34" y="182" width="78" height="22" rx="2"/>
+      <path d="M118 78h70v40h28v66H118z"/>
+    </g>
+    <rect x="176" y="68" width="26" height="26" rx="2" fill="#ff5b3d" transform="rotate(9 189 81)"/>
+  </g>
+  <g fill="#f1eadb" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="300" y="78" font-family="ui-monospace, monospace" font-size="22" letter-spacing="10" fill="#ff5b3d">TINY</text>
+    <text x="292" y="188" font-size="128" letter-spacing="-8">SIGNAL</text>
+    <text x="292" y="288" font-size="128" letter-spacing="-8">CLUB<tspan fill="#c8ef52">.</tspan></text>
+  </g>
+</svg>

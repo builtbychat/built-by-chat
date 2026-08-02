@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Wedge Seat · Club Period</title>
+  <desc id="desc">Angular body with a V-notch. An orange wedge drives into the seat; an acid-green round period is Club finishing the line.</desc>
+  <path fill="#171613" d="
+    M44 44
+    H130
+    L178 108
+    L226 44
+    H226
+    V212
+    H44
+    Z"/>
+  <!-- Wedge contribution -->
+  <path fill="#ff5b3d" d="M152 50 L178 98 L204 50 Z"/>
+  <!-- Club as a round period -->
+  <circle cx="210" cy="192" r="14" fill="#c8ef52"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club scale monogram</title>
+  <desc id="desc">The word Tiny appears very small above a large SC monogram.</desc>
+  <g fill="#171613" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="18" y="48" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="24" letter-spacing="6" fill="#ff5b3d">TINY</text>
+    <text x="10" y="218" font-size="194" letter-spacing="-20">SC</text>
+  </g>
+  <circle cx="225" cy="213" r="10" fill="#c8ef52"/>
+</svg>

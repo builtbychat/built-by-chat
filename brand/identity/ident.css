@@ -1,0 +1,196 @@
+@font-face {
+  font-family: Bricolage;
+  src: url('../fonts/bricolage-grotesque/BricolageGrotesque-Variable.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 200 800;
+}
+
+:root {
+  color-scheme: dark;
+  --blue: #3157ff;
+  --cream: #f1eadb;
+  --coral: #ff5b3d;
+  --lime: #c8ef52;
+  --ink: #171613;
+  --cycle: 10s;
+}
+
+* { box-sizing: border-box; }
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+body { background: var(--blue); }
+
+.stage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--blue);
+  font-family: Bricolage, Arial, sans-serif;
+}
+
+.input,
+.build,
+.outcome,
+.brand,
+.next { position: absolute; }
+
+.input {
+  top: 12%;
+  left: 8%;
+  opacity: 0;
+  animation: input var(--cycle) .15s infinite both;
+}
+
+.input p,
+.build p,
+.outcome p,
+.brand p,
+.next {
+  margin: 0;
+  font: 800 clamp(8px, 1vw, 15px)/1.2 ui-monospace, Menlo, monospace;
+  letter-spacing: .14em;
+}
+
+.input p { color: var(--ink); }
+
+.input strong {
+  display: block;
+  width: fit-content;
+  margin-top: .8em;
+  padding: .65em .8em;
+  background: var(--coral);
+  color: var(--ink);
+  font: 800 clamp(14px, 2.3vw, 34px)/1 Bricolage, Arial, sans-serif;
+}
+
+.build {
+  top: 46%;
+  left: 8%;
+  width: 84%;
+  opacity: 0;
+  animation: build var(--cycle) .15s infinite both;
+}
+
+.build span {
+  display: block;
+  width: 100%;
+  height: clamp(7px, 1vw, 15px);
+  background: var(--cream);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: progress var(--cycle) .15s infinite both;
+}
+
+.build p { margin-top: 1em; color: var(--ink); }
+
+.outcome {
+  right: 7%;
+  bottom: 9%;
+  text-align: right;
+  opacity: 0;
+  transform: translateY(8%) scale(.96);
+  transform-origin: right bottom;
+  animation: outcome var(--cycle) .15s infinite both;
+}
+
+.outcome p { color: var(--lime); }
+
+.outcome strong {
+  display: block;
+  color: var(--cream);
+  font: 800 clamp(54px, 10.5vw, 160px)/.82 Bricolage, Arial, sans-serif;
+  font-variation-settings: 'opsz' 96, 'wdth' 84, 'wght' 800;
+  letter-spacing: -.04em;
+  word-spacing: .12em;
+}
+
+.brand {
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: start;
+  opacity: 0;
+  transform: scale(.97);
+  animation: brand var(--cycle) .15s infinite both;
+}
+
+.brand img { width: min(78vw, 980px); }
+.brand p { margin-top: 2.5%; color: var(--ink); }
+
+.next {
+  right: 4%;
+  bottom: 5%;
+  color: var(--cream);
+  opacity: 0;
+  animation: next var(--cycle) .15s infinite both;
+}
+
+@keyframes input {
+  0%, 5% { opacity: 0; transform: translateY(14px); }
+  10%, 28% { opacity: 1; transform: none; }
+  34%, 100% { opacity: 0; transform: translateY(-10px); }
+}
+
+@keyframes build {
+  0%, 22% { opacity: 0; }
+  28%, 48% { opacity: 1; }
+  55%, 100% { opacity: 0; }
+}
+
+@keyframes progress {
+  0%, 25% { transform: scaleX(0); background: var(--cream); }
+  48% { transform: scaleX(1); background: var(--cream); }
+  51%, 100% { transform: scaleX(1); background: var(--lime); }
+}
+
+@keyframes outcome {
+  0%, 43% { opacity: 0; transform: translateY(8%) scale(.96); }
+  50%, 66% { opacity: 1; transform: none; }
+  72%, 100% { opacity: 0; transform: translateY(-4%) scale(1.02); }
+}
+
+@keyframes brand {
+  0%, 64% { opacity: 0; transform: scale(.97); }
+  71%, 95% { opacity: 1; transform: none; }
+  100% { opacity: 0; transform: scale(1.01); }
+}
+
+@keyframes next {
+  0%, 76% { opacity: 0; }
+  82%, 95% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+body.paused * { animation-play-state: paused !important; }
+
+body.reduced .input,
+body.reduced .build,
+body.reduced .outcome { display: none; }
+
+body.reduced .brand,
+body.reduced .next {
+  opacity: 1;
+  transform: none;
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body:not(.force-motion) .input,
+  body:not(.force-motion) .build,
+  body:not(.force-motion) .outcome { display: none; }
+
+  body:not(.force-motion) .brand,
+  body:not(.force-motion) .next {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}

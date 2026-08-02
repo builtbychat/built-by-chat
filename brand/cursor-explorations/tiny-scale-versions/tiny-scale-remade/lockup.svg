@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 340" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club typographic scale lockup</title>
+  <desc id="desc">Tiny is set very small above the large stacked words Signal Club.</desc>
+  <rect width="1080" height="340" fill="#3157ff"/>
+  <g fill="#f1eadb" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="64" y="60" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" letter-spacing="14" fill="#ff5b3d">TINY</text>
+    <text x="52" y="184" font-size="150" letter-spacing="-10">SIGNAL</text>
+    <text x="52" y="310" font-size="150" letter-spacing="-10">CLUB<tspan fill="#c8ef52">.</tspan></text>
+  </g>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-weight="800">
+    <text x="700" y="98" font-size="15" letter-spacing="4" fill="#171613">ONE VIEWER SIGNAL</text>
+    <text x="700" y="137" font-size="24" letter-spacing="1" fill="#f1eadb">ADD A NIGHT MARKET</text>
+    <line x1="700" y1="174" x2="994" y2="174" stroke="#ff5b3d" stroke-width="8"/>
+    <text x="700" y="207" font-size="13" letter-spacing="3" fill="#171613">BUILT + TESTED</text>
+    <text x="700" y="278" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-size="62" letter-spacing="-3" fill="#f1eadb">NIGHT MARKET</text>
+  </g>
+</svg>

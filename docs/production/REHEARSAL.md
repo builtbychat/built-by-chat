@@ -2,6 +2,12 @@
 
 Do not announce the premiere until every critical item passes.
 
+## Local executable warm-up
+
+- [ ] Open `/studio/rehearsal` and pass every scenario without a rejected action.
+- [ ] Run `npm run rehearsal:sim:record` and review the sanitized coverage report.
+- [ ] Treat the simulator as policy practice only; it does not complete any provider, equipment, recording, or unlisted-stream gate.
+
 ## Twenty-minute local recording
 
 - [ ] MKV recording begins and automatic MP4 remux completes.

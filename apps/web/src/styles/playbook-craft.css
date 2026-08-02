@@ -1,0 +1,140 @@
+.craft-principles {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 5rem 0;
+}
+
+.craft-principles article {
+  min-height: 300px;
+  padding: 2rem;
+  border: 1px solid var(--line);
+  background: #111934;
+  display: flex;
+  flex-direction: column;
+}
+
+.craft-principles span,
+.operator-materials article > span {
+  font: 500 .58rem DM Mono;
+  letter-spacing: .12em;
+  color: var(--coral);
+}
+
+.craft-principles h2 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  margin: auto 0 1rem;
+}
+
+.craft-principles p {
+  color: var(--muted);
+  font-size: .76rem;
+  line-height: 1.65;
+}
+
+.operator-craft-gate {
+  padding: 5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.operator-craft-gate > header {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 3rem;
+  align-items: end;
+  margin-bottom: 3rem;
+}
+
+.operator-craft-gate h2,
+.craft-journey-mini h2,
+.operator-materials h2 {
+  font-size: clamp(2.5rem, 4.5vw, 4.8rem);
+}
+
+.operator-craft-gate header aside {
+  border-top: 3px solid var(--coral);
+  padding-top: 1rem;
+}
+
+.operator-craft-gate header aside.ready { border-color: var(--cyan); }
+.operator-craft-gate header aside.revise { border-color: #f8df6b; }
+
+.operator-craft-gate header aside strong {
+  display: block;
+  font: 700 3.5rem Fraunces;
+}
+
+.operator-craft-gate header aside span {
+  font-size: .72rem;
+  font-weight: 900;
+}
+
+.operator-craft-gate header aside p {
+  color: var(--muted);
+  font-size: .68rem;
+  line-height: 1.5;
+  margin-top: .7rem;
+}
+
+.operator-craft-gate > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.operator-craft-gate label {
+  display: grid;
+  grid-template-columns: auto 30px 1fr;
+  gap: .8rem;
+  padding: 1.3rem;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  background: #0f1730;
+}
+
+.operator-craft-gate label.checked { background: #14223b; }
+.operator-craft-gate input { accent-color: var(--cyan); }
+.operator-craft-gate label > b { font: 500 .58rem DM Mono; color: var(--coral); }
+.operator-craft-gate label strong { font: 700 1rem Fraunces; }
+.operator-craft-gate label p { color: var(--muted); font-size: .68rem; line-height: 1.5; margin: .5rem 0; }
+.operator-craft-gate label small { color: var(--coral); font-size: .58rem; line-height: 1.4; }
+.operator-craft-gate label.checked small { color: var(--cyan); }
+
+.craft-journey-mini {
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: 4rem;
+  padding: 5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.craft-journey-mini ol { list-style: none; padding: 0; margin: 0; }
+.craft-journey-mini li { display: grid; grid-template-columns: 30px 110px 1fr; gap: 1rem; padding: 1rem 0; border-top: 1px solid var(--line); }
+.craft-journey-mini li b { font: 500 .58rem DM Mono; color: var(--coral); }
+.craft-journey-mini li strong { font-size: .8rem; }
+.craft-journey-mini li span { font-size: .68rem; color: var(--muted); }
+
+.operator-materials {
+  padding: 5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.operator-materials > header { display: flex; justify-content: space-between; align-items: end; gap: 2rem; }
+.operator-materials > header a { color: var(--cyan); font-size: .72rem; }
+.operator-materials > div { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 3rem; }
+.operator-materials article { border: 1px solid var(--line); padding: 1.5rem; background: #111934; }
+.operator-materials h3 { font: 700 1.3rem Fraunces; margin: 1.4rem 0 .7rem; }
+.operator-materials article p { white-space: pre-wrap; color: var(--muted); font: 400 .66rem/1.6 DM Mono; max-height: 190px; overflow: auto; }
+.operator-materials button { border: 0; background: transparent; color: var(--cyan); font-size: .66rem; font-weight: 900; text-decoration: underline; cursor: pointer; }
+
+@media (max-width: 800px) {
+  .craft-principles,
+  .operator-craft-gate > div,
+  .craft-journey-mini,
+  .operator-materials > div { grid-template-columns: 1fr; }
+
+  .operator-craft-gate > header { grid-template-columns: 1fr; }
+  .operator-materials > header { align-items: start; flex-direction: column; }
+}

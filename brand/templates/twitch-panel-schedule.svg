@@ -1,1 +1,16 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="320" height="160" viewBox="0 0 320 160"><rect width="320" height="160" rx="12" fill="#182244"/><path d="M0 0h320v10H0z" fill="#ff7b72"/><text x="28" y="55" fill="#eef6ff" font-family="Manrope,Arial" font-size="27" font-weight="800">SCHEDULE</text><text x="28" y="91" fill="#5de4e7" font-family="DM Mono,monospace" font-size="12">LIVE BUILD · THU 7 PM CT</text><text x="28" y="119" fill="#ff7b72" font-family="DM Mono,monospace" font-size="11">MODEM PICNIC · SUN 3 PM CT</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="160" viewBox="0 0 320 160" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club schedule panel</title>
+  <desc id="desc">Minimal schedule Twitch panel.</desc>
+  <defs>
+  <style>
+    @font-face { font-family: Bricolage; src: url('../fonts/bricolage-grotesque/BricolageGrotesque-Variable.ttf'); font-weight: 200 800; }
+    .display { font-family: Bricolage, Arial Black, sans-serif; font-weight: 800; font-variation-settings: 'opsz' 96, 'wdth' 84, 'wght' 800; }
+    .meta { font-family: ui-monospace, Menlo, monospace; font-weight: 800; letter-spacing: .14em; }
+  </style>
+  
+</defs>
+  <rect width="320" height="160" fill="#171613"/>
+  <rect width="12" height="160" fill="#c8ef52"/>
+  <text x="34" y="102" fill="#f1eadb" class="display" font-size="42">SCHEDULE</text>
+  <rect x="34" y="121" width="74" height="6" fill="#c8ef52"/>
+</svg>

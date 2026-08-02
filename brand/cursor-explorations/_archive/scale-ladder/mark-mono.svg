@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Scale Ladder mono</title>
+  <desc id="desc">One-color nested notched periods at three scales.</desc>
+  <path fill="currentColor" d="M28 28h120v48h64v136H28z"/>
+  <path fill="currentColor" opacity=".55" d="M64 64h78v32h42v88H64z"/>
+  <path fill="currentColor" opacity=".3" d="M96 96h42v20h24v48H96z"/>
+</svg>

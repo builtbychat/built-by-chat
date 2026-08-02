@@ -251,8 +251,8 @@ body[data-audio='blocked'] .audio-notice { opacity: 1; pointer-events: auto; }
 @keyframes pulse { 50% { opacity: .6; transform: scale(.78); } }
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after { animation-duration: .001ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
-  .logo, .eyebrow, h1, .tagline, .status-row, .next-card { opacity: 1; transform: none; }
+  body:not(.force-motion) *, body:not(.force-motion) *::before, body:not(.force-motion) *::after { animation-duration: .001ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+  body:not(.force-motion) .logo, body:not(.force-motion) .eyebrow, body:not(.force-motion) h1, body:not(.force-motion) .tagline, body:not(.force-motion) .status-row, body:not(.force-motion) .next-card { opacity: 1; transform: none; }
 }
 
 body.reduced *, body.reduced *::before, body.reduced *::after { animation-duration: .001ms !important; animation-delay: 0ms !important; animation-iteration-count: 1 !important; }

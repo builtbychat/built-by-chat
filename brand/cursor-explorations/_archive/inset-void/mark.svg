@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Scale · Inset Void</title>
+  <desc id="desc">Solid period with a square hole cut from the upper-right; persimmon contribution nests inside the void.</desc>
+  <path fill="#171613" fill-rule="evenodd" d="M40 40h160v160H40zm108 18h46v46h-46z"/>
+  <rect x="116" y="66" width="30" height="30" rx="2" fill="#ff5b3d" transform="rotate(8 131 81)"/>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club Tiny Scale Type monochrome mark</title>
+  <desc id="desc">Single-color notched period with a contribution square using currentColor.</desc>
+  <path fill="currentColor" d="M52 52h96v40h40v96H52z"/>
+  <rect x="156" y="48" width="28" height="28" rx="2" fill="currentColor" transform="rotate(8 170 62)" opacity=".55"/>
+</svg>

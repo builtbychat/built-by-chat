@@ -6,6 +6,8 @@
   "scripts": {
     "predev": "node ../../scripts/export-assets.mjs",
     "dev": "vite",
+    "predemo": "node ../../scripts/export-assets.mjs",
+    "demo": "vite --open /demo",
     "prebuild": "node ../../scripts/export-assets.mjs",
     "build": "vite build",
     "typecheck": "tsc --noEmit",

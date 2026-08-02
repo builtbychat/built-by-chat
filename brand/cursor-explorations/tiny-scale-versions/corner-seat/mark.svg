@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Scale · Corner Seat</title>
+  <desc id="desc">Heavy period with a deep upper-right L-notch. A persimmon square seats on the ledge — the contribution that finishes the mark.</desc>
+  <!-- Body: open L-notch. Ledge runs 156→216 at y=112. -->
+  <path fill="#171613" d="M44 44h112v68h68v100H44z"/>
+  <!-- Contribution seated on the ledge, slight mischievous tilt -->
+  <rect x="164" y="56" width="44" height="44" rx="3" fill="#ff5b3d" transform="rotate(4.5 186 78)"/>
+</svg>

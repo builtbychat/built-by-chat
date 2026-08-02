@@ -1,5 +1,5 @@
 {
-  "lastVerified": "2026-07-16",
+  "lastVerified": "2026-08-02",
   "workstreams": [
     {
       "name": "Product + test site",
@@ -11,7 +11,9 @@
         { "label": "Protected voting and idea submission", "status": "done" },
         { "label": "Studio boundary and control surface", "status": "done" },
         { "label": "Automated type/lint/unit/build checks", "status": "done" },
-        { "label": "Vercel visual test site", "status": "done" }
+        { "label": "Vercel visual test site", "status": "done" },
+        { "label": "Standalone Project One Founding Day demo and interactive playbook", "status": "done" },
+        { "label": "Executable incident rehearsal lab, alerts, timeline, and local evidence tracker", "status": "done" }
       ]
     },
     {
@@ -21,10 +23,10 @@
         { "label": "Build four playable code-native identity studies", "status": "done" },
         { "label": "Build Round 03 open-wildcard brand architecture", "status": "done" },
         { "label": "Approve an ownable identity direction", "status": "blocked" },
-        { "label": "Finalize replacement logo system and brand guide", "status": "blocked" },
-        { "label": "Finalize replacement hero art and platform assets", "status": "blocked" },
-        { "label": "Rebuild thumbnail and sponsor templates", "status": "blocked" },
-        { "label": "Re-skin OBS scenes and browser overlays", "status": "blocked" },
+        { "label": "Finalize replacement logo system and brand guide", "status": "done" },
+        { "label": "Finalize project art and platform assets", "status": "done" },
+        { "label": "Rebuild thumbnail and sponsor templates", "status": "done" },
+        { "label": "Re-skin OBS scenes and browser overlays", "status": "done" },
         { "label": "Media kit and sponsor policy", "status": "done" }
       ]
     },
@@ -129,7 +131,7 @@
       "tasks": [
         { "label": "Legacy code-native intro and outro retained for comparison", "status": "done" },
         { "label": "Playable identity motion lab with four studies", "status": "done" },
-        { "label": "Rebuild intro and outro from approved identity", "status": "blocked" },
+        { "label": "Rebuild intro and outro from current identity candidate", "status": "done" },
         { "label": "CC0 music/SFX provenance and audio validation", "status": "done" },
         { "label": "1080p, reduced-motion, safe-area, and compositor QA", "status": "done" }
       ]
@@ -154,7 +156,9 @@
         { "label": "Episodes 2–6 complete host packs", "status": "done" },
         { "label": "Transactional email delivery test", "status": "blocked" },
         { "label": "Calendar/platform schedules published", "status": "blocked" },
-        { "label": "Final launch announcement approval", "status": "blocked" }
+        { "label": "Final launch announcement approval", "status": "blocked" },
+        { "label": "Browser-first living playbook, future-project portfolio, and growth experiment system", "status": "done" },
+        { "label": "Public human-craft journey, anti-slop release gate, learning log, and living publishing materials", "status": "done" }
       ]
     },
     {
@@ -172,7 +176,8 @@
         { "label": "Music/art/font/clip rights inventory", "status": "done" },
         { "label": "Captions and transcript workflow", "status": "done" },
         { "label": "Privacy-safe analytics and success metrics", "status": "done" },
-        { "label": "Account recovery drill", "status": "blocked" }
+        { "label": "Account recovery drill", "status": "blocked" },
+        { "label": "Resolve or record the React Router RSC-only audit exception before production", "status": "blocked" }
       ]
     }
   ]

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club Proof Stack lockup</title>
+  <desc id="desc">Proof stack mark beside stacked Tiny Signal Club wordmark on ultramarine.</desc>
+  <rect width="1000" height="300" fill="#3157ff"/>
+  <g transform="translate(36 28) scale(.95)">
+    <g fill="#f1eadb">
+      <rect x="42" y="168" width="150" height="22" rx="3"/>
+      <rect x="42" y="140" width="128" height="22" rx="3"/>
+      <rect x="42" y="112" width="104" height="22" rx="3"/>
+      <rect x="42" y="84" width="86" height="22" rx="3"/>
+    </g>
+    <rect x="118" y="48" width="52" height="18" rx="3" fill="#ff5b3d" transform="rotate(-6 144 57)"/>
+  </g>
+  <g fill="#f1eadb" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="320" y="78" font-family="ui-monospace, monospace" font-size="26" letter-spacing="7"><tspan fill="#ff5b3d">TINY</tspan></text>
+    <text x="312" y="178" font-size="118" letter-spacing="-7">SIGNAL</text>
+    <text x="312" y="268" font-size="118" letter-spacing="-7">CLUB<tspan fill="#c8ef52">.</tspan></text>
+  </g>
+</svg>

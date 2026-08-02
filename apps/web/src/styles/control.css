@@ -5,6 +5,8 @@
 .catch-up.emergency { border-color: var(--coral); }
 .catch-up.emergency span { color: var(--coral); }
 .studio-status { display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: 2rem; margin-top: 2rem; padding: 1.2rem 1.5rem; background: var(--cream); color: var(--midnight); }
+.studio-heading { display: flex; align-items: end; justify-content: space-between; gap: 1rem; }
+.studio-heading h1 { margin-bottom: 0; }
 .studio-status strong { font: 600 2rem DM Mono; }
 .studio-status span { text-transform: uppercase; font: 600 .7rem DM Mono; color: #8a3439; }
 .health-row { display: flex; flex-wrap: wrap; gap: .7rem; margin: 1rem 0; }

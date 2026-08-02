@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club Margin Note mark</title>
+  <desc id="desc">A heavy editorial bracket open to the right with a small persimmon annotation square seated in the opening.</desc>
+  <g fill="#171613">
+    <rect x="48" y="44" width="28" height="152" rx="2"/>
+    <rect x="48" y="44" width="92" height="24" rx="2"/>
+    <rect x="48" y="172" width="92" height="24" rx="2"/>
+  </g>
+  <rect x="128" y="98" width="34" height="34" rx="2" fill="#ff5b3d" transform="rotate(11 145 115)"/>
+</svg>

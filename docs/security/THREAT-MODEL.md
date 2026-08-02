@@ -28,7 +28,7 @@ Vote integrity, immutable results, town history, private moderation records, pro
 | Cost or paid-action escalation | Per-run ceilings plus explicit purchase approval | Configure provider/account budget alerts |
 | Account loss | Dedicated identities, 2FA requirement, offline recovery | Complete account setup and recovery drill |
 | Recording/stream-key exposure | Sanitized OBS collection; keys excluded from git | Import inspection and recording storage policy |
-| Dependency compromise | Lockfile, Dependabot, audit, required CI | Public repo security configuration |
+| Dependency compromise | Lockfile, Dependabot, audit, required CI; the app uses `BrowserRouter` and does not enable unstable React Router RSC APIs | Resolve or record the RSC-only GHSA-qwww-vcr4-c8h2 audit exception before production; upgrade before any RSC adoption |
 
 ## Incident priorities
 

@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" role="img" aria-labelledby="title desc">
+  <title id="title">Tiny Signal Club Stamp Seal lockup</title>
+  <desc id="desc">Stamp seal mark beside stacked Tiny Signal Club wordmark.</desc>
+  <rect width="1000" height="300" fill="#c8ef52"/>
+  <g transform="translate(40 30) scale(.95)">
+    <circle cx="120" cy="120" r="78" fill="none" stroke="#171613" stroke-width="36" stroke-linecap="butt" stroke-dasharray="420 70" transform="rotate(-55 120 120)"/>
+    <rect x="168" y="36" width="30" height="30" rx="2" fill="#ff5b3d" transform="rotate(18 183 51)"/>
+  </g>
+  <g fill="#171613" font-family="Arial Narrow, Helvetica Neue, Arial, sans-serif" font-weight="900">
+    <text x="320" y="78" font-family="ui-monospace, monospace" font-size="26" letter-spacing="7"><tspan fill="#ff5b3d">TINY</tspan></text>
+    <text x="312" y="178" font-size="118" letter-spacing="-7">SIGNAL</text>
+    <text x="312" y="268" font-size="118" letter-spacing="-7">CLUB.</text>
+  </g>
+</svg>

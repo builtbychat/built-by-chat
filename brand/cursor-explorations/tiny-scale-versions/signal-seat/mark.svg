@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Signal Seat</title>
+  <desc id="desc">Rounded period with a scooped bowl ledge. An orange signal circle rolls into the seat — Signal as a bead, not a brick.</desc>
+  <!-- Soft body + curved bowl notch (not an L) -->
+  <path fill="#171613" d="
+    M48 48
+    H148
+    C148 48 148 78 178 96
+    C198 108 208 118 208 140
+    V208
+    H48
+    Z"/>
+  <!-- Signal bead -->
+  <circle cx="168" cy="78" r="22" fill="#ff5b3d"/>
+</svg>
